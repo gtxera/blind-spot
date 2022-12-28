@@ -4,8 +4,14 @@ using UnityEngine;
 
 public class DialogueEventSO : ScriptableObject
 {
-    public virtual void RunEvent()
+    private HashSet<DialogueEventListener> _listeners = new HashSet<DialogueEventListener>();
+    
+    public void Invoke()
     {
-        Debug.Log("Event called");
+        foreach(DialogueEventListener listener in _listeners)
+            listener.RaiseEvent();
     }
+
+    public void Register(DialogueEventListener listener) => _listeners.Add(listener);
+    public void Deregister(DialogueEventListener listener) => _listeners.Remove(listener);
 }
