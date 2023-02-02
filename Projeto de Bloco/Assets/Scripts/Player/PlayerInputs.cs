@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PlayerInputs : MonoBehaviour {
-    public static PlayerInputs Instance;
+public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
 
     public float HorizontalInput { get; private set; }
     public float VerticalInput { get; private set; }
@@ -21,12 +20,7 @@ public class PlayerInputs : MonoBehaviour {
         
     private bool _shiftKeyUp;
     public event Action ShiftKeyUpEvent;
-
-    private void Awake()
-    { 
-        if (Instance == null) Instance = this;
-        else Destroy(this);
-    }
+    
 
     private void Update()
     {

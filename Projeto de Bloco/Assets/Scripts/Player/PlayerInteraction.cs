@@ -6,19 +6,11 @@ using Player;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class PlayerInteraction : MonoBehaviour
+public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
 {
-    public static PlayerInteraction Instance;
-    
     private IInteractable _currentInteraction;
 
     private bool _currentInteractionIsLocked;
-
-    private void Awake()
-    {
-        if (Instance == null) Instance = this;
-        else Destroy(this);
-    }
 
     void Start()
     {

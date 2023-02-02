@@ -6,10 +6,8 @@ using Player;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController))]
-public class PlayerMovementStateMachine : MonoBehaviour
+public class PlayerMovementStateMachine : SingletonBehaviour<PlayerMovementStateMachine>
 {
-    public static PlayerMovementStateMachine Instance;
-    
     private MovementState _currentMovementState;
 
     private FootMovementState _defaultMovementState;
@@ -19,10 +17,9 @@ public class PlayerMovementStateMachine : MonoBehaviour
 
     public event Action<Type, Type> StateChanged;
     
-    private void Awake()
+    private new void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(this);
+        base.Awake();
         
         _characterController = GetComponent<CharacterController>();
         

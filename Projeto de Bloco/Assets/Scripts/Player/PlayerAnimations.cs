@@ -14,7 +14,6 @@ public class PlayerAnimations : MonoBehaviour
 
     private void Awake()
     {
-
         _animator = GetComponent<Animator>();
     }
 
