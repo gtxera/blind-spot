@@ -5,4 +5,5 @@ using UnityEngine;
 public class DialogueSimpleLine : DialogueLineSO
 {
     public DialogueLineSO NextDialogue;
+    public string Text;
 }

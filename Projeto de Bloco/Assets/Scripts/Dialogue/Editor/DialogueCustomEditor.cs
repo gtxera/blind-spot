@@ -9,6 +9,7 @@ using UnityEngine;
 public class DialogueCustomEditor : Editor
 {
     private SerializedProperty _name, _dialogueLines, _hasNameSet;
+    private GUIStyle _dialogueNameStyle, _removeLineButtonStyle, _addLineButtonStyle;
     
     private void OnEnable()
     {
@@ -16,6 +17,16 @@ public class DialogueCustomEditor : Editor
         _dialogueLines = serializedObject.FindProperty("DialogueLines");
 
         _hasNameSet = serializedObject.FindProperty("HasNameSet");
+        
+        _dialogueNameStyle = new GUIStyle
+        {
+            alignment = TextAnchor.MiddleCenter,
+            fontSize = 18,
+            normal =
+            {
+                textColor = Color.white
+            }
+        };
     }
 
     public override void OnInspectorGUI()
@@ -34,18 +45,35 @@ public class DialogueCustomEditor : Editor
         
         else
         {
-            GUIStyle style = new GUIStyle
+            EditorGUILayout.LabelField(_name.stringValue, _dialogueNameStyle);
+            EditorGUILayout.Separator();
+
+            for (int i = 0; i < _dialogueLines.arraySize; i++)
             {
-                alignment = TextAnchor.MiddleCenter,
-                fontSize = 18,
-                normal =
+                var line = _dialogueLines.GetArrayElementAtIndex(i);
+                var dialogueLine = line.objectReferenceValue as DialogueLineSO;
+                var wrapperReference = dialogueLine.Wrapper;
+                if (wrapperReference.DialogueLineSO == null)
                 {
-                    textColor = Color.white
+                    var lineObj = line.objectReferenceValue as DialogueLineSO;
+                    lineObj.CreateWrapper();
                 }
-            };
-            EditorGUILayout.LabelField(_name.stringValue, style);
-            
-            EditorGUILayout.PropertyField(_dialogueLines);
+
+                var wrapper = new SerializedObject(dialogueLine).FindProperty("Wrapper");
+                EditorGUILayout.PropertyField(wrapper);
+                
+                if (GUILayout.Button("Remove line"))
+                {
+                    for (int j = i; j < _dialogueLines.arraySize - 1; j++)
+                    {
+                        _dialogueLines.GetArrayElementAtIndex(j).objectReferenceValue =
+                            _dialogueLines.GetArrayElementAtIndex(j + 1).objectReferenceValue;
+                    }
+
+                    _dialogueLines.arraySize--;
+                }
+                EditorGUILayout.Separator();
+            }
 
             if (GUILayout.Button("Add Line"))
             {
@@ -75,7 +103,6 @@ public class DialogueCustomEditor : Editor
         AssetDatabase.CreateAsset(newLine as UnityEngine.Object, finalPath);
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
-        EditorUtility.FocusProjectWindow();
 
         var lines = serializedObject.FindProperty("DialogueLines");
         lines.arraySize++;

@@ -5,4 +5,5 @@ using UnityEngine;
 public class DialogueChoiceLine : DialogueLineSO
 {
     public List<DialogueChoice> Choices;
+    public string Text;
 }

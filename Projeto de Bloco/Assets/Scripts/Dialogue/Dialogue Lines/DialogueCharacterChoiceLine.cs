@@ -7,5 +7,4 @@ public class DialogueCharacterChoiceLine : DialogueChoiceLine
     public DialogueCharacterSO Character;
     public string Name;
     public Texture Portrait;
-    public string Text;
 }
