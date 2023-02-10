@@ -1,15 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-[CreateAssetMenu]
-public class ItemSO : ScriptableObject
+public class DialogueEventSO : MonoBehaviour
 {
-    public Texture ItemImage;
+    private List<DialogueEventListener> _listeners = new List<DialogueEventListener>();
     
-    private List<ItemEventListener> _listeners = new List<ItemEventListener>();
-
     public void RaiseEvent()
     {
         for (int i = _listeners.Count - 1; i >= 0; i--)
@@ -18,12 +14,12 @@ public class ItemSO : ScriptableObject
         }
     }
 
-    public void RegisterListener(ItemEventListener listener)
+    public void RegisterListener(DialogueEventListener listener)
     {
         _listeners.Add(listener);
     }
 
-    public void UnregisterListener(ItemEventListener listener)
+    public void UnregisterListener(DialogueEventListener listener)
     {
         _listeners.Remove(listener);
     }

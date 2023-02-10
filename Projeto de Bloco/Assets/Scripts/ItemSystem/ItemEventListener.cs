@@ -22,6 +22,6 @@ public class ItemEventListener
 
     public void OnEventRaised()
     {
-        response.Invoke();
+        response?.Invoke();
     }
 }
