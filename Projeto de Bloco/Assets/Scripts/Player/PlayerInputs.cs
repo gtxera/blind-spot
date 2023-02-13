@@ -20,6 +20,9 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         
     private bool _shiftKeyUp;
     public event Action ShiftKeyUpEvent;
+
+    private bool _mouseLeftButtonDown;
+    public event Action MouseLeftButtonDownEvent;
     
 
     private void Update()
@@ -41,6 +44,8 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
             
         _shiftKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
         _shiftKeyUp = Input.GetKeyUp(KeyCode.LeftShift);
+
+        _mouseLeftButtonDown = Input.GetMouseButtonDown(0);
     }
 
     private void RaiseEvents()
@@ -59,6 +64,8 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         if(_eKeyDown) EKeyDownEvent?.Invoke();
             
         if(_shiftKeyDown) ShiftKeyDownEvent?.Invoke();
-        if(_shiftKeyUp) ShiftKeyUpEvent?.Invoke(); 
+        if(_shiftKeyUp) ShiftKeyUpEvent?.Invoke();
+
+        if (_mouseLeftButtonDown) MouseLeftButtonDownEvent?.Invoke();
     }
 }

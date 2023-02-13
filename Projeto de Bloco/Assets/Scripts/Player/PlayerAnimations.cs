@@ -27,6 +27,8 @@ public class PlayerAnimations : MonoBehaviour
 
         PlayerMovementStateMachine.Instance.StateChanged += StartDrivingAnimation;
         PlayerMovementStateMachine.Instance.StateChanged += StopDrivingAnimation;
+        PlayerMovementStateMachine.Instance.StateChanged += StartIdleAnimation;
+        PlayerMovementStateMachine.Instance.StateChanged += StopIdleAnimation;
     }
 
     private void StartWalkingAnimation()
@@ -63,6 +65,16 @@ public class PlayerAnimations : MonoBehaviour
     {
         if(oldState == typeof(CarMovementState))
             _animator.SetBool(Driving, false);
+    }
+
+    private void StartIdleAnimation(Type oldState, Type newState)
+    {
+        if(newState == typeof(StaticMovementState)) _animator.SetBool(Walking, false);
+    }
+
+    private void StopIdleAnimation(Type oldState, Type newState)
+    {
+        if (newState == typeof(FootMovementState) && !PlayerInputs.Instance.MovementDirection.Equals(Vector3.zero)) _animator.SetBool(Walking, true);
     }
     
 }

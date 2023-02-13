@@ -5,5 +5,6 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Dialogue/New Dialogue Character")]
 public class DialogueCharacterSO : ScriptableObject
 {
+    public string Name;
     public SerializableDictionary<string, Texture> Portraits;
 }

@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515ff3a273093d746b9047076ff678de, type: 3}
+  m_Name: Ed pinto limpo
+  m_EditorClassIdentifier: 
+  Name: Ed pinto limpo
+  Portraits:
+    list:
+    - Key: medo
+      Value: {fileID: 2800000, guid: f79532ed53993a24fb2d007f647d3f97, type: 3}
+    - Key: nervoso
+      Value: {fileID: 2800000, guid: 98d032c68be4a784ab77b461c5341fc8, type: 3}

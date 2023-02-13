@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class DialogueLineSO : ScriptableObject
 {
-    [SerializeReference]
-    public DialogueLineSOWrapper Wrapper = new DialogueLineSOWrapper();
+    [HideInInspector] public DialogueLineSOWrapper Wrapper = new DialogueLineSOWrapper();
+
+    public DialogueSO ParentDialogue;
+
+    [HideInInspector] public string LineIdentifier;
 
     public void CreateWrapper()
     {
