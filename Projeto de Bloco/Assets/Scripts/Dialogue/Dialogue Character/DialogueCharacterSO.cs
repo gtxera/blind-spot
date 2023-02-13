@@ -6,5 +6,5 @@ using UnityEngine;
 public class DialogueCharacterSO : ScriptableObject
 {
     public string Name;
-    public SerializableDictionary<string, Texture> Portraits;
+    public SerializableDictionary<string, Sprite> Portraits;
 }

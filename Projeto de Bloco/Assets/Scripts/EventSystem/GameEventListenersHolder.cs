@@ -3,9 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ItemListenersHolder : MonoBehaviour
+public class GameEventListenersHolder : MonoBehaviour
 {
-    [SerializeField] private ItemEventListener[] _listeners;
+    [SerializeField] private List<GameEventListener> _listeners = new List<GameEventListener>();
 
     private void OnEnable()
     {
@@ -19,7 +19,7 @@ public class ItemListenersHolder : MonoBehaviour
     {
         foreach (var listener in _listeners)
         {
-            listener.UnableListener();
+            listener.DisableListener();
         }
     }
 }

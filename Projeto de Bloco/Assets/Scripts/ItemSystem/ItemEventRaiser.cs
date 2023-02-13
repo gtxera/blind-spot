@@ -8,6 +8,6 @@ public class ItemEventRaiser : MonoBehaviour
 
     public void RaiseItemEvent()
     {
-        item.RaiseEvent();
+        item.ItemEvent.RaiseEvent();
     }
 }

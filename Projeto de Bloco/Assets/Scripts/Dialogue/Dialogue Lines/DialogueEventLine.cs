@@ -4,6 +4,6 @@ using UnityEngine;
 
 public class DialogueEventLine : DialogueLineSO
 {
-    public DialogueEventSO DialogueEvent;
+    public GameEvent DialogueEvent;
     public DialogueLineSO NextDialogue;
 }

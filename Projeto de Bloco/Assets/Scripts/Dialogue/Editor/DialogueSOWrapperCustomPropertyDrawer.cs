@@ -257,7 +257,10 @@ public class DialogueSOWrapperCustomPropertyDrawer : PropertyDrawer
         {
             Rect portraitRect = new Rect(position.x + position.width/2 - 100, position.y + currentHeight,
                 200, 200);
-            EditorGUI.DrawTextureTransparent(portraitRect, portraits[portraitKey.stringValue] as Texture, ScaleMode.ScaleAndCrop);
+            Color defaultColor = GUI.color;
+            GUI.color = Color.clear;
+            EditorGUI.DrawTextureTransparent(portraitRect, portraits[portraitKey.stringValue].texture, ScaleMode.ScaleAndCrop);
+            GUI.color = defaultColor;
             text = portraitKey.stringValue;
         }
         else

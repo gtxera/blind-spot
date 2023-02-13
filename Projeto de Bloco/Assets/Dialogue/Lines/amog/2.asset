@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bacac846cfb4f5448931524ca37b7da, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: ff2a1322bfe8afe4eaa35e64845a44cd, type: 2}
+  LineIdentifier: 2
+  Choices:
+  - ChoiceText: hehehe yup
+    NextDialogue: {fileID: 11400000, guid: cd656735eb83f0c40aea7a64393e3fbc, type: 2}
+  Text: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
