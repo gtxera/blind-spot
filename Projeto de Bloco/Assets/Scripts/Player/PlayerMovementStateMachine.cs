@@ -62,4 +62,9 @@ public class PlayerMovementStateMachine : SingletonBehaviour<PlayerMovementState
     {
         return _currentMovementState.GetType();
     }
+
+    public void ResetCurrentMovementState()
+    {
+        _currentMovementState.ResetMovement();
+    }
 }

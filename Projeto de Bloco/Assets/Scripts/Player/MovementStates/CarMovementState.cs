@@ -7,6 +7,7 @@ public class CarMovementState : MovementState
 {
     private float _maxMotorForce, _maxSpeedKmPerHour, _maxBreakForce, _maxSteerAngle, _antiRollForce, _decelerationForce;
     private float _currentMotorForce, _currentBreakForce, _currentSpeedKmPerHour, _currentSteerAngle, _currentDecelerationForce;
+    private float _maxGasCapacity, _currentGasCapacity, _gasConsumption;
 
     private Rigidbody _carRigidBody;
     
@@ -24,18 +25,22 @@ public class CarMovementState : MovementState
 
     public CarMovementState(
         Rigidbody carRigidBody,
-        float maxMotorForce, float maxSpeedKmPerHour, float maxBreakForce, float maxSteerAngle, float antiRollForce, float decelerationForce,
+        CarStats carStats,
         WheelCollider frontLeftWheelCollider, WheelCollider frontRightWheelCollider, WheelCollider rearLeftWheelCollider, WheelCollider rearRightWheelCollider,
         Transform frontLeftWheelTransform, Transform frontRightWheelTransform, Transform rearLeftWheelTransform, Transform rearRightWheelTransform)
     {
         _carRigidBody = carRigidBody;
         
-        _maxMotorForce = maxMotorForce;
-        _maxSpeedKmPerHour = maxSpeedKmPerHour;
-        _maxBreakForce = maxBreakForce;
-        _maxSteerAngle = maxSteerAngle;
-        _antiRollForce = antiRollForce;
-        _decelerationForce = decelerationForce;
+        _maxMotorForce = carStats.MaxMotorForce;
+        _maxSpeedKmPerHour = carStats.MaxSpeedKmPerHour;
+        _maxBreakForce = carStats.MaxBreakForce;
+        _maxSteerAngle = carStats.MaxSteerAngleInDegrees;
+        _antiRollForce = carStats.AntiRollForce;
+        _decelerationForce = carStats.DecelerationForce;
+
+        _maxGasCapacity = carStats.MaximumGasCapacity;
+        _currentGasCapacity = _maxGasCapacity;
+        _gasConsumption = carStats.GasConsumptionInUnitsPerSecond;
 
         _frontLeftWheelCollider = frontLeftWheelCollider;
         _frontRightWheelCollider = frontRightWheelCollider;
@@ -50,7 +55,7 @@ public class CarMovementState : MovementState
     
     public override void DoFixedUpdate()
     {
-        if (!_isActive) return;
+        if (!_isActive && _currentGasCapacity <= 0) return;
         
         HandleMotor();
         HandleDeceleration();
@@ -64,7 +69,7 @@ public class CarMovementState : MovementState
     private void HandleMotor()
     {
         _currentMotorForce = Mathf.Lerp(_currentMotorForce, _maxMotorForce * PlayerInputs.Instance.VerticalInput, 0.01f);
-        
+
         _currentSpeedKmPerHour = _carRigidBody.velocity.magnitude * 3.6f;
 
         if (Mathf.Abs(_currentSpeedKmPerHour) < _maxSpeedKmPerHour)
@@ -77,6 +82,11 @@ public class CarMovementState : MovementState
             _frontLeftWheelCollider.motorTorque = 0f;
             _frontRightWheelCollider.motorTorque = 0f;
         }
+    }
+
+    private void ConsumeGas()
+    {
+        _currentGasCapacity -= _gasConsumption * Time.fixedDeltaTime;
     }
 
     private void HandleDeceleration()

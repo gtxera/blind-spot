@@ -73,5 +73,10 @@ namespace Player
 
             _characterController.SimpleMove(_currentSpeed * _moveDirection);
         }
+
+        public override void ResetMovement()
+        {
+            _currentSpeed = 0;
+        }
     }
 }

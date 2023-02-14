@@ -40,6 +40,15 @@ public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
         }
     }
 
+    private void OnTriggerStay(Collider other)
+    {
+        if (!_currentInteractionIsLocked)
+        {
+            _currentInteraction = other.GetComponent<IInteractable>();
+            _currentInteraction?.SetOutlines(true);
+        }
+    }
+
     public void LockInteraction(bool isLocked)
     {
         _currentInteraction.SetOutlines(false);

@@ -15,13 +15,18 @@ public abstract class MovementState
     {
         
     }
+    
+    public virtual void ResetMovement()
+    {
+        
+    }
 
     public void ActivateMovement(bool isActive)
     {
         _isActive = isActive;
     }
-
-    public bool GetActiveState()
+    
+    public bool IsActive()
     {
         return _isActive;
     }

@@ -18,3 +18,5 @@ MonoBehaviour:
   MaxSteerAngleInDegrees: 30
   AntiRollForce: 5000
   DecelerationForce: 200
+  MaximumGasCapacity: 1000
+  GasConsumptionInUnitsPerSecond: 10

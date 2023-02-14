@@ -36,7 +36,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
     {
         _carMovementState = new CarMovementState(
             _carRigidBody,
-            carStats.MaxMotorForce, carStats.MaxSpeedKmPerHour, carStats.MaxBreakForce, carStats.MaxSteerAngleInDegrees, carStats.AntiRollForce, carStats.DecelerationForce,
+            carStats,
             frontLeftWheelCollider, frontRightWheelCollider, rearLeftWheelCollider, rearRightWheelCollider,
             frontLeftWheelTransform, frontRightWheelTransform, rearLeftWheelTransform, rearRightWheelTransform);
 

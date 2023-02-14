@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
-  m_Name: segundo
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 2
   m_EditorClassIdentifier: 
   Wrapper:
-    DialogueLineSO: {fileID: 11400000}
-  ParentDialogue: {fileID: 11400000, guid: ff2a1322bfe8afe4eaa35e64845a44cd, type: 2}
-  LineIdentifier: segundo
+    DialogueLineSO: {fileID: 0}
+  ParentDialogue: {fileID: 11400000, guid: 4142d43922b18704fa78b65a1ce28bfe, type: 2}
+  LineIdentifier: 
   NextDialogue: {fileID: 0}
-  Text: segundo foi
+  Text: 
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 

@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "New Car")]
 public class CarStats : ScriptableObject
 {
-    public float MaxMotorForce, MaxSpeedKmPerHour, MaxBreakForce, MaxSteerAngleInDegrees, AntiRollForce, DecelerationForce;
+    public float MaxMotorForce, MaxSpeedKmPerHour, MaxBreakForce, MaxSteerAngleInDegrees, AntiRollForce, DecelerationForce, MaximumGasCapacity, GasConsumptionInUnitsPerSecond;
 }

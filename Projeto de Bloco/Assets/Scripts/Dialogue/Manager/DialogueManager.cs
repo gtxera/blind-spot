@@ -1,6 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -18,9 +22,12 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private DialogueLineSO _currentLine;
 
-    private HandledCoroutine _showTextRoutine;
+    private Task _showTextTask;
 
     private GameObjectPool _buttonsPool;
+
+    private CancellationTokenSource _showTextTokenSource;
+    private CancellationToken _showTextToken;
 
     private void Start()
     {
@@ -34,10 +41,12 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         _characterImage = _characterLineContainer.transform.GetChild(0).GetComponent<Image>();
 
         _buttonsPool = new GameObjectPool(_choiceButtonPrefab, _choicesContainer.gameObject);
+        
     }
 
     public void StartDialogue(DialogueSO dialogue)
     {
+        PlayerMovementStateMachine.Instance.ResetCurrentMovementState();
         PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
         PlayerInteraction.Instance.IgnoreInteraction(true);
 
@@ -69,6 +78,9 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private void ShowCurrentLine()
     {
+        _showTextTokenSource = new CancellationTokenSource();
+        _showTextToken = _showTextTokenSource.Token;
+
         if (_currentLine is DialogueCharacterSimpleLine or DialogueCharacterChoiceLine)
         {
             _normalLineContainer.SetActive(false);
@@ -100,12 +112,12 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         {
             case DialogueSimpleLine simpleLine:
                 _currentLineText.text = simpleLine.Text;
-                _showTextRoutine = this.StartHandledCoroutine(ShowFullText, ShowFullText,LineTextReveal());
+                _showTextTask = LineTextReveal(_showTextToken);
                 break;
 
             case DialogueChoiceLine choiceLine:
                 _currentLineText.text = choiceLine.Text;
-                StartCoroutine(ChoicesAndTextReveal(choiceLine));
+                _showTextTask = ChoicesAndTextReveal(choiceLine, _showTextToken);
                 break;
             
             case DialogueEventLine eventLine:
@@ -115,26 +127,33 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         }
     }
 
-    private IEnumerator LineTextReveal()
+    private async Task LineTextReveal(CancellationToken token)
     {
         _currentLineText.maxVisibleCharacters = 1;
 
         for (int i = 1; i < _currentLineText.text.Length + 1; i++)
         {
+            await Task.Delay(50);
             _currentLineText.maxVisibleCharacters = i;
             
-            yield return new WaitForSeconds(0.05f);
+            if (token.IsCancellationRequested)
+            {
+                ShowFullText();
+                throw new TaskCanceledException();
+            }
+            
+            
         }
     }
 
-    private IEnumerator ChoicesAndTextReveal(DialogueChoiceLine choiceLine)
+    private async Task ChoicesAndTextReveal(DialogueChoiceLine choiceLine, CancellationToken token)
     {
-        _showTextRoutine = this.StartHandledCoroutine(ShowFullText, ShowFullText, LineTextReveal());
-
-        while (_showTextRoutine.Running)
+        _showTextTask = LineTextReveal(token);
+        try
         {
-            yield return new WaitForEndOfFrame();
+            await _showTextTask;
         }
+        catch (TaskCanceledException){ }
 
         foreach (var choice in choiceLine.Choices)
         {
@@ -169,9 +188,9 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
     {
         if (!_dialogueUI.activeSelf) return;
 
-        if (_showTextRoutine.Running)
+        if (!_showTextTokenSource.IsCancellationRequested && !_showTextTask.IsCompleted)
         {
-            this.StopHandledCoroutine(_showTextRoutine);
+            _showTextTokenSource.Cancel();
         }
 
         else
@@ -188,6 +207,7 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private void ShowFullText()
     {
+        Debug.Log("called");
         _currentLineText.maxVisibleCharacters = _currentLineText.text.Length;
     }
 }
