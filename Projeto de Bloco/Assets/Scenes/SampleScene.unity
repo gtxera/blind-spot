@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18384424, g: 0.22859064, b: 0.30080366, a: 1}
+  m_IndirectSpecularColor: {r: 0.18384404, g: 0.22859035, b: 0.30080298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1020,7 +1020,7 @@ RectTransform:
   - {fileID: 709660463}
   - {fileID: 1495094809}
   m_Father: {fileID: 2021288026}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0}
@@ -1335,6 +1335,7 @@ GameObject:
   - component: {fileID: 1002899512}
   - component: {fileID: 1002899511}
   - component: {fileID: 1002899509}
+  - component: {fileID: 1002899517}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1457,6 +1458,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1002899517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1002899508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3518734afd8c66d43b592a30ee35cb9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _listeners:
+  - _gameEvent: {fileID: 11400000, guid: be58ad0cdab586d4e94006a5e0f5e791, type: 2}
+    _event:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1002899509}
+          m_TargetAssemblyTypeName: TestItem, Assembly-CSharp
+          m_MethodName: DestroyCube
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!146 &1033331441 stripped
 WheelCollider:
   m_CorrespondingSourceObject: {fileID: 2737710317085372627, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
@@ -1492,7 +1522,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2021288026}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -1891,7 +1921,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 17a670b3f2acd664181454cf254dc411, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2421,7 +2451,7 @@ PrefabInstance:
     - target: {fileID: 9195151737310229696, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 04f1a900da1eea14cb1ccd1ee45bc26e, type: 2}
+      objectReference: {fileID: 2100000, guid: 17a670b3f2acd664181454cf254dc411, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a8f57edf3523624eb9f886833e8e97a, type: 3}
 --- !u!1 &1991767359
@@ -2555,7 +2585,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2021288026
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2569,8 +2599,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 768617755}
-  - {fileID: 1332949260}
   - {fileID: 878760453}
+  - {fileID: 1332949260}
   m_Father: {fileID: 819222910}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

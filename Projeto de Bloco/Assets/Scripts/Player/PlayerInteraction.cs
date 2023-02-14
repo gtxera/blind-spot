@@ -19,21 +19,37 @@ public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
 
     private void CallInteraction()
     {
-       if(_currentInteraction != null) _currentInteraction.Interact(gameObject);
+        _currentInteraction?.Interact(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(!_currentInteractionIsLocked) _currentInteraction = other.GetComponent<IInteractable>();
+        if (!_currentInteractionIsLocked)
+        {
+            _currentInteraction = other.GetComponent<IInteractable>();
+            _currentInteraction?.SetOutlines(true);
+        }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(!_currentInteractionIsLocked) _currentInteraction = null;
+        if (!_currentInteractionIsLocked)
+        {
+            _currentInteraction?.SetOutlines(false);
+            _currentInteraction = null;
+        }
     }
 
     public void LockInteraction(bool isLocked)
     {
+        _currentInteraction.SetOutlines(false);
+        _currentInteractionIsLocked = isLocked;
+    }
+
+    public void IgnoreInteraction(bool isLocked)
+    {
+        _currentInteraction?.SetOutlines(false);
+        _currentInteraction = null;
         _currentInteractionIsLocked = isLocked;
     }
 }

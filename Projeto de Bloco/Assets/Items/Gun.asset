@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: Gun
   m_EditorClassIdentifier: 
   ItemImage: {fileID: 0}
+  ItemEvent: {fileID: 11400000, guid: be58ad0cdab586d4e94006a5e0f5e791, type: 2}

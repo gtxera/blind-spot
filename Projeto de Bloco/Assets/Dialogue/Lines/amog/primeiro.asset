@@ -9,16 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
-  m_Name: 4
+  m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
+  m_Name: primeiro
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ff2a1322bfe8afe4eaa35e64845a44cd, type: 2}
-  LineIdentifier: 4
+  LineIdentifier: primeiro
   NextDialogue: {fileID: 0}
-  Text: hehehe
-  Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
-  Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: Feliz
+  Text: 'colocando um texto imenso pra testar colocando um texto imenso pra testar
+    colocando um texto imenso pra testar colocando um texto imenso pra testar colocando
+    um texto imenso pra testar colocando um texto imenso pra testar colocando um
+    texto imenso pra testar colocando um texto imenso pra testar '

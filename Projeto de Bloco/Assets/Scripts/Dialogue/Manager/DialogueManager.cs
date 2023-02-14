@@ -20,6 +20,8 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private HandledCoroutine _showTextRoutine;
 
+    private GameObjectPool _buttonsPool;
+
     private void Start()
     {
         PlayerInputs.Instance.MouseLeftButtonDownEvent += OnMouseClick;
@@ -29,12 +31,15 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         _normalLineText = _normalLineContainer.GetComponentInChildren<TextMeshProUGUI>();
         
         _characterLineText = _characterLineContainer.GetComponentInChildren<TextMeshProUGUI>();
-        _characterImage = _normalLineContainer.GetComponentInChildren<Image>();
+        _characterImage = _characterLineContainer.transform.GetChild(0).GetComponent<Image>();
+
+        _buttonsPool = new GameObjectPool(_choiceButtonPrefab, _choicesContainer.gameObject);
     }
 
     public void StartDialogue(DialogueSO dialogue)
     {
         PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
+        PlayerInteraction.Instance.IgnoreInteraction(true);
 
         _dialogueUI.SetActive(true);
 
@@ -58,6 +63,7 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
     private void EndDialogue()
     {
         PlayerMovementStateMachine.Instance.ChangeDefaultMovementState();
+        PlayerInteraction.Instance.IgnoreInteraction(false);
         _dialogueUI.SetActive(false);
     }
 
@@ -67,9 +73,17 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         {
             _normalLineContainer.SetActive(false);
             _characterLineContainer.SetActive(true);
+
+            switch (_currentLine)
+            {
+                case DialogueCharacterSimpleLine characterSimpleLine:
+                    _characterImage.sprite = characterSimpleLine.Character.Portraits[characterSimpleLine.PortraitKey];
+                    break;
+                case DialogueCharacterChoiceLine characterChoiceLine:
+                    _characterImage.sprite = characterChoiceLine.Character.Portraits[characterChoiceLine.PortraitKey];
+                    break;
+            }
             
-            var characterLine = _currentLine as DialogueCharacterSimpleLine;
-            _characterImage.sprite = characterLine.Character.Portraits[characterLine.PortraitKey];
             
             _currentLineText = _characterLineText;
         }
@@ -86,7 +100,7 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         {
             case DialogueSimpleLine simpleLine:
                 _currentLineText.text = simpleLine.Text;
-                _showTextRoutine = this.StartHandledCoroutine(LineTextReveal());
+                _showTextRoutine = this.StartHandledCoroutine(ShowFullText, ShowFullText,LineTextReveal());
                 break;
 
             case DialogueChoiceLine choiceLine:
@@ -108,14 +122,14 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         for (int i = 1; i < _currentLineText.text.Length + 1; i++)
         {
             _currentLineText.maxVisibleCharacters = i;
-
+            
             yield return new WaitForSeconds(0.05f);
         }
     }
 
     private IEnumerator ChoicesAndTextReveal(DialogueChoiceLine choiceLine)
     {
-        _showTextRoutine = this.StartHandledCoroutine(LineTextReveal());
+        _showTextRoutine = this.StartHandledCoroutine(ShowFullText, ShowFullText, LineTextReveal());
 
         while (_showTextRoutine.Running)
         {
@@ -130,12 +144,25 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private void InstantiateChoiceButton(DialogueChoice choice)
     {
-        var button = Instantiate(_choiceButtonPrefab, _choicesContainer, true);
+        var button = _buttonsPool.GetObject(true);
 
-        button.GetComponent<Button>().onClick.AddListener(delegate { TryLoadNextLine(choice.NextDialogue); });
+        button.GetComponent<Button>().onClick.AddListener(delegate
+        {
+            TryLoadNextLine(choice.NextDialogue);
+            RemoveChoices();
+            
+        });
         
         button.GetComponentInChildren<TextMeshProUGUI>().text = choice.ChoiceText;
         
+    }
+
+    private void RemoveChoices()
+    {
+        foreach (var button in _buttonsPool.Pool)
+        {
+            _buttonsPool.DisableObject(button);
+        }
     }
 
     private void OnMouseClick()
@@ -144,7 +171,6 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
         if (_showTextRoutine.Running)
         {
-            _currentLineText.maxVisibleCharacters = _currentLineText.text.Length;
             this.StopHandledCoroutine(_showTextRoutine);
         }
 
@@ -158,5 +184,10 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
                     break;
             }
         }
+    }
+
+    private void ShowFullText()
+    {
+        _currentLineText.maxVisibleCharacters = _currentLineText.text.Length;
     }
 }

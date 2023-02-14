@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public static class CoroutineHandler
 {
-    public static HandledCoroutine StartHandledCoroutine(this MonoBehaviour obj, params IEnumerator[] routines)
+    public static HandledCoroutine StartHandledCoroutine(this MonoBehaviour obj, Action onCoroutineFinished = null, Action onCoroutineStopped = null, params IEnumerator[] routines)
     {
-        var handledCoroutine = new HandledCoroutine(obj);
+        var handledCoroutine = new HandledCoroutine(obj, onCoroutineFinished, onCoroutineStopped);
 
         obj.StartCoroutine(handledCoroutine.StartHandledRoutine(routines));
 
@@ -22,14 +23,18 @@ public static class CoroutineHandler
 
 public class HandledCoroutine
 {
-    public HandledCoroutine(MonoBehaviour obj)
+    public HandledCoroutine(MonoBehaviour obj, Action onCoroutineFinished, Action onCoroutineStopped)
     {
         _obj = obj;
+        _onCoroutineFinished = onCoroutineFinished;
+        _onCoroutineStopped = onCoroutineStopped;
     }
     
     public bool Running { get; private set; }
     public bool Finished { get; private set; }
     public bool Stopped { get; private set; }
+
+    private Action _onCoroutineFinished,_onCoroutineStopped;
 
     private MonoBehaviour _obj;
 
@@ -55,6 +60,8 @@ public class HandledCoroutine
 
         Finished = true;
         Running = false;
+        
+        _onCoroutineFinished?.Invoke();
     }
 
     public void StopHandledRoutine()
@@ -63,6 +70,9 @@ public class HandledCoroutine
         Finished = false;
         Stopped = true;
         
+        Debug.Log(_currentRoutine);
         _obj.StopCoroutine(_currentRoutine);
+        
+        _onCoroutineStopped?.Invoke();
     }
 }

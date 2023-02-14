@@ -24,19 +24,23 @@ public class CarInteraction : MonoBehaviour, IInteractable
     [SerializeField] private Transform driverSeatTransform, exitPointTransform;
     
     private CarMovementState _carMovementState;
+    
+    public Material InteractableMaterial { get; private set; }
 
     private void Awake()
     {
         _carRigidBody = GetComponent<Rigidbody>();
     }
 
-    void Start()
+    private void Start()
     {
         _carMovementState = new CarMovementState(
             _carRigidBody,
             carStats.MaxMotorForce, carStats.MaxSpeedKmPerHour, carStats.MaxBreakForce, carStats.MaxSteerAngleInDegrees, carStats.AntiRollForce, carStats.DecelerationForce,
             frontLeftWheelCollider, frontRightWheelCollider, rearLeftWheelCollider, rearRightWheelCollider,
             frontLeftWheelTransform, frontRightWheelTransform, rearLeftWheelTransform, rearRightWheelTransform);
+
+        InteractableMaterial = GetComponentInChildren<Renderer>().material;
     }
 
 

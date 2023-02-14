@@ -9,12 +9,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
-  m_Name: amogus
+  m_Script: {fileID: 11500000, guid: 9bacac846cfb4f5448931524ca37b7da, type: 3}
+  m_Name: teste
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ff2a1322bfe8afe4eaa35e64845a44cd, type: 2}
-  LineIdentifier: amogus
-  NextDialogue: {fileID: 11400000, guid: 9ebf354a5fac3fc45a7250d6740c67dd, type: 2}
-  Text: amogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogusamogus
+  LineIdentifier: 0
+  Choices:
+  - ChoiceText: primeiro
+    NextDialogue: {fileID: 11400000, guid: 85f76bac2a37d14439c86786a1c1a07f, type: 2}
+  - ChoiceText: segundo
+    NextDialogue: {fileID: 11400000, guid: d29ca6b938c5a794f986f6ca8ff31e0c, type: 2}
+  Text: testando diferentes caminhos

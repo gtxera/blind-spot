@@ -211,6 +211,7 @@ public class DialogueCustomEditor : Editor
     private void RenameLine(DialogueLineSO lineToRename, string newName, int index)
     {
         AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(lineToRename.GetInstanceID()), newName);
+        lineToRename.name = newName;
         AssetDatabase.Refresh();
         _currentLineName[index] = newName;
     }

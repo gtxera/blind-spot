@@ -21,17 +21,9 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: CarMaterial
-  m_Shader: {fileID: -6465566751694194690, guid: 17221986419377b4bb4f358a0c2a598a, type: 3}
-  m_ValidKeywords:
-  - ADDITIONAL_LIGHT_CALCULATE_SHADOW
-  - MAIN_LIGHT_CALCULATE_SHADOWS
-  - _MAIN_LIGHT_SHADOWS_CASCADE
-  - _SHADOWS_SOFT
-  m_InvalidKeywords:
-  - 
-  - 
-  - 
-  - 
+  m_Shader: {fileID: -6465566751694194690, guid: d95e5b4443ef7e945a1497ec49d80b87, type: 3}
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -93,6 +85,14 @@ Material:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
+    - _ToonDiffuseTexture:
+        m_Texture: {fileID: 2800000, guid: 8c508eea1762dd44cbf66593e03a6b04, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ToonNormalMapTexture:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _ToonRamp:
         m_Texture: {fileID: 2800000, guid: dded78ed00bc77b4e960b667b206290c, type: 3}
         m_Scale: {x: 1, y: 1}
@@ -127,11 +127,24 @@ Material:
     - _GlossMapScale: 0
     - _Glossiness: 0
     - _GlossyReflections: 0
+    - _HasOutline: 0
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Matte: 1
     - _Metallic: 0
     - _Normal_Strength: 0
     - _OcclusionStrength: 1
+    - _OutlineAcuteDepthThreshold: 1
+    - _OutlineAcuteStartDot: 0.9
+    - _OutlineDepthStrength: 1
+    - _OutlineDepthThreshold: 1
+    - _OutlineDepthTightening: 1
+    - _OutlineFarNormalEndDepth: 1
+    - _OutlineFarNormalStartDepth: 1
+    - _OutlineFarNormalThreshold: 1
+    - _OutlineNormalStrength: 1
+    - _OutlineNormalThreshold: 1
+    - _OutlineNormalTightening: 1000
+    - _OutlineThickness: 0.0005
     - _Parallax: 0.005
     - _QueueControl: 0
     - _QueueOffset: 0
@@ -142,11 +155,15 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _Surface: 0
+    - _ToonMatte: 1
+    - _ToonNormalStrength: 0
+    - _ToonSmoothness: 0.4
     - _WorkflowMode: 1
     - _ZWrite: 1
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _OutlineColor: {r: 0.048891068, g: 1, b: 0, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []
