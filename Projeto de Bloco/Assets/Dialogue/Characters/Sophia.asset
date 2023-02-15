@@ -18,7 +18,7 @@ MonoBehaviour:
     - Key: Neutro
       Value: {fileID: 21300000, guid: cc017bf955ed1de49b0bef27ffb3937c, type: 3}
     - Key: Feliz
-      Value: {fileID: 21300000, guid: 198299afc5ba3e548a395d894a6f49c6, type: 3}
+      Value: {fileID: 21300000, guid: 5b2d6fe14b76eeb4791b4e08be892a95, type: 3}
     - Key: Irritada
       Value: {fileID: 21300000, guid: 198299afc5ba3e548a395d894a6f49c6, type: 3}
     - Key: Preocupada
