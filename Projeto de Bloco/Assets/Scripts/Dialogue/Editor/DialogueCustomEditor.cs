@@ -161,7 +161,10 @@ public class DialogueCustomEditor : Editor
                 menu.ShowAsContext();
             }
         }
-        
+
+        EditorStyles.textField.alignment = TextAnchor.UpperLeft;
+        EditorStyles.label.fontSize = 12;
+        EditorStyles.foldoutHeader.fixedWidth = 0;
         serializedObject.ApplyModifiedProperties();
     }
 
