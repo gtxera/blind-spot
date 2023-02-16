@@ -10,12 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
-  m_Name: ' 0 dialogue'
+  m_Name: 0 dialogue
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: d17de310244885c42bffd288fec53926, type: 2}
-  LineIdentifier: ' 0 dialogue'
+  LineIdentifier: 0 dialogue
   NextDialogue: {fileID: 11400000, guid: 9ea6b3c3774c23d44bf13429e4ab7ba1, type: 2}
   Text: "Argh! N\xE3o \xE9 poss\xEDvel que essa tralha n\xE3o aguente nem alguns
     metros."

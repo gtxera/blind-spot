@@ -1,13 +1,23 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 [System.Serializable]
 public class GameEventListener
 {
+    public GameEventListener(GameEvent gameEvent, Action scriptEvent = null)
+    {
+        _gameEvent = gameEvent;
+        _scriptEvent = scriptEvent;
+    }
+    
     [SerializeField] private GameEvent _gameEvent;
-    [SerializeField] private UnityEvent _event;
+    [SerializeField] private UnityEvent _unityEvent;
+
+    private Action _scriptEvent;
 
     public void EnableListener()
     {
@@ -21,6 +31,7 @@ public class GameEventListener
 
     public void OnEventRaised()
     {
-        _event?.Invoke();
+        _unityEvent?.Invoke();
+        _scriptEvent?.Invoke();
     }
 }

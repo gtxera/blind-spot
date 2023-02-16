@@ -20,6 +20,13 @@ public class CreateQuestPhaseEditorWindow : EditorWindow
 
        if (GUILayout.Button("Create Phase"))
        {
+           if (!IsValidName())
+           {
+               EditorUtility.DisplayDialog("Invalid name", "Choose a name that does not exists in the current quest or is not empty",
+                   "Ok");
+               return;
+           }
+           
            var path = $"Assets/Quests/Phases/{_questName}";
            var finalPath = Path.Combine(path, $"{_phaseName}.asset");
 
@@ -44,9 +51,24 @@ public class CreateQuestPhaseEditorWindow : EditorWindow
        }
     }
 
+    private bool IsValidName()
+    {
+        if (!_phaseName.HasAtLeastOneCharacter()) return false;
+        
+        for (int i = 0; i < _questPhasesProperty.arraySize; i++)
+        {
+            if (_phaseName == _questPhasesProperty.GetArrayElementAtIndex(i).objectReferenceValue.name)
+            {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
     public static void ShowWindow(SerializedObject serializedObject, SerializedProperty questPhasesProperty, string questName)
     {
-        CreateQuestPhaseEditorWindow window = (CreateQuestPhaseEditorWindow)EditorWindow.GetWindow(typeof(CreateQuestPhaseEditorWindow));
+        CreateQuestPhaseEditorWindow window = (CreateQuestPhaseEditorWindow)GetWindow(typeof(CreateQuestPhaseEditorWindow));
         window._questObject = serializedObject;
         window._questName = questName;
         window._questPhasesProperty = questPhasesProperty;

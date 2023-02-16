@@ -53,7 +53,7 @@ public class DialogueCustomEditor : Editor
             EditorGUILayout.PropertyField(_name);
             if (GUILayout.Button("Set name"))
             {
-                if (!CheckIfIsValidName(_name.stringValue))
+                if (!_name.stringValue.HasAtLeastOneCharacter())
                 {
                     EditorUtility.DisplayDialog("Empty dialogue name", "Enter a valid name", "Ok");
                     return;
@@ -111,8 +111,15 @@ public class DialogueCustomEditor : Editor
                 
                 if (CheckIfIsValidName(lineIdentifier.stringValue) && lineIdentifier.stringValue != _currentLineName[i])
                 {
+                    lineIdentifier.stringValue = lineIdentifier.stringValue.Trim();
                     RenameLine(dialogueLine, lineIdentifier.stringValue, i);
                     lineObject.FindProperty("m_Name").stringValue = lineIdentifier.stringValue;
+                }
+                else if(lineIdentifier.stringValue != _currentLineName[i])
+                {
+                    EditorUtility.DisplayDialog("Invalid Line Name", "The name is either empty or already exists",
+                        "Ok");
+                        lineIdentifier.stringValue = _currentLineName[i];
                 }
 
                 EditorStyles.textArea.alignment = TextAnchor.UpperLeft;
@@ -137,7 +144,8 @@ public class DialogueCustomEditor : Editor
                             _shownLines[j] = _shownLines[j + 1];
                         }
 
-                        AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(dialogueLine.GetInstanceID()));
+                        AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(dialogueLine));
+                        AssetDatabase.Refresh();
                         _dialogueLines.arraySize--;
                         continue;
                     }
@@ -213,14 +221,21 @@ public class DialogueCustomEditor : Editor
 
     private void RenameLine(DialogueLineSO lineToRename, string newName, int index)
     {
-        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(lineToRename.GetInstanceID()), newName);
-        lineToRename.name = newName;
+        AssetDatabase.RenameAsset(AssetDatabase.GetAssetPath(lineToRename), newName);
+        AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
         _currentLineName[index] = newName;
     }
 
     private bool CheckIfIsValidName(string name)
     {
-        return name.Any(Char.IsLetter);
+        if (!name.HasAtLeastOneCharacter()) return false;
+
+        for (int i = 0; i < _dialogueLines.arraySize; i++)
+        {
+            if (name == _dialogueLines.GetArrayElementAtIndex(i).objectReferenceValue.name) return false;
+        }
+
+        return true;
     }
 }

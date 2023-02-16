@@ -37,6 +37,8 @@ public class QuestEditor : Editor
 
         EditorGUILayout.LabelField(_nameProperty.stringValue);
         
+        EditorGUILayout.Separator();
+        
         EditorStyles.label.fontSize = 12;
         EditorStyles.label.alignment = TextAnchor.UpperLeft;
         
@@ -45,8 +47,9 @@ public class QuestEditor : Editor
             var phaseProperty = _questPhasesProperty.GetArrayElementAtIndex(i);
             var phaseSO = phaseProperty.objectReferenceValue as QuestPhase;
             var wrapper = phaseSO.Wrapper;
-            Debug.Log(wrapper);
             if(wrapper.QuestPhase == null) phaseSO.CreateWrapper();
+
+            var defaultColor = GUI.backgroundColor;
 
             var phaseObject = new SerializedObject(phaseSO);
             var wrapperProperty = phaseObject.FindProperty("Wrapper");
@@ -64,12 +67,38 @@ public class QuestEditor : Editor
             
             if (_shownQuests[i])
             {
+                EditorGUILayout.Separator();
+                
                 EditorGUILayout.PropertyField(wrapperProperty);
+                
+                EditorGUILayout.Separator();
+                
+                GUI.backgroundColor = Color.red;
+                if (GUILayout.Button("Remove Phase"))
+                {
+                    for (int j = i; j < _questPhasesProperty.arraySize - 1; j++)
+                    {
+                        _questPhasesProperty.GetArrayElementAtIndex(j).objectReferenceValue =
+                            _questPhasesProperty.GetArrayElementAtIndex(j + 1).objectReferenceValue;
+                        _shownQuests[j] = _shownQuests[j + 1];
+                    }
+
+                    AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(phaseSO));
+                    AssetDatabase.Refresh();
+                    _questPhasesProperty.arraySize--;
+                    continue;
+                }
+
+                phaseObject.ApplyModifiedProperties();
             }
+
+            GUI.backgroundColor = defaultColor;
+            
+            EditorGUILayout.EndFoldoutHeaderGroup();
             
             EditorGUILayout.Separator();
 
-            phaseObject.ApplyModifiedProperties();
+            
         }
         
         
