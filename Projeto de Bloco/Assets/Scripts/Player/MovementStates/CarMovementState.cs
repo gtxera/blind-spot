@@ -96,7 +96,7 @@ public class CarMovementState : MovementState
 
     private void HandleBreaking()
     {
-        _currentBreakForce = PlayerInputs.Instance.SpaceBarPressed ? _maxBreakForce : 0f;
+        _currentBreakForce = PlayerInputs.Instance.CarBreaksPressed ? _maxBreakForce : 0f;
 
         _frontLeftWheelCollider.brakeTorque = _currentBreakForce + _currentDecelerationForce;
         _frontRightWheelCollider.brakeTorque = _currentBreakForce + _currentDecelerationForce;

@@ -30,11 +30,11 @@ namespace Player
             _playerTransform = playerTransform;
             _lastRotation = playerTransform.rotation;
 
-            PlayerInputs.Instance.ShiftKeyDownEvent += () =>
+            PlayerInputs.Instance.RunKeyDownEvent += () =>
             {
                 if (_isActive) _isRunning = true;
             };
-            PlayerInputs.Instance.ShiftKeyUpEvent += () =>
+            PlayerInputs.Instance.RunKeyUpEvent += () =>
             {
                 if (_isActive) _isRunning = false;
             };

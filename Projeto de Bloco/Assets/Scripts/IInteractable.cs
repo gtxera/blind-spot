@@ -16,6 +16,8 @@ public interface IInteractable
 
     void SetOutlines(bool isActive)
     {
+        if(InteractableMaterial is null) return;
+
         InteractableMaterial.SetFloat(HasOutline, Convert.ToInt32(isActive));
     }
 }

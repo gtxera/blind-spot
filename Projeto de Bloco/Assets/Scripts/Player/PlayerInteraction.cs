@@ -14,7 +14,7 @@ public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
 
     void Start()
     {
-        PlayerInputs.Instance.EKeyDownEvent += CallInteraction;
+        PlayerInputs.Instance.InteractKeyDownEvent += CallInteraction;
     }
 
     private void CallInteraction()

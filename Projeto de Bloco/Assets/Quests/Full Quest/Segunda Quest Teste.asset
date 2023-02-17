@@ -10,9 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4258e7d186d03b740b2f7d3e06e20cfc, type: 3}
-  m_Name: New Quest
+  m_Name: Segunda Quest Teste
   m_EditorClassIdentifier: 
-  IsMandatory: 1
+  IsMandatory: 0
   QuestPhases:
-  - {fileID: 11400000, guid: fedbdcb9ada810f44868711ba9e161cb, type: 2}
-  - {fileID: 11400000, guid: b8403773cb8ef584b8dcb82cd78f3ccd, type: 2}
+  - {fileID: 11400000, guid: 10acf50f9d4dd3048a9d18818f0f1386, type: 2}

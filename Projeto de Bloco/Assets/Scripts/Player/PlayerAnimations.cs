@@ -22,8 +22,8 @@ public class PlayerAnimations : MonoBehaviour
         PlayerInputs.Instance.MovementStartedEvent += StartWalkingAnimation;
         PlayerInputs.Instance.MovementStoppedEvent += StopWalkAnimation;
 
-        PlayerInputs.Instance.ShiftKeyDownEvent += StartRunningAnimation;
-        PlayerInputs.Instance.ShiftKeyUpEvent += StopRunningAnimation;
+        PlayerInputs.Instance.RunKeyDownEvent += StartRunningAnimation;
+        PlayerInputs.Instance.RunKeyUpEvent += StopRunningAnimation;
 
         PlayerMovementStateMachine.Instance.StateChanged += StartDrivingAnimation;
         PlayerMovementStateMachine.Instance.StateChanged += StopDrivingAnimation;

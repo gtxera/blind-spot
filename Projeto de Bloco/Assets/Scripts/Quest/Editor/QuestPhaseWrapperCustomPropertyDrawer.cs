@@ -14,6 +14,7 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
     
     private QuestPhase _questPhase;
     private List<SerializableDictionaryWrapper> _dictionaryWrappers = new();
+    private List<float> _listElementsHeight = new();
     private ReorderableList _nextPhasesList;
     private SerializedObject _phaseSerializedObject;
     private Quest _parentQuest;
@@ -23,7 +24,7 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
     private const float DEFAULT_SPACE = 5.0f;
     public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
     {
-        return 100;
+        return 120;
     }
 
     public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
@@ -38,6 +39,7 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
                 var wrapper = new SerializableDictionaryWrapper(questPhase, key, questPhase.NextPhases[key]);
                 
                 _dictionaryWrappers.Add(wrapper);
+                _listElementsHeight.Add(0f);
             }
             
             _nextPhasesList = new ReorderableList(_dictionaryWrappers, typeof(SerializableDictionaryWrapper))
@@ -45,6 +47,7 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
                 drawHeaderCallback = NextPhasesListHeader,
                 drawElementCallback = DrawNextPhasesElements,
                 elementHeightCallback = GetNextPhasesElementHeight,
+                onRemoveCallback = RemoveNextPhase,
                 onAddCallback = AddNextPhase
             };
 
@@ -64,9 +67,22 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
             EditorGUI.GetPropertyHeight(phaseTextProperty));
 
         EditorStyles.label.alignment = TextAnchor.MiddleCenter;
-
+        EditorStyles.textArea.alignment = TextAnchor.UpperLeft;
         EditorGUI.PropertyField(phaseTextRect, phaseTextProperty);
 
+        currentHeight += EditorGUI.GetPropertyHeight(phaseTextProperty) + DEFAULT_SPACE;
+
+        var phaseWaypointProperty = _phaseSerializedObject.FindProperty("PhaseWaypointName");
+        var phaseWaypointRect = new Rect(position.x, position.y + currentHeight, position.width, EditorGUIUtility.singleLineHeight);
+
+        EditorStyles.textField.alignment = TextAnchor.UpperLeft;
+        EditorGUI.PropertyField(phaseWaypointRect, phaseWaypointProperty);
+
+        if (!phaseWaypointProperty.stringValue.HasAtLeastOneCharacter())
+        {
+            phaseWaypointProperty.stringValue = "";
+        }
+        
         currentHeight += EditorGUI.GetPropertyHeight(phaseTextProperty) + DEFAULT_SPACE;
         
         _nextPhasesList.DoLayoutList();
@@ -84,27 +100,53 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
 
     private void DrawNextPhasesElements(Rect rect, int index, bool isActive, bool isFocused)
     {
-        float currentHeight = 0;
+        float currentHeight = DEFAULT_SPACE;
         
         var nextPhase = _nextPhasesList.list[index] as SerializableDictionaryWrapper;
 
-        nextPhase.GameEvent = EditorGUI.ObjectField(new Rect(rect.x, rect.y, rect.width, EditorGUIUtility.singleLineHeight),
+        EditorStyles.label.alignment = TextAnchor.MiddleCenter;
+        EditorGUI.LabelField(new Rect(rect.x, rect.y + currentHeight, rect.width, EditorGUIUtility.singleLineHeight), "Event");
+
+        currentHeight += EditorGUIUtility.singleLineHeight + DEFAULT_SPACE;
+        
+        nextPhase.GameEvent = EditorGUI.ObjectField(new Rect(rect.x, rect.y + currentHeight, rect.width, EditorGUIUtility.singleLineHeight),
             nextPhase.GameEvent, typeof(GameEvent), false) as GameEvent;
 
         currentHeight += EditorGUIUtility.singleLineHeight + DEFAULT_SPACE;
 
         if (nextPhase.GameEvent != null)
         {
+            EditorGUI.LabelField(new Rect(rect.x, rect.y + currentHeight, rect.width, EditorGUIUtility.singleLineHeight), "Next Phase");
+
+            currentHeight += EditorGUIUtility.singleLineHeight + DEFAULT_SPACE;
+            
+            if (nextPhase.NextPhase != null)
+            {
+                EditorGUI.ObjectField(
+                    new Rect(rect.x, rect.y + currentHeight, rect.width, EditorGUIUtility.singleLineHeight),
+                    nextPhase.NextPhase, typeof(QuestPhase), false);
+
+                currentHeight += EditorGUIUtility.singleLineHeight + DEFAULT_SPACE;
+            }
+            
             DrawNextPhaseSelector(new Rect(rect.x, rect.y + currentHeight, rect.width, EditorGUIUtility.singleLineHeight), nextPhase);
         }
+
+        currentHeight += EditorGUIUtility.singleLineHeight + DEFAULT_SPACE;
+
+        _listElementsHeight[index] = currentHeight;
+        
+        EditorStyles.label.alignment = TextAnchor.UpperLeft;
     }
 
     private void DrawNextPhaseSelector(Rect rect, SerializableDictionaryWrapper wrapper)
     {
-        if (EditorGUI.DropdownButton(rect, new GUIContent("Choose Next Quest"), FocusType.Passive))
+        if (EditorGUI.DropdownButton(rect, new GUIContent("Choose Next Phase"), FocusType.Passive))
         {
             var menu = new GenericMenu();
 
+            menu.AddItem(new GUIContent("Finish this quest"), false, data => wrapper.NextPhase = data as QuestPhase, QuestUtility.FinishThisQuest);
+            
             foreach (var questPhase in _parentQuest.QuestPhases.Where(questPhase => questPhase.name != _questPhase.name))
             {
                 menu.AddItem(new GUIContent(questPhase.name), false, data => wrapper.NextPhase = data as QuestPhase, questPhase);
@@ -118,11 +160,43 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
     {
         var newPhase = new SerializableDictionaryWrapper(_questPhase);
         list.list.Add(newPhase);
+        _listElementsHeight.Add(0f);
+    }
+
+    private void RemoveNextPhase(ReorderableList list)
+    {
+        var indices = list.selectedIndices;
+
+        if (indices.Count == 0)
+        {
+            var wrapper = list.list[^1] as SerializableDictionaryWrapper;
+
+            RemoveNextPhaseFromObject(wrapper);
+            
+            list.list.RemoveAt(list.list.Count -1);
+            return;
+        }
+        
+        foreach (var index in indices)
+        {
+            var wrapper = list.list[index] as SerializableDictionaryWrapper;
+
+            RemoveNextPhaseFromObject(wrapper);
+            
+            list.list.RemoveAt(index);
+        }
+    }
+
+    private void RemoveNextPhaseFromObject(SerializableDictionaryWrapper wrapper)
+    {
+        if (wrapper.NextPhase == null) return;
+        
+        wrapper.Phase.NextPhases.Remove(wrapper.GameEvent);
     }
 
     private float GetNextPhasesElementHeight(int index)
     {
-        return 100;
+        return _listElementsHeight[index];
     }
     
     private class SerializableDictionaryWrapper
@@ -149,8 +223,8 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
             {
                 if (value == null  ||value == _nextPhase || _gameEvent == null) return;
 
-                _phase.NextPhases.Remove(_gameEvent);
-                _phase.NextPhases.Add(_gameEvent, value);
+                Phase.NextPhases.Remove(_gameEvent);
+                Phase.NextPhases.Add(_gameEvent, value);
                 _nextPhase = value;
 
             }
@@ -158,11 +232,11 @@ public class QuestPhaseWrapperCustomPropertyDrawer : PropertyDrawer
 
         private QuestPhase _nextPhase;
         
-        private readonly QuestPhase _phase;
+        public readonly QuestPhase Phase;
 
         public SerializableDictionaryWrapper(QuestPhase phase, GameEvent gameEvent = null, QuestPhase nextPhase = null)
         {
-            _phase = phase;
+            Phase = phase;
             _gameEvent = gameEvent;
             _nextPhase = nextPhase;
         }

@@ -9,22 +9,27 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
     public Vector3 MovementDirection { get; private set; }
     private bool _isMoving;
     public event Action MovementStartedEvent, MovementStoppedEvent;
+    
+    public bool CarBreaksPressed { get; private set; }
 
-    public bool SpaceBarPressed { get; private set; }
-        
-    private bool _eKeyDown;
-    public event Action EKeyDownEvent;
+    private bool _interactKeyDown;
+    public event Action InteractKeyDownEvent;
 
-    private bool _shiftKeyDown;
-    public event Action ShiftKeyDownEvent;
+    private bool _runKeyDown;
+    public event Action RunKeyDownEvent;
         
-    private bool _shiftKeyUp;
-    public event Action ShiftKeyUpEvent;
+    private bool _runKeyUp;
+    public event Action RunKeyUpEvent;
 
     private bool _mouseLeftButtonDown;
     public event Action MouseLeftButtonDownEvent;
     
+    private float _mouseWheelMovement;
+    public event Action<float> MouseWheelMove;
 
+    private bool _radioKeyDown;
+    public event Action RadioKeyDown;
+    
     private void Update()
     {
         GetInputs();
@@ -38,14 +43,18 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
             
         MovementDirection = new Vector3(HorizontalInput, 0,VerticalInput);
 
-        SpaceBarPressed = Input.GetKey(KeyCode.Space);
+        CarBreaksPressed = Input.GetKey(InputBindings.Bindings[InputBindings.PlayerActions.CarBreaks]);
+
+        _interactKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Interact]);
             
-        _eKeyDown = Input.GetKeyDown(KeyCode.E);
-            
-        _shiftKeyDown = Input.GetKeyDown(KeyCode.LeftShift);
-        _shiftKeyUp = Input.GetKeyUp(KeyCode.LeftShift);
+        _runKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Run]);
+        _runKeyUp = Input.GetKeyUp(InputBindings.Bindings[InputBindings.PlayerActions.Run]);
 
         _mouseLeftButtonDown = Input.GetMouseButtonDown(0);
+
+        _mouseWheelMovement = Input.GetAxis("Mouse ScrollWheel");
+
+        _radioKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Radio]);
     }
 
     private void RaiseEvents()
@@ -61,11 +70,15 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
             MovementStoppedEvent?.Invoke();
         }
             
-        if(_eKeyDown) EKeyDownEvent?.Invoke();
+        if(_interactKeyDown) InteractKeyDownEvent?.Invoke();
             
-        if(_shiftKeyDown) ShiftKeyDownEvent?.Invoke();
-        if(_shiftKeyUp) ShiftKeyUpEvent?.Invoke();
+        if(_runKeyDown) RunKeyDownEvent?.Invoke();
+        if(_runKeyUp) RunKeyUpEvent?.Invoke();
 
         if (_mouseLeftButtonDown) MouseLeftButtonDownEvent?.Invoke();
+        
+        if(_mouseWheelMovement != 0) MouseWheelMove?.Invoke(_mouseWheelMovement);
+        
+        if(_radioKeyDown) RadioKeyDown?.Invoke();
     }
 }

@@ -7,10 +7,11 @@ public class QuestPhase : ScriptableObject
     [TextArea]
     public string PhaseText;
 
-    public GameEvent OnPhaseFinishedEvent;
-    
     public SerializableDictionary<GameEvent, QuestPhase> NextPhases = new();
 
+    public string PhaseWaypointName;
+    
+    [HideInInspector]
     public Quest ParentQuest;
 
     [HideInInspector]

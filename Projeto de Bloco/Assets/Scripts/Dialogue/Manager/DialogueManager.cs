@@ -29,6 +29,8 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
     private CancellationTokenSource _showTextTokenSource;
     private CancellationToken _showTextToken;
 
+    public event Action<DialogueSO> OnDialogueStarted, OnDialogueEnded;
+
     private void Start()
     {
         PlayerInputs.Instance.MouseLeftButtonDownEvent += OnMouseClick;
@@ -49,6 +51,8 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         PlayerMovementStateMachine.Instance.ResetCurrentMovementState();
         PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
         PlayerInteraction.Instance.IgnoreInteraction(true);
+        
+        OnDialogueStarted?.Invoke(dialogue);
 
         _dialogueUI.SetActive(true);
 
@@ -61,7 +65,7 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
     {
         if (nextLine == null)
         {
-            EndDialogue();
+            EndDialogue(_currentLine.ParentDialogue);
             return;
         }
 
@@ -69,10 +73,13 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         ShowCurrentLine();
     }
 
-    private void EndDialogue()
+    private void EndDialogue(DialogueSO dialogue)
     {
         PlayerMovementStateMachine.Instance.ChangeDefaultMovementState();
         PlayerInteraction.Instance.IgnoreInteraction(false);
+        
+        OnDialogueEnded?.Invoke(dialogue);
+        
         _dialogueUI.SetActive(false);
     }
 
@@ -141,8 +148,6 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
                 ShowFullText();
                 throw new TaskCanceledException();
             }
-            
-            
         }
     }
 
@@ -207,7 +212,6 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private void ShowFullText()
     {
-        Debug.Log("called");
         _currentLineText.maxVisibleCharacters = _currentLineText.text.Length;
     }
 }

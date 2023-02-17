@@ -41,6 +41,10 @@ public class QuestEditor : Editor
         
         EditorStyles.label.fontSize = 12;
         EditorStyles.label.alignment = TextAnchor.UpperLeft;
+
+        EditorGUILayout.PropertyField(serializedObject.FindProperty("IsMandatory"));
+        
+        EditorGUILayout.Separator();
         
         for (int i = 0; i < _questPhasesProperty.arraySize; i++)
         {
@@ -97,7 +101,6 @@ public class QuestEditor : Editor
             EditorGUILayout.EndFoldoutHeaderGroup();
             
             EditorGUILayout.Separator();
-
             
         }
         
@@ -110,7 +113,7 @@ public class QuestEditor : Editor
         }
 
         EditorStyles.label.fontSize = 12;
-        EditorStyles.label.alignment = TextAnchor.UpperLeft;
+        EditorStyles.label.alignment = TextAnchor.MiddleLeft;
         EditorStyles.textField.alignment = TextAnchor.UpperLeft;
         EditorStyles.foldoutHeader.fixedWidth = 0;
 

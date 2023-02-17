@@ -171,6 +171,7 @@ public class DialogueCustomEditor : Editor
         }
 
         EditorStyles.textField.alignment = TextAnchor.UpperLeft;
+        EditorStyles.textArea.alignment = TextAnchor.UpperLeft;
         EditorStyles.label.fontSize = 12;
         EditorStyles.foldoutHeader.fixedWidth = 0;
         serializedObject.ApplyModifiedProperties();
