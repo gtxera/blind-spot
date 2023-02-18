@@ -15,7 +15,7 @@ C:/Users/Windows/Documents/GitHub/Projeto-de-Bloco/Projeto de Bloco
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-49982
+62774
 Successfully changed project path to: C:/Users/Windows/Documents/GitHub/Projeto-de-Bloco/Projeto de Bloco
 C:/Users/Windows/Documents/GitHub/Projeto-de-Bloco/Projeto de Bloco
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,11 +47,11 @@ C:/Users/Windows/Documents/GitHub/Projeto-de-Bloco/Projeto de Bloco
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Player connection [7592] Host "[IP] 192.168.0.104 [Port] 0 [Flags] 2 [Guid] 1757624907 [EditorId] 1757624907 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-59SLQ9O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
+Player connection [1420] Host "[IP] 192.168.0.104 [Port] 0 [Flags] 2 [Guid] 1859357345 [EditorId] 1859357345 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-59SLQ9O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined multi-casting on [225.0.0.222:54997]...
 
-Player connection [7592] Host "[IP] 192.168.0.104 [Port] 0 [Flags] 2 [Guid] 1757624907 [EditorId] 1757624907 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-59SLQ9O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
+Player connection [1420] Host "[IP] 192.168.0.104 [Port] 0 [Flags] 2 [Guid] 1859357345 [EditorId] 1859357345 [Version] 1048832 [Id] WindowsEditor(7,DESKTOP-59SLQ9O) [Debug] 1 [PackageName] WindowsEditor [ProjectName] Editor" joined alternative multi-casting on [225.0.0.222:34997]...
 
-Refreshing native plugins compatible for Editor in 100.17 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 104.12 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.3.16f1 (4016570cf34f)
 [Subsystems] Discovering subsystems at path E:/Unity Diretório/2021.3.16f1/Editor/Data/Resources/UnitySubsystems
@@ -67,74 +67,74 @@ Initialize mono
 Mono path[0] = 'E:/Unity Diretório/2021.3.16f1/Editor/Data/Managed'
 Mono path[1] = 'E:/Unity Diretório/2021.3.16f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'E:/Unity Diretório/2021.3.16f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56344
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56212
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: E:/Unity Diretório/2021.3.16f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.002647 seconds.
+Registered in 0.002891 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 100.98 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 100.38 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.675 seconds
+- Completed reload, in  0.666 seconds
 Domain Reload Profiling:
-	ReloadAssembly (675ms)
-		BeginReloadAssembly (102ms)
+	ReloadAssembly (666ms)
+		BeginReloadAssembly (98ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (472ms)
-			LoadAssemblies (100ms)
+		EndReloadAssembly (462ms)
+			LoadAssemblies (98ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (124ms)
+			SetupTypeCache (108ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (27ms)
-			SetupLoadedEditorAssemblies (272ms)
+			SetupLoadedEditorAssemblies (276ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (6ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (101ms)
-				BeforeProcessingInitializeOnLoad (2ms)
-				ProcessInitializeOnLoadAttributes (121ms)
-				ProcessInitializeOnLoadMethodAttributes (42ms)
+				RefreshPlugins (100ms)
+				BeforeProcessingInitializeOnLoad (1ms)
+				ProcessInitializeOnLoadAttributes (122ms)
+				ProcessInitializeOnLoadMethodAttributes (46ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.008017 seconds.
+Registered in 0.009688 seconds.
 Begin MonoManager ReloadAssembly
 Symbol file LoadedFromMemory doesn't match image C:\Users\Windows\Documents\GitHub\Projeto-de-Bloco\Projeto de Bloco\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll
 Symbol file LoadedFromMemory doesn't match image C:\Users\Windows\Documents\GitHub\Projeto-de-Bloco\Projeto de Bloco\Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 101.88 ms, found 5 plugins.
+Refreshing native plugins compatible for Editor in 105.72 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.419 seconds
+- Completed reload, in  1.319 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1420ms)
+	ReloadAssembly (1320ms)
 		BeginReloadAssembly (119ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (6ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (17ms)
-		EndReloadAssembly (1189ms)
-			LoadAssemblies (97ms)
+			CreateAndSetChildDomain (18ms)
+		EndReloadAssembly (1085ms)
+			LoadAssemblies (112ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (336ms)
+			SetupTypeCache (306ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (106ms)
-			SetupLoadedEditorAssemblies (593ms)
+			RebuildScriptCaches (67ms)
+			SetupLoadedEditorAssemblies (575ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (4ms)
+				InitializePlatformSupportModulesInManaged (3ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (102ms)
-				BeforeProcessingInitializeOnLoad (114ms)
-				ProcessInitializeOnLoadAttributes (292ms)
+				RefreshPlugins (106ms)
+				BeforeProcessingInitializeOnLoad (112ms)
+				ProcessInitializeOnLoadAttributes (273ms)
 				ProcessInitializeOnLoadMethodAttributes (78ms)
 				AfterProcessingInitializeOnLoad (3ms)
 				EditorAssembliesLoaded (0ms)
@@ -143,13 +143,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
-Refreshing native plugins compatible for Editor in 1.10 ms, found 5 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.04 seconds
+Refreshing native plugins compatible for Editor in 1.38 ms, found 5 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 5540 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 51 unused Assets / (0.8 MB). Loaded Objects now: 5989.
-Memory consumption went from 219.0 MB to 218.2 MB.
-Total: 3.712600 ms (FindLiveObjects: 0.448300 ms CreateObjectMapping: 0.407100 ms MarkObjects: 2.569700 ms  DeleteObjects: 0.286500 ms)
+Unloading 5542 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 51 unused Assets / (0.8 MB). Loaded Objects now: 5991.
+Memory consumption went from 220.4 MB to 219.6 MB.
+Total: 4.151000 ms (FindLiveObjects: 0.481800 ms CreateObjectMapping: 0.523500 ms MarkObjects: 2.830600 ms  DeleteObjects: 0.314100 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -163,41 +163,43 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1529.595383 seconds.
-  path: Assets/ARCADE - FREE Racing Car/Meshes
-  artifactKey: Guid(0b49c9f90b77b6441bac4cde7efcd2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ARCADE - FREE Racing Car/Meshes using Guid(0b49c9f90b77b6441bac4cde7efcd2fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9042295c7b11f0eeef7343a28e418fb9') in 0.012296 seconds 
+  Time since last request: 15678.902500 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Tile1.fbx
+  artifactKey: Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Tile1.fbx using Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '655f3d186da4e486d0c7e65510f81175') in 0.312321 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000029 seconds.
-  path: Assets/ARCADE - FREE Racing Car/Meshes/ARCADE - FREE Racing Car.fbx
-  artifactKey: Guid(9ec6a8fc6925acb4abc5500eeecb8270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/ARCADE - FREE Racing Car/Meshes/ARCADE - FREE Racing Car.fbx using Guid(9ec6a8fc6925acb4abc5500eeecb8270) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7412f419165fe22fd259d9b29d2b329d') in 0.342650 seconds 
+  Time since last request: 60.919860 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Tile1F.fbx
+  artifactKey: Guid(b52b504cd376e0c43858bca4cfcfd77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Tile1F.fbx using Guid(b52b504cd376e0c43858bca4cfcfd77c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ad8b5c6f9daabc5ce8a3d564d764b819') in 0.061872 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.691062 seconds.
-  path: Assets/Models
-  artifactKey: Guid(e474c57086481b548ae810f25848d266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models using Guid(e474c57086481b548ae810f25848d266) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba70a70d3f06cf3dfe59befb0019871f') in 0.005694 seconds 
+  Time since last request: 98.420861 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Tile1.fbx
+  artifactKey: Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Tile1.fbx using Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b65f0d2b7a8b7448385a96bfcacba1b6') in 0.064036 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.037926 seconds.
-  path: Assets/Models/Ch46_nonPBR.fbx
-  artifactKey: Guid(cda65567f65e0c446b2db778935cee54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Ch46_nonPBR.fbx using Guid(cda65567f65e0c446b2db778935cee54) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e1ac3daa53980fa8e944f645f60c1ae5') in 2.058955 seconds 
+  Time since last request: 29.113934 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Estrada1.fbx
+  artifactKey: Guid(c8c3a6467f2c9604087200c71fc9ef39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Estrada1.fbx using Guid(c8c3a6467f2c9604087200c71fc9ef39) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '47c73d52dfa39c203d2a56c21f45cdfc') in 0.026666 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/Models/Raposa Copy 2.fbx
-  artifactKey: Guid(bd8879f6f8e61524380f3003dd617895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/Raposa Copy 2.fbx using Guid(bd8879f6f8e61524380f3003dd617895) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a2420f6a9cbc0deff7ada6ffe95c48e') in 0.080596 seconds 
+  Time since last request: 357.470274 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Tile1.fbx
+  artifactKey: Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Tile1.fbx using Guid(0aae818ab9ef48f4e982fe91d8e57acf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '897f518e64fe790ccf1e6e123cb0d92f') in 0.065288 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000045 seconds.
-  path: Assets/Models/rendeer.obj
-  artifactKey: Guid(42f238c8f143b454d8bdc3ae6f8f2838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Models/rendeer.obj using Guid(42f238c8f143b454d8bdc3ae6f8f2838) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc5af54161199dec85abfe8bb82fde42') in 0.053876 seconds 
-Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
-AssetImportWorker is now disconnected from the server
-Process exiting
-Exiting without the bug reporter. Application will terminate with return code 0
+  Time since last request: 206.094769 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Tile2.fbx
+  artifactKey: Guid(040f82cc7ec338042b2368907c3726d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Tile2.fbx using Guid(040f82cc7ec338042b2368907c3726d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bbce4b1dfa9d1e757844d9ec750daa5c') in 0.061303 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 4.579018 seconds.
+  path: Assets/Assets 3D/Estrada Infinita/Estrada2.fbx
+  artifactKey: Guid(742710f16d3044943b93cc3425aa0d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Assets 3D/Estrada Infinita/Estrada2.fbx using Guid(742710f16d3044943b93cc3425aa0d90) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ef8d47609f88f8ba47a11b577f329a1d') in 0.050648 seconds 
