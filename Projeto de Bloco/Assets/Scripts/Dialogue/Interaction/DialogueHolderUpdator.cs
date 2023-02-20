@@ -2,10 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Scripting;
+using Object = System.Object;
 
 public class DialogueHolderUpdator : MonoBehaviour
 {
-    [SerializeField] private IDialogueHolder _dialogueHolder;
+    [RequireInterface(typeof(IDialogueHolder))]
+    [SerializeField] private Object _dialogueHolderReference;
+    
+    private IDialogueHolder _dialogueHolder => _dialogueHolderReference as IDialogueHolder;
     
     [SerializeField] private List<EventAndDialogue> EventsAndDialogues;
 
@@ -15,10 +20,10 @@ public class DialogueHolderUpdator : MonoBehaviour
     {
         foreach (var eventAndDialogue in EventsAndDialogues)
         {
-            var listener = new GameEventListener(eventAndDialogue.Event, (() =>
+            var listener = new GameEventListener(eventAndDialogue.Event, () =>
             {
                 ChangeDialogue(eventAndDialogue.Dialogue);
-            }));
+            });
             listener.EnableListener();
             _eventListeners.Add(listener);
         }
@@ -32,7 +37,7 @@ public class DialogueHolderUpdator : MonoBehaviour
         }
     }
 
-    [System.Serializable]
+    [Serializable]
     private struct EventAndDialogue
     {
         public GameEvent Event;
