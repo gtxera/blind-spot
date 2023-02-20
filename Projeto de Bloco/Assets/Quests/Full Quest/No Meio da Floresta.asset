@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4258e7d186d03b740b2f7d3e06e20cfc, type: 3}
-  m_Name: 0 Main
+  m_Name: No Meio da Floresta
   m_EditorClassIdentifier: 
   IsMandatory: 1
   QuestPhases:
-  - {fileID: 11400000, guid: cb1ad79ea80804741aefc45c2fbed1fd, type: 2}
-  - {fileID: 11400000, guid: a639c3a2c8db22142a7f3274cce44135, type: 2}
-  - {fileID: 11400000, guid: e70428c5b1582fe4d841108295442b1e, type: 2}
-  - {fileID: 11400000, guid: 6c9ca8867d0069f4789e1fac420ed562, type: 2}
-  - {fileID: 11400000, guid: 6d8a38a3ea4f98e48bf4cd90fd2b2257, type: 2}
+  - {fileID: 11400000, guid: 4a72f9d0be5380d49a0dac05855ad37c, type: 2}
+  - {fileID: 11400000, guid: a1a04b8c423b1b140a5008f2d6d8a719, type: 2}
