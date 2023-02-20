@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 2 skip dialogue
+  LineIdentifier: 14 dialogue
   NextDialogue: {fileID: 11400000, guid: 54d23c65a978bdb4e9542b2e2b009a60, type: 2}
   Text: ...
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}

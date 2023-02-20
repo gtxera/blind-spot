@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 2 dialogue
+  LineIdentifier: 8 dialogue
   NextDialogue: {fileID: 11400000, guid: 25eb8cb4e87e71343b5abc3328923272, type: 2}
   Text: "Fica a uns quil\xF4metros daqui, uma cabana onde estamos estalados. Era
     uma \xE1rea de camping antigamente."

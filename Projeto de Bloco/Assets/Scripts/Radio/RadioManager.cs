@@ -8,7 +8,9 @@ public class RadioManager : SingletonBehaviour<RadioManager>
     [SerializeField] private float _frequencyIncrement;
 
     private const float MOUSE_WHEEL_NORMALIZER = 10f;
-    
+
+    public Dictionary<float, DialogueSO> Dialogues {get; private set;} = new();
+
     public float CurrentFrequency
     {
         get => _currentFrequency;
@@ -30,15 +32,19 @@ public class RadioManager : SingletonBehaviour<RadioManager>
 
     private void TryStartRadioDialogue()
     {
-        switch (_currentFrequency)
+        if (!Dialogues.ContainsKey(_currentFrequency)) return;
+        
+        DialogueManager.Instance.StartDialogue(Dialogues[_currentFrequency]);
+    }
+
+    public void ChangeFrequencyDialogue(float frequency, DialogueSO dialogue)
+    {
+        if (Dialogues.ContainsKey(frequency))
         {
-            case 103.2f:
-                Debug.Log("opa");
-                break;
-            
-            default:
-                Debug.Log("statica");
-                break;
+            Dialogues[frequency] = dialogue;
+            return;
         }
+
+        Dialogues.Add(frequency, dialogue);
     }
 }

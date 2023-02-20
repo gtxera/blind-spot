@@ -2,19 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Scripting;
-using Object = System.Object;
 
 public class DialogueHolderUpdator : MonoBehaviour
 {
     [RequireInterface(typeof(IDialogueHolder))]
-    [SerializeField] private Object _dialogueHolderReference;
+    [SerializeField] private UnityEngine.Object _dialogueHolderReference;
     
     private IDialogueHolder _dialogueHolder => _dialogueHolderReference as IDialogueHolder;
     
     [SerializeField] private List<EventAndDialogue> EventsAndDialogues;
 
-    private List<GameEventListener> _eventListeners;
+    private readonly List<GameEventListener> _eventListeners = new();
 
     private void OnEnable()
     {

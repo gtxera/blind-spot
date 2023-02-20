@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 12 dialogue
+  LineIdentifier: bad response
   NextDialogue: {fileID: 11400000, guid: 76345120fedf1554d9cb89a753beb686, type: 2}
   Text: "N\xE3o duvido. S\xE3o um grupo h\xE1 muitos anos?"
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}

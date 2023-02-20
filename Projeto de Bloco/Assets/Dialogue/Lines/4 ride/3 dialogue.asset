@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 3 dialogue
+  LineIdentifier: 9 dialogue
   NextDialogue: {fileID: 11400000, guid: 9742c50fd5cfb0a40b3bfeba452cbc5b, type: 2}
   Text: '"Estamos"?'
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}

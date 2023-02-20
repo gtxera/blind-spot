@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 6 dialogue
+  LineIdentifier: "adiciona pilhas (invent\xE1rio)"
   NextDialogue: {fileID: 11400000, guid: 7eed0f0378780914da6a7fd605de2da9, type: 2}
   Text: "Estou indo procurar meu irm\xE3o."
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}

@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 9 dialogue
+  LineIdentifier: 17 dialogue
   NextDialogue: {fileID: 11400000, guid: 3d96584c65e93a145b80766a7a05d614, type: 2}
   Text: "Hah! Seu irm\xE3o \xE9 daqueles dur\xF5es que n\xE3o te deixa nem acender
     a pr\xF3pria fogueira?"

@@ -18,7 +18,7 @@ public static class InputBindings
         { PlayerActions.Interact, KeyCode.E},
         { PlayerActions.Run, KeyCode.LeftShift},
         { PlayerActions.CarBreaks, KeyCode.Space},
-        { PlayerActions.Radio, KeyCode.F}
+        { PlayerActions.Radio, KeyCode.R}
     };
 
     public static void ChangeInputBinding(PlayerActions actionToChange, KeyCode newBinding)

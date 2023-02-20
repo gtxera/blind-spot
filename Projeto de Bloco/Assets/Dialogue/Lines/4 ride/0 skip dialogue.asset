@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 1 skip dialogue
+  LineIdentifier: 13 dialogue
   Choices:
   - ChoiceText: "(Sil\xEAncio)"
     NextDialogue: {fileID: 11400000, guid: 30c16560186f6094ea9118f9bcd16af1, type: 2}

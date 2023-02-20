@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 13 dialogue
+  LineIdentifier: good response
   NextDialogue: {fileID: 11400000, guid: ee7b9c545bf330d41927095a93b7c2a4, type: 2}
   Text: "Mais do que tenho dedos numa m\xE3o. Voc\xEA e seu irm\xE3o? Nunca se separaram?
     Desde o come\xE7o?"

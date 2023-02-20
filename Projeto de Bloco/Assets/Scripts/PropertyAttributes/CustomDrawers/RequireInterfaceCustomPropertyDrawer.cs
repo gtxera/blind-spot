@@ -23,8 +23,10 @@ public class RequireInterfaceCustomPropertyDrawer : PropertyDrawer
             // Begin drawing property field.
             EditorGUI.BeginProperty(position, label, property);
             // Draw property field.
-            property.objectReferenceValue = EditorGUI.ObjectField(position, label, property.objectReferenceValue, requiredAttribute.requiredType, true);
-            // Finish drawing property field.
+            Object obj = EditorGUI.ObjectField(position, label, property.objectReferenceValue, typeof(UnityEngine.Object), true);
+
+            if(obj is GameObject g) property.objectReferenceValue = g.GetComponent(requiredAttribute.RequiredType);
+            
             EditorGUI.EndProperty();
         }
         else

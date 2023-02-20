@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 0 skip dialogue
+  LineIdentifier: 15 dialogue
   NextDialogue: {fileID: 11400000, guid: a8da6431470ec6a45b8ab7e73af224f0, type: 2}
   Text: 'Lugar nenhum. '
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}

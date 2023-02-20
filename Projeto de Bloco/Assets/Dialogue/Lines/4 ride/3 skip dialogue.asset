@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 3 skip dialogue
+  LineIdentifier: chegada (cutscene)
   NextDialogue: {fileID: 11400000, guid: a99bd0fbb890df44f836b07798277ec6, type: 2}
   Text: "Tudo bem, tenho certeza de que tem seus motivos. N\xE3o vou perturbar mais."
   Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}

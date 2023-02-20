@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 10 dialogue
+  LineIdentifier: bad answer
   NextDialogue: {fileID: 11400000, guid: 5e1c565cf2329744db764dab18b48363, type: 2}
   Text: "Mais ou menos. Ele s\xF3 n\xE3o gosta que eu saia sozinha, ou que mexa na
     caminhonete dele."

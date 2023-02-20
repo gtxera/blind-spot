@@ -59,7 +59,7 @@ public class QuestUIManager : MonoBehaviour
         textMesh.text = newPhase.PhaseText;
     }
 
-    private void LateUpdate()
+    /*private void LateUpdate()
     {
         var arrowPositionOffset = new Vector3(Mathf.Cos(_arrowAngle) * _arrowCircleOffset,
             _playerTransform.position.y + 0.1f,
@@ -67,5 +67,5 @@ public class QuestUIManager : MonoBehaviour
 
         _arrowIndicatorTransform.position = _playerTransform.position + arrowPositionOffset;
         _arrowAngle += Time.deltaTime * 10;
-    }
+    }*/
 }

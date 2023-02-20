@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 5 dialogue
+  LineIdentifier: 11 dialogue
   NextDialogue: {fileID: 11400000, guid: 55bfdd2ecea4ba048b22008e7f663d68, type: 2}
   Text: " Ah pare com essa cara! N\xE3o \xE9 nenhuma emboscada, eu ia querer o que
     com voc\xEA? Essa caminhonete velha com parafusos soltos?"

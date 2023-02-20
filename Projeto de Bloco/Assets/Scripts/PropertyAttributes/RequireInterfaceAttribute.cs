@@ -5,10 +5,10 @@ using UnityEngine;
 
 public class RequireInterfaceAttribute : PropertyAttribute
 {
-    public Type requiredType { get; private set; }
+    public Type RequiredType { get; private set; }
 
     public RequireInterfaceAttribute(Type type)
     {
-        requiredType = type;
+        RequiredType = type;
     }
 }

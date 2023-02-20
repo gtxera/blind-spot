@@ -15,7 +15,7 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
-  LineIdentifier: 11 dialogue
+  LineIdentifier: good answer
   NextDialogue: {fileID: 11400000, guid: d66f297a4da368a4e8be1272d69ac0b2, type: 2}
   Text: "O Ralph era assim, at\xE9 ele\u2026 voc\xEA sabe, n\xE9? As pessoas envelhecem,
     e a velhice no fim do mundo n\xE3o \xE9 muito gentil\u2026 Mas ele \xE9 um velho
