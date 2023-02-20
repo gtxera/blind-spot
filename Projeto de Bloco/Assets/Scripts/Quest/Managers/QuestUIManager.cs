@@ -7,13 +7,7 @@ using UnityEngine;
 public class QuestUIManager : MonoBehaviour
 {
     [SerializeField] private GameObject _questUIGameObject, _phaseTextParent, _phaseTextPrefab;
-
-    [SerializeField] private Transform _arrowIndicatorTransform, _playerTransform;
-
-    private float _arrowAngle;
-
-    private float _arrowCircleOffset = 1;
-
+    
     private Dictionary<Quest, TextMeshProUGUI> _phasesText = new();
 
     private Dictionary<Quest, GameObject> _questTextGameObjects = new();
@@ -27,11 +21,14 @@ public class QuestUIManager : MonoBehaviour
         QuestManager.Instance.OnQuestStarted += CreateQuestText;
         QuestManager.Instance.OnPhaseTransition += UpdateText;
         QuestManager.Instance.OnQuestFinished += DestroyQuestText;
+
     }
 
     private void CreateQuestText(Quest quest)
     {
-        if(!_questUIGameObject.activeSelf) _questUIGameObject.SetActive(true);
+        if (!_questUIGameObject.activeSelf)
+        {
+        }
 
         var questTextGameObject = _questTextObjectsPool.GetObject(true);
         var questText = questTextGameObject.GetComponent<TextMeshProUGUI>();
@@ -58,14 +55,5 @@ public class QuestUIManager : MonoBehaviour
 
         textMesh.text = newPhase.PhaseText;
     }
-
-    /*private void LateUpdate()
-    {
-        var arrowPositionOffset = new Vector3(Mathf.Cos(_arrowAngle) * _arrowCircleOffset,
-            _playerTransform.position.y + 0.1f,
-            Mathf.Sin(_arrowAngle) * _arrowCircleOffset);
-
-        _arrowIndicatorTransform.position = _playerTransform.position + arrowPositionOffset;
-        _arrowAngle += Time.deltaTime * 10;
-    }*/
+    
 }

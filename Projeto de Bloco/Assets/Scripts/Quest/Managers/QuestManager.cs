@@ -22,7 +22,10 @@ public class QuestManager : SingletonBehaviour<QuestManager>
 
     public void StartQuest(Quest newQuest)
     {
-        if (_finishedQuests.Contains(newQuest)) return;
+        if (_finishedQuests.Contains(newQuest) || _currentQuests.ContainsKey(newQuest))
+        {
+            return;
+        }
         
         _currentQuests.Add(newQuest, newQuest.QuestPhases[0]);
         OnQuestStarted?.Invoke(newQuest);
