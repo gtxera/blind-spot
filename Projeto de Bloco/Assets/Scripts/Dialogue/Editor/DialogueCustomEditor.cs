@@ -143,6 +143,7 @@ public class DialogueCustomEditor : Editor
                             _dialogueLines.GetArrayElementAtIndex(j).objectReferenceValue =
                                 _dialogueLines.GetArrayElementAtIndex(j + 1).objectReferenceValue;
                             _shownLines[j] = _shownLines[j + 1];
+                            _currentLineName[j] = _currentLineName[j + 1];
                         }
 
                         AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(dialogueLine));
