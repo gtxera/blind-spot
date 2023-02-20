@@ -16,9 +16,9 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 95d6388f553a56549a28fe5c32c64189, type: 2}
   LineIdentifier: 0 dialogue
-  NextDialogue: {fileID: 0}
-  Text: 
-  Character: {fileID: 0}
+  NextDialogue: {fileID: 11400000, guid: d90c9ac114920144a90b33fed2d9ea25, type: 2}
+  Text: "A\xED! Arrasou, vamos chegar rapidinho!"
+  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
   Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Portrait: {fileID: 21300000, guid: 9d1037a1ef807394b8bfd5adc1bf9e3c, type: 3}
+  PortraitKey: Sorrindo

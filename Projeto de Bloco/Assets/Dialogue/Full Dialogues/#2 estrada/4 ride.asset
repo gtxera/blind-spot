@@ -15,15 +15,6 @@ MonoBehaviour:
   Name: 4 ride
   HasNameSet: 1
   DialogueLines:
-  - {fileID: 11400000, guid: 5047eb90b82fec74cb8c01e3129233a9, type: 2}
-  - {fileID: 11400000, guid: 12150a67a6d4bd14f891a3d6842944b3, type: 2}
-  - {fileID: 11400000, guid: 7637952c593009b408b61684c20ba90d, type: 2}
-  - {fileID: 11400000, guid: 3014dd379ad186242882866751f982d9, type: 2}
-  - {fileID: 11400000, guid: 01276c2f70c0ad64e9072466b9655419, type: 2}
-  - {fileID: 11400000, guid: 3bdf6919ee932fd4eb32ad2f3f051ebd, type: 2}
-  - {fileID: 11400000, guid: 1c4428788040a2846ac25098a241a17a, type: 2}
-  - {fileID: 11400000, guid: 9d44ebf3425fd2d40a996ec090167ac4, type: 2}
-  - {fileID: 11400000, guid: 76d96f7ae99f0d84282a8da73c0cf3de, type: 2}
   - {fileID: 11400000, guid: 9f7bd6f807adc654681c8b6bccb77862, type: 2}
   - {fileID: 11400000, guid: 310f7ae89d1a6d8448b19f42993024c5, type: 2}
   - {fileID: 11400000, guid: 25eb8cb4e87e71343b5abc3328923272, type: 2}
