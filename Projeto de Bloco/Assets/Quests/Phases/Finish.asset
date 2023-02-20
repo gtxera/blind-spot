@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d906d845bb380e14badc707b1673e6d7, type: 3}
+  m_Name: Finish
+  m_EditorClassIdentifier: 
+  PhaseText: "Se voc\xEA por um acaso encontou isso, gostaria de deixar meu depoimento.
+    S\xE3o atualmente 3:11 da manh\xE3 e a \xFAnica raz\xE3o para a exist\xEAncia
+    desse objeto \xE9 pra um workarround fudido no sistema de cria\xE7\xE3o das fases
+    de uma quest. O pouco que me resta de sanidade lentamente est\xE1 sendo extra\xEDdo
+    pelo sistema de serializa\xE7\xE3o da Unity, que parece que foi feito por uma
+    crian\xE7a. Minto, uma crian\xE7a teria feito algo melhor."
+  OnPhaseFinishedEvent: {fileID: 0}
+  NextPhases:
+    list: []
+  ParentQuest: {fileID: 0}
+  Wrapper:
+    QuestPhase: {fileID: 0}

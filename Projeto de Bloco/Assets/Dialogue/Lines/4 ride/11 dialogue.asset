@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 11 dialogue
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
+  LineIdentifier: good answer
+  NextDialogue: {fileID: 11400000, guid: d66f297a4da368a4e8be1272d69ac0b2, type: 2}
+  Text: "O Ralph era assim, at\xE9 ele\u2026 voc\xEA sabe, n\xE9? As pessoas envelhecem,
+    e a velhice no fim do mundo n\xE3o \xE9 muito gentil\u2026 Mas ele \xE9 um velho
+    casca grossa! Ainda tem muito do que reclamar nessa vida."
+  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
+  Name: 
+  Portrait: {fileID: 21300000, guid: 5b2d6fe14b76eeb4791b4e08be892a95, type: 3}
+  PortraitKey: Feliz
