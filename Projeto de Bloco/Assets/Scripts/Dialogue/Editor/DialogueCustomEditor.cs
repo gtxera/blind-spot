@@ -114,6 +114,7 @@ public class DialogueCustomEditor : Editor
                     lineIdentifier.stringValue = lineIdentifier.stringValue.Trim();
                     RenameLine(dialogueLine, lineIdentifier.stringValue, i);
                     lineObject.FindProperty("m_Name").stringValue = lineIdentifier.stringValue;
+                    _currentLineName[i] = lineIdentifier.stringValue;
                 }
                 else if(lineIdentifier.stringValue != _currentLineName[i])
                 {
