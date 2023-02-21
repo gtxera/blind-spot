@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 2 Phase
   m_EditorClassIdentifier: 
   PhaseText: "\xC9 preciso se preparar antes de enfrentar a estrada, recolha seus
-    equipamentos e d\xEA o fora da\xED!"
+    equipamentos e d\xEA o fora da\xED!\nDesmonte a barraca"
   NextPhases:
-    list: []
+    list:
+    - Key: {fileID: 11400000, guid: a5d95c61290a1fa43a34c775ca2563bb, type: 2}
+      Value: {fileID: 11400000, guid: 6c9ca8867d0069f4789e1fac420ed562, type: 2}
   PhaseWaypointName: Desmonte a barraca
   ParentQuest: {fileID: 11400000, guid: 4c456e49685605e47896c64c607d488b, type: 2}
   Wrapper:

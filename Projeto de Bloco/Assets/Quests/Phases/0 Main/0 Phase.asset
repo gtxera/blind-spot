@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 0 Phase
   m_EditorClassIdentifier: 
   PhaseText: "\xC9 preciso se preparar antes de enfrentar a estrada, recolha seus
-    equipamentos e d\xEA o fora da\xED!"
+    equipamentos e d\xEA o fora da\xED!\nPegue a Mochila"
   NextPhases:
-    list: []
+    list:
+    - Key: {fileID: 11400000, guid: 0899da4490399074ba1bdcb3620331c9, type: 2}
+      Value: {fileID: 11400000, guid: a639c3a2c8db22142a7f3274cce44135, type: 2}
   PhaseWaypointName: Pegue a Mochila
   ParentQuest: {fileID: 11400000, guid: 4c456e49685605e47896c64c607d488b, type: 2}
   Wrapper:

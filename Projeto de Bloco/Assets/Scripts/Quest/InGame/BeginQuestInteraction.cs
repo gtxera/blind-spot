@@ -9,11 +9,15 @@ public class BeginQuestInteraction : MonoBehaviour, IInteractable, IQuestHolder
     
     public Quest Quest { get; set; }
     
-    public Material InteractableMaterial { get; }
+    public Material[] InteractableMaterials { get; set; }
 
     private void Start()
     {
         Quest = _startingQuest;
+
+        var mesh = GetComponent<MeshRenderer>();
+
+        InteractableMaterials = mesh.materials;
     }
 
     public void Interact(GameObject playerObject)

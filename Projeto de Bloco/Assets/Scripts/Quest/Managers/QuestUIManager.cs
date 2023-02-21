@@ -3,11 +3,14 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class QuestUIManager : MonoBehaviour
-{
-    [SerializeField] private GameObject _questUIGameObject, _phaseTextParent, _phaseTextPrefab;
+{ 
+    [SerializeField] private GameObject _questUI;
     
+    [SerializeField] private GameObject _phaseTextParent, _phaseTextPrefab;
+
     private Dictionary<Quest, TextMeshProUGUI> _phasesText = new();
 
     private Dictionary<Quest, GameObject> _questTextGameObjects = new();
@@ -21,13 +24,13 @@ public class QuestUIManager : MonoBehaviour
         QuestManager.Instance.OnQuestStarted += CreateQuestText;
         QuestManager.Instance.OnPhaseTransition += UpdateText;
         QuestManager.Instance.OnQuestFinished += DestroyQuestText;
-
     }
 
     private void CreateQuestText(Quest quest)
     {
-        if (!_questUIGameObject.activeSelf)
+        if (!_questUI.activeSelf)
         {
+            _questUI.SetActive(true);
         }
 
         var questTextGameObject = _questTextObjectsPool.GetObject(true);
@@ -41,12 +44,14 @@ public class QuestUIManager : MonoBehaviour
 
     private void DestroyQuestText(Quest quest)
     {
-        if(!QuestManager.Instance.HasActiveQuest) _questUIGameObject.SetActive(false);
+        if (!QuestManager.Instance.HasActiveQuest)
+        {
+            _questUI.SetActive(false);
+        }
 
         _phasesText.Remove(quest);
         _questTextObjectsPool.DisableObject(_questTextGameObjects[quest]);
         _questTextGameObjects.Remove(quest);
-        
     }
 
     private void UpdateText(Quest quest, QuestPhase newPhase)

@@ -9,11 +9,11 @@ public class DialogueInteraction : MonoBehaviour, IInteractable, IDialogueHolder
     
     public DialogueSO Dialogue { get; set; }
     
-    public Material InteractableMaterial { get; private set; }
+    public Material[] InteractableMaterials { get; set; }
     
     void Start()
     {
-        InteractableMaterial = GetComponent<Renderer>().material;
+        InteractableMaterials = GetComponent<Renderer>().materials;
         Dialogue = _startingDialogue;
     }
 

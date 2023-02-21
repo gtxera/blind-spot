@@ -13,9 +13,11 @@ MonoBehaviour:
   m_Name: 3 Phase
   m_EditorClassIdentifier: 
   PhaseText: "\xC9 preciso se preparar antes de enfrentar a estrada, recolha seus
-    equipamentos e d\xEA o fora da\xED!"
+    equipamentos e d\xEA o fora da\xED!\nApague a fogueira"
   NextPhases:
-    list: []
+    list:
+    - Key: {fileID: 11400000, guid: d76441017c64cf942b54169f4b265cbf, type: 2}
+      Value: {fileID: 11400000, guid: 6d8a38a3ea4f98e48bf4cd90fd2b2257, type: 2}
   PhaseWaypointName: Apague a fogueira
   ParentQuest: {fileID: 11400000, guid: 4c456e49685605e47896c64c607d488b, type: 2}
   Wrapper:

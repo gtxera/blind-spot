@@ -25,7 +25,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
     
     private CarMovementState _carMovementState;
     
-    public Material InteractableMaterial { get; private set; }
+    public Material[] InteractableMaterials { get; set; }
 
     private void Awake()
     {
@@ -40,7 +40,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
             frontLeftWheelCollider, frontRightWheelCollider, rearLeftWheelCollider, rearRightWheelCollider,
             frontLeftWheelTransform, frontRightWheelTransform, rearLeftWheelTransform, rearRightWheelTransform);
 
-        InteractableMaterial = GetComponentInChildren<Renderer>().material;
+        InteractableMaterials = GetComponentInChildren<Renderer>().materials;
     }
 
 

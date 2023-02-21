@@ -1,23 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public interface IInteractable
 {
     private static readonly int HasOutline = Shader.PropertyToID("_HasOutline");
 
-    Material InteractableMaterial
+    Material[] InteractableMaterials
     {
         get;
+        set;
     }
     
     void Interact(GameObject playerObject);
 
     void SetOutlines(bool isActive)
     {
-        if(InteractableMaterial is null) return;
+        if(!InteractableMaterials.Any()) return;
 
-        InteractableMaterial.SetFloat(HasOutline, Convert.ToInt32(isActive));
+        foreach (var material in InteractableMaterials)
+        {
+            material.SetFloat(HasOutline, Convert.ToInt32(isActive));    
+        }
     }
 }
