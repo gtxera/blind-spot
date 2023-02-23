@@ -6,7 +6,9 @@ using UnityEngine.UI;
 [CreateAssetMenu]
 public class ItemSO : ScriptableObject
 {
-    public Texture ItemImage;
+    public Sprite ItemImage;
+
+    public bool Stackable;
 
     public GameEvent ItemEvent;
 

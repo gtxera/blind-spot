@@ -61,9 +61,4 @@ public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
         _currentInteraction = null;
         _currentInteractionIsLocked = isLocked;
     }
-
-    private void Update()
-    {
-        Debug.Log(_currentInteraction);
-    }
 }
