@@ -17,6 +17,8 @@ public class ItemEventListener : MonoBehaviour
 
         foreach (var pair in _eventAndItems)
         {
+            if(pair.Item.ItemEvent == null) continue;
+
             var listener = new GameEventListener(pair.Item.ItemEvent, () =>
             {
                 if(!validator.PlayerInRange) return;
@@ -40,8 +42,8 @@ public class ItemEventListener : MonoBehaviour
     [System.Serializable]
     private struct EventAndItem
     {
-        public UnityEvent UnityEvent;
-        
         public ItemSO Item;
+        
+        public UnityEvent UnityEvent;
     }
 }

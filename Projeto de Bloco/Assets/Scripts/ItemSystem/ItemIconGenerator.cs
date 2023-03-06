@@ -46,6 +46,12 @@ public class ItemIconGenerator : MonoBehaviour
         
         AssetDatabase.ImportAsset($"Assets/Textures/Item Icons/{_iconName}.png", ImportAssetOptions.ForceUpdate);
 
+        var item = AssetDatabase.LoadAssetAtPath<ItemSO>($"Assets/Items/{_iconName}.asset");
+
+        var spr = AssetDatabase.LoadAssetAtPath<Sprite>($"Assets/Textures/Item Icons/{_iconName}.png");
+
+        if (item != null) item.ItemImage = spr;
+
 #endif
     }
 }

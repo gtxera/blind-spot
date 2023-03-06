@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a6509b675a76304a803b3a978d18461, type: 3}
   m_Name: Gas
   m_EditorClassIdentifier: 
-  ItemImage: {fileID: 21300000, guid: 0f28c0898f5e0e3408dba079fc484ef7, type: 3}
+  ItemImage: {fileID: 21300000, guid: 12634ac8e800a7649b9ddece06d00d19, type: 3}
   Stackable: 1
   ItemEvent: {fileID: 0}

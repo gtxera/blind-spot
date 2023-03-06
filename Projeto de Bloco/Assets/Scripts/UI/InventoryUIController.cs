@@ -14,6 +14,8 @@ public class InventoryUIController : MonoBehaviour
     
     private readonly List<ItemUIPair> _itemUIPairs = new();
 
+    private GameObject _placeholder;
+
     private RectTransform _rectTransform;
 
     private bool _mouseInInventoryPosition;
@@ -29,6 +31,9 @@ public class InventoryUIController : MonoBehaviour
         PlayerInventory.Instance.ItemCountChanged += ItemCountUpdate;
         PlayerInventory.Instance.ItemRemoved += RemoveItem;
 
+        ItemUIDragger.DragStarted += CreatePlaceholder;
+        ItemUIDragger.DragEnded += DestroyPlaceholder;
+
         _rectTransform = GetComponent<RectTransform>();
     }
 
@@ -37,6 +42,8 @@ public class InventoryUIController : MonoBehaviour
         var newItemUI = Instantiate(_itemUIPrefab, transform);
 
         newItemUI.GetComponent<Image>().sprite = item.ItemImage;
+        newItemUI.GetComponent<Image>().color = Color.white;
+        newItemUI.GetComponent<ItemUIDragger>().Initialize(transform.parent);
 
         switch (item.Stackable)
         {
@@ -71,7 +78,18 @@ public class InventoryUIController : MonoBehaviour
         _itemUIPairs.Remove(pair);
     }
 
-    public void Update()
+    private void CreatePlaceholder(int siblingIndex)
+    {
+        _placeholder = Instantiate(_itemUIPrefab, transform);
+        _placeholder.transform.SetSiblingIndex(siblingIndex);
+    }
+
+    private void DestroyPlaceholder(int _)
+    {
+        Destroy(_placeholder);
+    }
+
+    private void Update()
     {
         var mouseNormalizedPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
 
@@ -84,7 +102,9 @@ public class InventoryUIController : MonoBehaviour
 
             _dialogueSlideOutTokenSource?.Cancel();
             
+#pragma warning disable CS4014
             DialogueUISlideIn(_dialogueSlideInToken);
+#pragma warning restore CS4014
             
             _mouseInInventoryPosition = true;
         }
@@ -95,7 +115,9 @@ public class InventoryUIController : MonoBehaviour
             
             _dialogueSlideInTokenSource?.Cancel();
 
+#pragma warning disable CS4014
             DialogueUISlideOut(_dialogueSlideOutToken);
+#pragma warning restore CS4014
             
             _mouseInInventoryPosition = false;
         }
