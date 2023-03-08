@@ -18,15 +18,13 @@ public class InventoryUIController : MonoBehaviour
 
     private RectTransform _rectTransform;
 
-    private bool _mouseInInventoryPosition;
-
-    private CancellationTokenSource _dialogueSlideInTokenSource, _dialogueSlideOutTokenSource;
-    private CancellationToken _dialogueSlideInToken, _dialogueSlideOutToken;
-
-    private const float SLIDE_SPEED = 0.004f;
+    private bool _inventoryOpen;
+    
 
     private void Start()
     {
+        PlayerInputs.Instance.InventoryKeyDown += ShowHideInventory;
+        
         PlayerInventory.Instance.ItemNewAdded += AddNewItem;
         PlayerInventory.Instance.ItemCountChanged += ItemCountUpdate;
         PlayerInventory.Instance.ItemRemoved += RemoveItem;
@@ -37,12 +35,21 @@ public class InventoryUIController : MonoBehaviour
         _rectTransform = GetComponent<RectTransform>();
     }
 
+    private void ShowHideInventory()
+    {
+        _inventoryOpen = !_inventoryOpen;
+
+        _rectTransform.anchoredPosition = new Vector2(0,
+            _inventoryOpen ? - _rectTransform.sizeDelta.y / 2 : _rectTransform.sizeDelta.y / 2);
+    }
+
     private void AddNewItem(ItemSO item, int amount)
     {
         var newItemUI = Instantiate(_itemUIPrefab, transform);
 
-        newItemUI.GetComponent<Image>().sprite = item.ItemImage;
-        newItemUI.GetComponent<Image>().color = Color.white;
+        var itemImg = newItemUI.transform.GetChild(1).GetComponent<Image>();
+        itemImg.sprite = item.ItemImage;
+        itemImg.color = Color.white;
         newItemUI.GetComponent<ItemUIDragger>().Initialize(transform.parent);
 
         switch (item.Stackable)
@@ -52,7 +59,7 @@ public class InventoryUIController : MonoBehaviour
                 break;
             
             case false:
-                newItemUI.transform.GetChild(0).gameObject.SetActive(false);
+                newItemUI.transform.GetChild(2).gameObject.SetActive(false);
                 break;
         }
 
@@ -89,72 +96,10 @@ public class InventoryUIController : MonoBehaviour
         Destroy(_placeholder);
     }
 
-    private void Update()
-    {
-        var mouseNormalizedPos = Input.mousePosition / new Vector2(Screen.width, Screen.height);
-
-        var itemUIScreenProportion = (Screen.height - _rectTransform.sizeDelta.y) / Screen.height;
-
-        if (mouseNormalizedPos.y >= itemUIScreenProportion && !_mouseInInventoryPosition)
-        {
-            _dialogueSlideInTokenSource = new CancellationTokenSource();
-            _dialogueSlideInToken = _dialogueSlideInTokenSource.Token;
-
-            _dialogueSlideOutTokenSource?.Cancel();
-            
-#pragma warning disable CS4014
-            DialogueUISlideIn(_dialogueSlideInToken);
-#pragma warning restore CS4014
-            
-            _mouseInInventoryPosition = true;
-        }
-        else if(mouseNormalizedPos.y < itemUIScreenProportion && _mouseInInventoryPosition)
-        {
-            _dialogueSlideOutTokenSource = new CancellationTokenSource();
-            _dialogueSlideOutToken = _dialogueSlideOutTokenSource.Token;
-            
-            _dialogueSlideInTokenSource?.Cancel();
-
-#pragma warning disable CS4014
-            DialogueUISlideOut(_dialogueSlideOutToken);
-#pragma warning restore CS4014
-            
-            _mouseInInventoryPosition = false;
-        }
-    }
-
-    private async Task DialogueUISlideIn(CancellationToken token)
-    {
-        while (_rectTransform.anchoredPosition.y > -_rectTransform.sizeDelta.y / 2)
-        {
-            _rectTransform.anchoredPosition -= new Vector2(0, _rectTransform.sizeDelta.y / 2 * SLIDE_SPEED);
-            await Task.Delay(Convert.ToInt32(Time.deltaTime * 1000), token);
-        }
-
-        _rectTransform.anchoredPosition = new Vector2(0, -_rectTransform.sizeDelta.y / 2);
-    }
-
-    private async Task DialogueUISlideOut(CancellationToken token)
-    {
-        while (_rectTransform.anchoredPosition.y < _rectTransform.sizeDelta.y / 2)
-        {
-            _rectTransform.anchoredPosition += new Vector2(0, _rectTransform.sizeDelta.y / 2 * SLIDE_SPEED);
-            await Task.Delay(Convert.ToInt32(Time.deltaTime * 1000), token);
-        }
-
-        _rectTransform.anchoredPosition = new Vector2(0, _rectTransform.sizeDelta.y / 2);
-    }
-
     private struct ItemUIPair
     {
         public ItemSO Item;
         
         public GameObject UI;
-    }
-
-    private void OnDisable()
-    {
-        _dialogueSlideInTokenSource?.Cancel();
-        _dialogueSlideOutTokenSource?.Cancel();
     }
 }

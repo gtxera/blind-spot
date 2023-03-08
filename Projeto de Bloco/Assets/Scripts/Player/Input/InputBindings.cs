@@ -10,15 +10,17 @@ public static class InputBindings
         Interact,
         Run,
         CarBreaks,
-        Radio
+        Radio,
+        OpenInventory
     }
 
-    public static Dictionary<PlayerActions, KeyCode> Bindings = new()
+    public static readonly Dictionary<PlayerActions, KeyCode> Bindings = new()
     {
         { PlayerActions.Interact, KeyCode.E},
         { PlayerActions.Run, KeyCode.LeftShift},
         { PlayerActions.CarBreaks, KeyCode.Space},
-        { PlayerActions.Radio, KeyCode.R}
+        { PlayerActions.Radio, KeyCode.R},
+        { PlayerActions.OpenInventory, KeyCode.I}
     };
 
     public static void ChangeInputBinding(PlayerActions actionToChange, KeyCode newBinding)

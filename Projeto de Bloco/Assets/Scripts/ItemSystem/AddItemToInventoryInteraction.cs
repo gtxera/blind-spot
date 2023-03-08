@@ -18,6 +18,8 @@ public class AddItemToInventoryInteraction : MonoBehaviour, IInteractable
     public void Interact(GameObject playerObject)
     {
         PlayerInventory.Instance.AddItem(_item, _amount);
+
+        PlayerInteraction.Instance.IgnoreInteraction(false);
         
         Destroy(gameObject);
     }

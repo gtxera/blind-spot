@@ -29,6 +29,9 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
 
     private bool _radioKeyDown;
     public event Action RadioKeyDown;
+
+    private bool _inventoryKeyDown;
+    public event Action InventoryKeyDown;
     
     private void Update()
     {
@@ -55,6 +58,8 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         _mouseWheelMovement = Input.GetAxis("Mouse ScrollWheel");
 
         _radioKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Radio]);
+
+        _inventoryKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.OpenInventory]);
     }
 
     private void RaiseEvents()
@@ -80,5 +85,7 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         if(_mouseWheelMovement != 0) MouseWheelMove?.Invoke(_mouseWheelMovement);
         
         if(_radioKeyDown) RadioKeyDown?.Invoke();
+        
+        if(_inventoryKeyDown) InventoryKeyDown?.Invoke();
     }
 }
