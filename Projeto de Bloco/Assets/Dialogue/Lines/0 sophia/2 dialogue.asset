@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: 660196ed907c6d0459beff143080b6e5, type: 2}
+  LineIdentifier: 2 dialogue
+  NextDialogue: {fileID: 11400000, guid: 54444ab4a464c424ca69c6538525d5b2, type: 2}
+  Text: "Na cidade? Ser\xE1 uma viagem e tanto! Ou\xE7a, tem v\xE1rios caminhos que
+    voc\xEA pode pegar, sabe? Ent\xE3o escolha bem nas encruzilhadas, voc\xEA n\xE3o
+    quer tomar caminhos longos e ficar sem gasolina no meio do nada! Mas \xE0s vezes
+    o caminho mais curto pode ser perigoso. Queria poder te dar um mapa, mas Daisy
+    comeu o que t\xEDnhamos. Se ficar de olho aberto por a\xED, vai ver voc\xEA at\xE9
+    encontra um!"
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 

@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: "1 amea\xE7ar"
+  m_EditorClassIdentifier: 
+  Name: "1 amea\xE7ar"
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 04de8822e43226046a90c4e26987bb76, type: 2}
+  - {fileID: 11400000, guid: fa3e5bba0d009974aaba444546f9a6e8, type: 2}
+  - {fileID: 11400000, guid: 6220d7f6d2786f24d86c8932a34e2f58, type: 2}
+  - {fileID: 11400000, guid: 555cb1a2e708277479cddbc047704225, type: 2}
+  - {fileID: 11400000, guid: 1d7edcc422c71e1418d72e38bc3781d4, type: 2}
+  - {fileID: 11400000, guid: 458aed74dc8f29d418447a0d84f305cc, type: 2}

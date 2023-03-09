@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 1 principal
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: adf1fc2344b219340a1e9b5ff8c33848, type: 2}
+  LineIdentifier: 1 principal
+  NextDialogue: {fileID: 11400000, guid: df1fed29892e42d4bb29d1899122b50c, type: 2}
+  Text: "Hahah, engra\xE7adinha. Vou seguir por essa rua entediante por horas ent\xE3o."
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 

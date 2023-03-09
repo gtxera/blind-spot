@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 4 machado
+  m_EditorClassIdentifier: 
+  Name: 4 machado
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: ae85d22ae1da72e44a5be4689d6e91d1, type: 2}
+  - {fileID: 11400000, guid: 6ac9ec00eb829ad479ef299e29b3e442, type: 2}

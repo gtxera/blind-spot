@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 20 dialogue
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: fdeb121a6d3223b4cab1bb2c4195f947, type: 2}
+  LineIdentifier: 20 dialogue
+  NextDialogue: {fileID: 11400000, guid: 2d760357ddad6ec4b9d53b18062baeee, type: 2}
+  Text: "Eu sempre tomo\u2026"
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 
