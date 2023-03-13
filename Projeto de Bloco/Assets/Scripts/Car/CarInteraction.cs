@@ -24,8 +24,6 @@ public class CarInteraction : MonoBehaviour, IInteractable
     [SerializeField] private Transform driverSeatTransform, exitPointTransform;
     
     private CarMovementState _carMovementState;
-    
-    public Material[] InteractableMaterials { get; set; }
 
     private void Awake()
     {
@@ -39,8 +37,6 @@ public class CarInteraction : MonoBehaviour, IInteractable
             carStats,
             frontLeftWheelCollider, frontRightWheelCollider, rearLeftWheelCollider, rearRightWheelCollider,
             frontLeftWheelTransform, frontRightWheelTransform, rearLeftWheelTransform, rearRightWheelTransform);
-
-        InteractableMaterials = GetComponentInChildren<Renderer>().materials;
     }
 
 
@@ -62,5 +58,10 @@ public class CarInteraction : MonoBehaviour, IInteractable
             PlayerInteraction.Instance.LockInteraction(false);
         }
         
+    }
+    
+    public void SetOutlines(bool isActive)
+    {
+        GameObjectUtility.SetLayerRecursively(gameObject, isActive ? 6 : 0);
     }
 }

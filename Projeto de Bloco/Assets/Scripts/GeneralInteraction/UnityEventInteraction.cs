@@ -7,16 +7,14 @@ using UnityEngine.Events;
 public class UnityEventInteraction : MonoBehaviour, IInteractable
 {
     [SerializeField] private UnityEvent _interactionEvent;
-    
-    public Material[] InteractableMaterials { get; set; }
-
-    private void Start()
-    {
-        InteractableMaterials = GetComponent<Renderer>().materials;
-    }
 
     public void Interact(GameObject playerObject)
     {
         _interactionEvent?.Invoke();
+    }
+    
+    public void SetOutlines(bool isActive)
+    {
+        GameObjectUtility.SetLayerRecursively(gameObject, isActive ? 6 : 0);
     }
 }

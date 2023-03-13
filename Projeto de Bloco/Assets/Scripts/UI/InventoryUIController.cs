@@ -50,7 +50,7 @@ public class InventoryUIController : MonoBehaviour
         var itemImg = newItemUI.transform.GetChild(1).GetComponent<Image>();
         itemImg.sprite = item.ItemImage;
         itemImg.color = Color.white;
-        newItemUI.GetComponent<ItemUIDragger>().Initialize(transform.parent);
+        newItemUI.GetComponent<ItemUIDragger>().Initialize(transform.parent, item);
 
         switch (item.Stackable)
         {

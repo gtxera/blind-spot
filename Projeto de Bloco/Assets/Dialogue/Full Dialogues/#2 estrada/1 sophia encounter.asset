@@ -17,3 +17,8 @@ MonoBehaviour:
   DialogueLines:
   - {fileID: 11400000, guid: ac5197327ffc5c14b95ac0c604078ff3, type: 2}
   - {fileID: 11400000, guid: 8c870664699b7b94a885f7f33e48f5aa, type: 2}
+  - {fileID: 11400000, guid: abc834ff639d5ee4488377f7099deeaa, type: 2}
+  - {fileID: 11400000, guid: bd0cbbc93123f584e88524d6aa0fb024, type: 2}
+  - {fileID: 11400000, guid: 454ca8cc8cb3cfd4cbbb90ff63f04a4f, type: 2}
+  - {fileID: 11400000, guid: b2876a6353daf424b9262fee5a21fed2, type: 2}
+  - {fileID: 11400000, guid: bf85042b37dd82a46ae83c0fabd26c9a, type: 2}

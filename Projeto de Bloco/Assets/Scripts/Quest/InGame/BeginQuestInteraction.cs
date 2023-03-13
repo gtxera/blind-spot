@@ -24,4 +24,9 @@ public class BeginQuestInteraction : MonoBehaviour, IInteractable, IQuestHolder
     {
         QuestManager.Instance.StartQuest(Quest);
     }
+    
+    public void SetOutlines(bool isActive)
+    {
+        GameObjectUtility.SetLayerRecursively(gameObject, isActive ? 6 : 0);
+    }
 }

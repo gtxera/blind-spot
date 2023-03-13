@@ -10,6 +10,4 @@ public class ItemSO : ScriptableObject
 
     public bool Stackable;
 
-    public GameEvent ItemEvent;
-
 }

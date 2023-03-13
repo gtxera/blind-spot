@@ -6,7 +6,11 @@ using UnityEngine;
 
 public class PlayerInventory : SingletonBehaviour<PlayerInventory>
 {
-    private readonly List<InventorySpace> _inventory = new();
+    [SerializeField] private GameObject _persistentInventoryManagerPrefab;
+    
+    private List<InventorySpace> _inventory = new();
+
+    public List<InventorySpace> Inventory => _inventory;
 
     public event Action<ItemSO, int> ItemNewAdded; 
 
@@ -15,6 +19,20 @@ public class PlayerInventory : SingletonBehaviour<PlayerInventory>
     public event Action<ItemSO> ItemRemoved;
 
     private bool _mouseInInventory;
+
+    private void Start()
+    {
+        if (FindObjectOfType<PersistentInventoryManager>() == null)
+        {
+            Instantiate(_persistentInventoryManagerPrefab);
+        }
+        
+        else
+        {
+            _inventory = PersistentInventoryManager.Instance.LastInventory;
+            PopulateInventoryUI();
+        }
+    }
 
     public bool HasItem(ItemSO item)
     {
@@ -59,7 +77,27 @@ public class PlayerInventory : SingletonBehaviour<PlayerInventory>
         }
     }
 
-    private class InventorySpace
+    public void ReorderInventory(ItemSO movedItem, int position)
+    {
+        var movedItemSpace = _inventory.First(space => space.Item = movedItem);
+        
+        for (int i = position; i < _inventory.Count; i++)
+        {
+            _inventory[i + 1] = _inventory[i];
+        }
+
+        _inventory[position] = movedItemSpace;
+    }
+
+    private void PopulateInventoryUI()
+    {
+        foreach (var space in _inventory)
+        {
+            ItemNewAdded?.Invoke(space.Item, space.ItemCount);
+        }
+    }
+
+    public class InventorySpace
     {
         public ItemSO Item;
 

@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bacac846cfb4f5448931524ca37b7da, type: 3}
+  m_Name: 2
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: b1be5b695ca2246418866008b6fc74b0, type: 2}
+  LineIdentifier: 2
+  Choices:
+  - ChoiceText: Atirar na criatura
+    NextDialogue: {fileID: 11400000, guid: b2876a6353daf424b9262fee5a21fed2, type: 2}
+  - ChoiceText: Partir para o soco
+    NextDialogue: {fileID: 11400000, guid: bd0cbbc93123f584e88524d6aa0fb024, type: 2}
+  Text: "Preciso ajud\xE1-la! N\xE3o tenho muitas muni\xE7\xF5es comigo mas talvez
+    seja muito arriscado me aproximar..."

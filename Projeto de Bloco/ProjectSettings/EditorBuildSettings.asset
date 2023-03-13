@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Acampamento.unity
+    guid: ac5cf10e135842949ae946228dc677a0
+  - enabled: 1
+    path: Assets/Scenes/Tutorial.unity
+    guid: e3d4d99b06121a24ba226ec75ed98186
   m_configObjects: {}

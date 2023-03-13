@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: d17de310244885c42bffd288fec53926, type: 2}
   LineIdentifier: "inspecione o carro (miss\xE3o)"
-  DialogueEvent: {fileID: 0}
+  DialogueEvent: {fileID: 11400000, guid: 7efe1df862ab1c94da8a3b4b5eebd097, type: 2}
   NextDialogue: {fileID: 0}

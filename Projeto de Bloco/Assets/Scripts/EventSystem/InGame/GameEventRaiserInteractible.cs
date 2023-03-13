@@ -7,7 +7,6 @@ public class GameEventRaiserInteractible : MonoBehaviour, IInteractable, IGameEv
 {
     [SerializeField] private GameEvent _startingEvent;
     
-    public Material[] InteractableMaterials { get; set; }
     
     public GameEvent Event { get; set; }
 
@@ -16,8 +15,7 @@ public class GameEventRaiserInteractible : MonoBehaviour, IInteractable, IGameEv
         Event = _startingEvent;
 
         var mesh = GetComponent<MeshRenderer>();
-
-        InteractableMaterials = mesh.materials;
+        
     }
 
     
@@ -25,5 +23,10 @@ public class GameEventRaiserInteractible : MonoBehaviour, IInteractable, IGameEv
     public void Interact(GameObject playerObject)
     {
         Event.RaiseEvent();
+    }
+
+    public void SetOutlines(bool isActive)
+    {
+        gameObject.layer = isActive ? 6 : 0;
     }
 }

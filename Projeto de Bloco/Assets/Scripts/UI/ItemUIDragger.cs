@@ -17,12 +17,17 @@ public class ItemUIDragger : MonoBehaviour
 
     private bool _dragInitiated;
 
+    private Camera _mainCamera;
+
+    private ItemSO _item;
+
     public static event Action<int> DragStarted, DragEnded;
 
     private void Start()
     {
         _borderImage = GetComponent<Image>();
         _backgroundImage = transform.GetChild(0).GetComponent<Image>();
+        _mainCamera = Camera.main;
     }
 
     public void Drag(BaseEventData data)
@@ -67,6 +72,13 @@ public class ItemUIDragger : MonoBehaviour
         _backgroundImage.enabled = true;
 
         _dragInitiated = false;
+
+        var ray = _mainCamera.ScreenPointToRay(pointerData.position);
+
+        foreach (var hit in Physics.RaycastAll(ray))
+        {
+            if(hit.transform.TryGetComponent<ItemInteractionsHolder>(out var interactions)) interactions.TryInteract(_item);
+        }
     }
 
     private int GetSiblingPositionOnDrop(Vector2 mousePos)
@@ -97,7 +109,7 @@ public class ItemUIDragger : MonoBehaviour
         if(!_dragInitiated) _borderImage.enabled = false;
     }
 
-    public void Initialize(Transform canvasTransform)
+    public void Initialize(Transform canvasTransform, ItemSO item)
     {
         var parent = transform.parent;
         
@@ -106,5 +118,7 @@ public class ItemUIDragger : MonoBehaviour
         _canvasTransform = canvasTransform;
 
         _canvas = canvasTransform.GetComponent<Canvas>();
+
+        _item = item;
     }
 }

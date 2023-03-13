@@ -9,16 +9,14 @@ public class DialogueInteraction : MonoBehaviour, IInteractable, IDialogueHolder
     
     public DialogueSO Dialogue { get; set; }
     
-    public Material[] InteractableMaterials { get; set; }
-    
-    void Start()
-    {
-        InteractableMaterials = GetComponent<Renderer>().materials;
-        Dialogue = _startingDialogue;
-    }
 
     public void Interact(GameObject playerObject)
     {
         DialogueManager.Instance.StartDialogue(Dialogue);
+    }
+    
+    public void SetOutlines(bool isActive)
+    {
+        GameObjectUtility.SetLayerRecursively(gameObject, isActive ? 6 : 0);
     }
 }

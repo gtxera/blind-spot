@@ -5,45 +5,100 @@ ModelImporter:
   internalIDToNameTable: []
   externalObjects:
   - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: aac6fe089d4ebc54183b977f65eac801, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 4e0bdfed36667f64cb011fbba48f8506, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.003
+    second: {fileID: 2100000, guid: e5c705487fa448144841583307b8bdd2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 78df59017fae31a429524a5c0c0b72dc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.005
+    second: {fileID: 2100000, guid: 3f0e0f6b86fd14042b4635d6f9561d42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.006
+    second: {fileID: 2100000, guid: a5a67ab6db6ddd0439f2ad305260a8d1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.007
+    second: {fileID: 2100000, guid: 3aed1c0e97ebd9c4aa31c81751a6f649, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Body
+    second: {fileID: 2100000, guid: 29b0ee777e7c35b4dbafad040892ff24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Outfit_Footwear
+    second: {fileID: 2100000, guid: 9d37a1a034c7ec2409f2751a10b3be24, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Outfit_Top
+    second: {fileID: 2100000, guid: 9b3a678da01cc3f439b7efd5fd2106bf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Wolf3D_Teeth
+    second: {fileID: 2100000, guid: 5cb3637835c7a3e43831e32c6f02b070, type: 2}
+  - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Wolf3D-f-fullbody-N
-    second: {fileID: 2800000, guid: 67c9b4446a81fff458798e8ff27ac3c5, type: 3}
+    second: {fileID: 2800000, guid: d73eccc261e7fb94da54583d81a7f089, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Wolf3D_Teeth
-    second: {fileID: 2800000, guid: 0978531ab3976a74aa5a93d061d18285, type: 3}
+    second: {fileID: 2800000, guid: 2d968017ab5d41b4b8814e919cf80061, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: baseColor
-    second: {fileID: 2800000, guid: fbfe56ff8a492c946b3bc10c2455ac60, type: 3}
+    second: {fileID: 2800000, guid: 1d9d157c188bb8d44a1be1cbbebd59ec, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: hair-78-N
-    second: {fileID: 2800000, guid: bdbe7fa6cf3d7d3409c09b11e9c291ab, type: 3}
+    second: {fileID: 2800000, guid: 1e81d01709687d747832a38d9f83d38d, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: outfit-f-cyberpunk-02-v2-footwear-D
-    second: {fileID: 2800000, guid: 4d150967c90d3ed439f31bd4481c7c7c, type: 3}
+    second: {fileID: 2800000, guid: c195aa4baf1665840a8d71e564b8c290, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: outfit-f-cyberpunk-02-v2-footwear-N
-    second: {fileID: 2800000, guid: 60543010db7fe24479fc931ddcdae5df, type: 3}
+    second: {fileID: 2800000, guid: deca5c1a84bc6e542a38acd3f1f0cacd, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: outfit-f-cyberpunk-02-v2-top-D
-    second: {fileID: 2800000, guid: bdd5b95968bf73e499854e7a686587d0, type: 3}
+    second: {fileID: 2800000, guid: 7c9b7c6811289004bb1869703985955b, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: outfit-f-cyberpunk-02-v2-top-N
-    second: {fileID: 2800000, guid: f265ccbbee798914d8f17ca44cd48293, type: 3}
+    second: {fileID: 2800000, guid: 6913b4f753c64c448ac0d158414dfde7, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -82,8 +137,8 @@ ModelImporter:
     sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     nodeNameCollisionStrategy: 1
     fileIdsGeneration: 2
     swapUVChannels: 0

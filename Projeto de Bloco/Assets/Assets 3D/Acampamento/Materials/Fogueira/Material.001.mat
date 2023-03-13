@@ -21,18 +21,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Material.001
-  m_Shader: {fileID: -6465566751694194690, guid: d95e5b4443ef7e945a1497ec49d80b87, type: 3}
-  m_ValidKeywords:
-  - ADDITIONAL_LIGHT_CALCULATE_SHADOW
-  - MAIN_LIGHT_CALCULATE_SHADOWS
-  - _MAIN_LIGHT_SHADOWS_CASCADE
-  - _SHADOWS_SOFT
+  m_Shader: {fileID: 4800000, guid: 933532a4fcc9baf4fa0491de14d08ed7, type: 3}
+  m_ValidKeywords: []
   m_InvalidKeywords: []
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
   m_CustomRenderQueue: -1
-  stringTagMap: {}
+  stringTagMap:
+    RenderType: Opaque
   disabledShaderPasses: []
   m_SavedProperties:
     serializedVersion: 3
@@ -123,7 +120,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HasOutline: 0
+    - _HasOutline: 1
     - _HasTexture: 1
     - _MAIN_LIGHT_SHADOWS_CASCADE: 1
     - _Metallic: 0
@@ -161,6 +158,6 @@ Material:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _OutlineColor: {r: 0.21960777, g: 0.6980392, b: 0.18823525, a: 0}
+    - _OutlineColor: {r: 0.21960774, g: 0.6980392, b: 0.18823522, a: 0}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
   m_BuildTextureStacks: []

@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: fbf313e486edafc4b82c59cd963ae3c8, type: 3}
       propertyPath: m_Name
-      value: EMILY
+      value: EMILY Variant
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbf313e486edafc4b82c59cd963ae3c8, type: 3}
@@ -175,3 +175,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   walkSpeed: 2
   runSpeed: 5
+--- !u!114 &4826053124670288510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431112335303792933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f252b86989bd0224db552ecb954b6f34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _persistentInventoryManagerPrefab: {fileID: 55526580340366667, guid: 6c5f4f330a0eeab41ae5f45b8cddaed5, type: 3}
