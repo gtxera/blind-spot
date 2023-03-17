@@ -18,7 +18,7 @@ MonoBehaviour:
   LineIdentifier: 0 dialogue
   NextDialogue: {fileID: 11400000, guid: b175e1a02aebab04c91121425bea4f60, type: 2}
   Text: "Vi o r\xE1dio no console da caminhonete. Acho que aquelas pilhas podem servir.
-    O sinal aqui \xE9 bem ruim, mas tem uma torre de r\xE1dio atr\xE1s da cabana.
+    O sinal aqui \xE9 bem ruim, mas tem uma torre de r\xE1dio logo ali \xE0 esquerda.
     Pode tentar pegar sinal ali."
   Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
   Name: 

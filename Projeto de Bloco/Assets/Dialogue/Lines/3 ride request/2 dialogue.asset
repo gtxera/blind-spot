@@ -21,8 +21,8 @@ MonoBehaviour:
     NextDialogue: {fileID: 11400000, guid: 23ca84d8d98dc434b917989fe55a2000, type: 2}
   - ChoiceText: Claro!
     NextDialogue: {fileID: 11400000, guid: 65823317611ced04e82b8301073309f8, type: 2}
-  Text: "Ent\xE3o, eu meio que preciso chegar num lugar, mas \xE9 lonj\xE3o a p\xE9.
-    Pode me dar uma carona?"
+  Text: "Ent\xE3o, eu meio que preciso chegar num lugar, mas \xE9 muuuito longe a
+    p\xE9. Pode me dar uma carona?"
   Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
   Name: 
   Portrait: {fileID: 0}
