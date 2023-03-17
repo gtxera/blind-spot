@@ -2617,7 +2617,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - _gameEvent: {fileID: 11400000, guid: d32208728de667c48949d26566c4d5d0, type: 2}
+  - _gameEvent: {fileID: 11400000, guid: 2ffd5bcbcc74b7d41865807aa1985b86, type: 2}
     _unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -2633,7 +2633,7 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
-  - _gameEvent: {fileID: 11400000, guid: d961bd963fa56bf4b8173633bffe16d9, type: 2}
+  - _gameEvent: {fileID: 11400000, guid: b1237189a121b5143a3b6a0e82a30c7f, type: 2}
     _unityEvent:
       m_PersistentCalls:
         m_Calls:
@@ -2962,7 +2962,7 @@ PrefabInstance:
     - target: {fileID: 5038519619020278548, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
       propertyPath: _dialogues.Array.data[2].Event
       value: 
-      objectReference: {fileID: 11400000, guid: d961bd963fa56bf4b8173633bffe16d9, type: 2}
+      objectReference: {fileID: 0}
     - target: {fileID: 5038519619020278548, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
       propertyPath: _dialogues.Array.data[3].Event
       value: 
