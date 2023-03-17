@@ -19,7 +19,7 @@ MonoBehaviour:
   Choices:
   - ChoiceText: "Pegar 3x muni\xE7\xF5es"
     NextDialogue: {fileID: 11400000, guid: e62ab4c41f169ed4abbaa0919a49f0aa, type: 2}
-  - ChoiceText: "Pegar 5x pe\xE7as"
+  - ChoiceText: "Pegar 2x combust\xEDvel"
     NextDialogue: {fileID: 11400000, guid: 2318dbddc80110f43b8596e9ff364bfb, type: 2}
   - ChoiceText: "N\xE3o, obrigada."
     NextDialogue: {fileID: 11400000, guid: 22675beb64d2568418336df3dea6ce0d, type: 2}
