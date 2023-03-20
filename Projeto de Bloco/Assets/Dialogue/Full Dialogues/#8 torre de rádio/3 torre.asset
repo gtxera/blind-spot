@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 3 torre
+  m_EditorClassIdentifier: 
+  Name: 3 torre
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 7ca10aa33984c3d459066191f46130b1, type: 2}
+  - {fileID: 11400000, guid: 75b47e1b83163684e9d6f88fc6c82530, type: 2}
+  - {fileID: 11400000, guid: e1984277cb99f7c48bf77d442d8aaf60, type: 2}
+  - {fileID: 11400000, guid: b4c3eae4b0bea484d9abf39002a974d4, type: 2}
+  - {fileID: 11400000, guid: 89dccfcf2acff1449907f08bdec68536, type: 2}

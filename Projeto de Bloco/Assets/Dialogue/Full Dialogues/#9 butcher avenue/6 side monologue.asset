@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 6 side monologue
+  m_EditorClassIdentifier: 
+  Name: 6 side monologue
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 8eaa297482910ba448bdbc234b8be29d, type: 2}
+  - {fileID: 11400000, guid: d918a8bb91bb635428fd9437f49470ca, type: 2}
