@@ -13,9 +13,16 @@ public class SaveData
 
         public bool IsActive;
 
-        public List<(Type, bool)> MonoBehaviourStates;
+        public Vector3 Position;
+        
+        public List<BehaviourState> MonoBehaviourStates;
+    }
 
-        public List<GameObjectState> ChildObjectsState;
+    [Serializable]
+    public struct BehaviourState
+    {
+        public string Name;
+        public bool Enabled;
     }
     
     public int SceneId;
@@ -30,31 +37,41 @@ public class SaveData
 
         foreach (var rootObject in activeScene.GetRootGameObjects())
         {
+            if (rootObject.TryGetComponent<RectTransform>(out _)) continue;
+            
             GameObjectStates.Add(CreateGameObjectStatesRecursively(rootObject));
         }
     }
 
     private GameObjectState CreateGameObjectStatesRecursively(GameObject gameObject)
     {
-        var monoBehaviourStates = new List<(Type, bool)>();
+        Debug.Log($"{gameObject.name} {gameObject.transform.position.sqrMagnitude}");
+        
+        var monoBehaviourStates = new List<BehaviourState>();
 
         foreach (var monoBehaviour in gameObject.GetComponents<Behaviour>())
         {
-            monoBehaviourStates.Add((monoBehaviour.GetType(), monoBehaviour.enabled));
-            Debug.Log(monoBehaviour.GetType());
+            monoBehaviourStates.Add(new BehaviourState
+            {
+                Name = monoBehaviour.GetType().Name,
+                Enabled = monoBehaviour.enabled
+            });
+            Debug.Log(monoBehaviour.GetType().ToString());
         }
 
         var state = new GameObjectState
         {
             GameObjectName = gameObject.name,
             IsActive = gameObject.activeSelf,
+            Position = gameObject.transform.position,
             MonoBehaviourStates = monoBehaviourStates,
-            ChildObjectsState = new List<GameObjectState>()
         };
 
         foreach (Transform child in gameObject.transform)
         {
-            state.ChildObjectsState.Add(CreateGameObjectStatesRecursively(child.gameObject));
+            if (gameObject.TryGetComponent<RectTransform>(out _)) continue;
+
+            GameObjectStates.Add(CreateGameObjectStatesRecursively(child.gameObject));
         }
 
         return state;

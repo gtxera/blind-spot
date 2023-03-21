@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Reflection;
 using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -26,7 +27,7 @@ public class GameSaver : SingletonBehaviour<GameSaver>
             Directory.CreateDirectory(mainPath);
         }
 
-        var savePath = Path.Combine(mainPath, $"{_saveId}.txt");
+        var savePath = Path.Combine(mainPath, $"{_saveId}.bspt");
         
         if (!File.Exists(savePath))
         {
@@ -36,16 +37,33 @@ public class GameSaver : SingletonBehaviour<GameSaver>
 
         var saveData = new SaveData(SceneManager.GetActiveScene());
 
-        var serializer = new JsonSerializer
-        {
-            NullValueHandling = NullValueHandling.Ignore,
-            TypeNameAssemblyFormatHandling = TypeNameAssemblyFormatHandling.Simple,
-            TypeNameAssemblyFormat = FormatterAssemblyStyle.Simple
-        };
-
-        var writer = new StreamWriter(savePath);
-        var jsonWriter = new JsonTextWriter(writer);
+        var serializedData = JsonUtility.ToJson(saveData);
         
-        serializer.Serialize(jsonWriter, saveData);
+        File.WriteAllText(savePath, serializedData);
+    }
+
+    public void Load()
+    {
+        var savePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), $@"Blind Spot\{_saveId}.bspt");
+
+        if (!File.Exists(savePath)) return;
+
+        var saveDataJson = File.ReadAllText(savePath);
+
+        var saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
+
+        foreach (var state in saveData.GameObjectStates)
+        {
+            var savedObject = GameObject.Find(state.GameObjectName);
+
+            savedObject.SetActive(state.IsActive);
+            savedObject.transform.position = state.Position;
+
+            foreach (var behaviourState in state.MonoBehaviourStates)
+            {
+                (savedObject.GetComponent(behaviourState.Name) as Behaviour)!.enabled = behaviourState.Enabled;
+            }
+        }
+
     }
 }
