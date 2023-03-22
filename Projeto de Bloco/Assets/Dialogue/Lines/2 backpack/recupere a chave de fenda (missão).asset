@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 08f5824245cc6d64282973fbcadbbef0, type: 2}
   LineIdentifier: "recupere a chave de fenda (miss\xE3o)"
-  DialogueEvent: {fileID: 0}
+  DialogueEvent: {fileID: 11400000, guid: b5d612a8433845c48bda7dacec6943a7, type: 2}
   NextDialogue: {fileID: 0}

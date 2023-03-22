@@ -14,4 +14,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
     guid: e3d4d99b06121a24ba226ec75ed98186
+  - enabled: 1
+    path: Assets/Scenes/Camping 2.unity
+    guid: 9c635dff23d52f140abc6afb79a45cca
+  - enabled: 1
+    path: "Assets/Scenes/Torre de R\xE1dio.unity"
+    guid: 7babd9e889309a74fbc0284fd73da6e5
   m_configObjects: {}

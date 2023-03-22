@@ -13,8 +13,15 @@ MonoBehaviour:
   m_Name: 1
   m_EditorClassIdentifier: 
   Wrapper:
+<<<<<<< Updated upstream:Projeto de Bloco/Assets/Dialogue/Lines/4 suprimentos/1.asset
     DialogueLineSO: {fileID: 0}
   ParentDialogue: {fileID: 11400000, guid: e2c586ef029a76a48b2c0edc67b7228d, type: 2}
   LineIdentifier: 
   DialogueEvent: {fileID: 0}
+=======
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: 6a0f18732a6991841aa028bfac759b66, type: 2}
+  LineIdentifier: pular para 4 ride
+  DialogueEvent: {fileID: 11400000, guid: b6b2ce4df4208634cbaf3efd7070c83a, type: 2}
+>>>>>>> Stashed changes:Projeto de Bloco/Assets/Dialogue/Lines/3.1 tutorial/pular para 4 ride.asset
   NextDialogue: {fileID: 0}
