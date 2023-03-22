@@ -13,6 +13,11 @@ public class GameSaver : SingletonBehaviour<GameSaver>
 {
     private string _saveId = "a";
 
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
     public void SetSaveId(string id)
     {
         _saveId = id;

@@ -3469,11 +3469,7 @@ PrefabInstance:
     - target: {fileID: 5038519619020278548, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
       propertyPath: _dialogues.Array.data[2].Event
       value: 
-<<<<<<< Updated upstream
-      objectReference: {fileID: 0}
-=======
       objectReference: {fileID: 11400000, guid: bde44d567a12fda47aea5416c97ce083, type: 2}
->>>>>>> Stashed changes
     - target: {fileID: 5038519619020278548, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
       propertyPath: _dialogues.Array.data[3].Event
       value: 
