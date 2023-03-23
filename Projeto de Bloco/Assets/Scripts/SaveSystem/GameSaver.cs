@@ -2,20 +2,36 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Reflection;
 using System.Runtime.Serialization.Formatters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameSaver : SingletonBehaviour<GameSaver>
 {
     private string _saveId = "a";
 
+    private UnityAction<Scene, LoadSceneMode> _loadGameObjectsCallback;
+
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= TrySave;
+        TrySave(SceneManager.GetActiveScene());
+    }
+
+    private void TrySave(Scene scene, LoadSceneMode mode = LoadSceneMode.Single)
+    {
+        if (scene.buildIndex != 0) Save();
     }
 
     public void SetSaveId(string id)
@@ -26,6 +42,8 @@ public class GameSaver : SingletonBehaviour<GameSaver>
     public void Save()
     {
         var mainPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Blind Spot";
+        
+        print("try save");
 
         if (!Directory.Exists(mainPath))
         {
@@ -45,6 +63,8 @@ public class GameSaver : SingletonBehaviour<GameSaver>
         var serializedData = JsonUtility.ToJson(saveData);
         
         File.WriteAllText(savePath, serializedData);
+        
+        PlayerPrefs.SetString("LastSave", _saveId);
     }
 
     public void Load()
@@ -57,9 +77,19 @@ public class GameSaver : SingletonBehaviour<GameSaver>
 
         var saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
 
+        _loadGameObjectsCallback = delegate(Scene scene, LoadSceneMode mode) { LoadGameObjects(saveData); };
+        SceneManager.sceneLoaded += _loadGameObjectsCallback;
+        
+        SceneManager.LoadScene(saveData.SceneId);
+    }
+
+    private void LoadGameObjects(SaveData saveData)
+    {
+        var ids = FindObjectsOfType<SaveObjectID>(true);
+        
         foreach (var state in saveData.GameObjectStates)
         {
-            var savedObject = GameObject.Find(state.GameObjectName);
+            var savedObject = ids.First(instance => instance.ID == state.GameObjectId).gameObject;
 
             savedObject.SetActive(state.IsActive);
             savedObject.transform.position = state.Position;
@@ -68,7 +98,26 @@ public class GameSaver : SingletonBehaviour<GameSaver>
             {
                 (savedObject.GetComponent(behaviourState.Name) as Behaviour)!.enabled = behaviourState.Enabled;
             }
+
+            SceneManager.sceneLoaded -= _loadGameObjectsCallback;
+            SceneManager.sceneLoaded += TrySave;
+        }
+    }
+
+    private Dictionary<float, GameObject> GatherIds(GameObject gameObject)
+    {
+        Dictionary<float, GameObject> ids = new(){ {gameObject.transform.position.sqrMagnitude, gameObject}};
+
+        foreach (Transform child in gameObject.transform)
+        {
+            var childIds = GatherIds(child.gameObject);
+
+            foreach (var pair in childIds)
+            {
+                ids.Add(pair.Key, pair.Value);
+            }
         }
 
+        return ids;
     }
 }

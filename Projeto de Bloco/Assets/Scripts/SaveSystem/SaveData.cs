@@ -3,13 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
+using Object = UnityEngine.Object;
 
 public class SaveData
 {
     [Serializable]
     public struct GameObjectState
     {
-        public string GameObjectName;
+        public uint GameObjectId;
 
         public bool IsActive;
 
@@ -28,25 +30,21 @@ public class SaveData
     public int SceneId;
 
     public List<GameObjectState> GameObjectStates;
-
+    
     public SaveData(Scene activeScene)
     {
         SceneId = activeScene.buildIndex;
 
         GameObjectStates = new List<GameObjectState>();
 
-        foreach (var rootObject in activeScene.GetRootGameObjects())
+        foreach (var saveObject in Object.FindObjectsOfType<SaveObjectID>(true))
         {
-            if (rootObject.TryGetComponent<RectTransform>(out _)) continue;
-            
-            GameObjectStates.Add(CreateGameObjectStatesRecursively(rootObject));
+            GameObjectStates.Add(CreateGameObjectState(saveObject.gameObject, saveObject.ID));
         }
     }
 
-    private GameObjectState CreateGameObjectStatesRecursively(GameObject gameObject)
+    private GameObjectState CreateGameObjectState(GameObject gameObject, uint saveId)
     {
-        Debug.Log($"{gameObject.name} {gameObject.transform.position.sqrMagnitude}");
-        
         var monoBehaviourStates = new List<BehaviourState>();
 
         foreach (var monoBehaviour in gameObject.GetComponents<Behaviour>())
@@ -56,23 +54,15 @@ public class SaveData
                 Name = monoBehaviour.GetType().Name,
                 Enabled = monoBehaviour.enabled
             });
-            Debug.Log(monoBehaviour.GetType().ToString());
         }
 
         var state = new GameObjectState
         {
-            GameObjectName = gameObject.name,
+            GameObjectId = saveId,
             IsActive = gameObject.activeSelf,
             Position = gameObject.transform.position,
             MonoBehaviourStates = monoBehaviourStates,
         };
-
-        foreach (Transform child in gameObject.transform)
-        {
-            if (gameObject.TryGetComponent<RectTransform>(out _)) continue;
-
-            GameObjectStates.Add(CreateGameObjectStatesRecursively(child.gameObject));
-        }
 
         return state;
     }
