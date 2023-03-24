@@ -23,10 +23,14 @@ public class GameSaver : SingletonBehaviour<GameSaver>
         DontDestroyOnLoad(gameObject);
     }
 
+    private void OnDisable()
+    {
+        TrySave(SceneManager.GetActiveScene());
+    }
+
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= TrySave;
-        TrySave(SceneManager.GetActiveScene());
     }
 
     private void TrySave(Scene scene, LoadSceneMode mode = LoadSceneMode.Single)
@@ -42,8 +46,6 @@ public class GameSaver : SingletonBehaviour<GameSaver>
     public void Save()
     {
         var mainPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "/Blind Spot";
-        
-        print("try save");
 
         if (!Directory.Exists(mainPath))
         {
@@ -54,7 +56,7 @@ public class GameSaver : SingletonBehaviour<GameSaver>
         
         if (!File.Exists(savePath))
         {
-            var saveFile = File.Create(savePath);
+            File.Create(savePath).Close();
             //File.SetAttributes(savePath, FileAttributes.Hidden);
         }
 
@@ -77,7 +79,7 @@ public class GameSaver : SingletonBehaviour<GameSaver>
 
         var saveData = JsonUtility.FromJson<SaveData>(saveDataJson);
 
-        _loadGameObjectsCallback = delegate(Scene scene, LoadSceneMode mode) { LoadGameObjects(saveData); };
+        _loadGameObjectsCallback = delegate(Scene _, LoadSceneMode _) { LoadGameObjects(saveData); };
         SceneManager.sceneLoaded += _loadGameObjectsCallback;
         
         SceneManager.LoadScene(saveData.SceneId);
@@ -86,13 +88,19 @@ public class GameSaver : SingletonBehaviour<GameSaver>
     private void LoadGameObjects(SaveData saveData)
     {
         var ids = FindObjectsOfType<SaveObjectID>(true);
-        
+
         foreach (var state in saveData.GameObjectStates)
         {
             var savedObject = ids.First(instance => instance.ID == state.GameObjectId).gameObject;
 
             savedObject.SetActive(state.IsActive);
-            savedObject.transform.position = state.Position;
+
+            if (savedObject.TryGetComponent<CharacterController>(out var charCtrl))
+            {
+                charCtrl.enabled = false;
+                savedObject.transform.position = state.Position;
+            }
+            else savedObject.transform.position = state.Position;
 
             foreach (var behaviourState in state.MonoBehaviourStates)
             {

@@ -39,6 +39,7 @@ public class SaveData
 
         foreach (var saveObject in Object.FindObjectsOfType<SaveObjectID>(true))
         {
+            Debug.Log(saveObject.name);
             GameObjectStates.Add(CreateGameObjectState(saveObject.gameObject, saveObject.ID));
         }
     }

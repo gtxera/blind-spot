@@ -9,7 +9,7 @@ using System.Linq;
 using UnityEngine;
 using Random = System.Random;
 
-[ExecuteAlways]
+[ExecuteInEditMode]
 public class SaveObjectID : MonoBehaviour
 {
     [SerializeField] private uint _id;
@@ -22,9 +22,7 @@ public class SaveObjectID : MonoBehaviour
     {
         if (!Application.isPlaying && _id == 0)
         {
-            if (SaveObjectIDManager.GameObjectById.ContainsValue(gameObject)) _id = SaveObjectIDManager.IdByGameObject[gameObject];
-
-            else _id = SaveObjectIDManager.GetFreeId(gameObject);
+            _id = SaveObjectIDManager.GetFreeId();
 
             EditorUtility.SetDirty(this);
         }
@@ -35,9 +33,8 @@ public class SaveObjectID : MonoBehaviour
     {
         if (Application.isPlaying && _id == 0)
         {
-            if (SaveObjectIDManager.GameObjectById.ContainsValue(gameObject))
-                _id = SaveObjectIDManager.IdByGameObject[gameObject];
-            else _id = SaveObjectIDManager.GetFreeId(gameObject);
+            _id = SaveObjectIDManager.GetFreeId();
         }
+
     }
 }

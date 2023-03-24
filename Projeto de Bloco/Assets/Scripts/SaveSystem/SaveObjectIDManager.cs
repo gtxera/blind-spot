@@ -5,28 +5,21 @@ using Random = System.Random;
 
 public static class SaveObjectIDManager
 {
-    public static Dictionary<uint, GameObject> GameObjectById = new();
-    public static Dictionary<GameObject, uint> IdByGameObject = new();
+    public static HashSet<uint> UsedIds = new();
 
     private static Random _random = new();
 
-    public static uint GetFreeId(GameObject gameObject)
+    public static uint GetFreeId()
     {
         uint id = 0;
 
         do
         {
             id = RandomUInt();
-        } while (id == 0 || GameObjectById.ContainsKey(id));
+        } while (id == 0 || UsedIds.Contains(id));
 
-        GameObjectById.Add(id, gameObject);
-        IdByGameObject.Add(gameObject, id);
+        UsedIds.Add(id);
 
-        foreach (var pair in GameObjectById)
-        {
-            Debug.Log(pair.Value);
-        }
-        
         return id;
     }
 
