@@ -12,6 +12,11 @@ public class InputMapper : MonoBehaviour
 
     private void Start()
     {
+        foreach (InputBindings.PlayerActions action in Enum.GetValues(typeof(InputBindings.PlayerActions)))
+        {
+            if(PlayerPrefs.HasKey(action.ToString())) InputBindings.ChangeInputBinding(action, (KeyCode)PlayerPrefs.GetInt(action.ToString()));
+        }
+        
         _text = GetComponentInChildren<TextMeshProUGUI>();
 
         InputBindings.BindingsChanged += actions =>

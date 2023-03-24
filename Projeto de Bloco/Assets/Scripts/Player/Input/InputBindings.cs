@@ -72,6 +72,8 @@ public static class InputBindings
         Bindings[actionToChange] = newBinding;
         changedBindings.Add(actionToChange);
         
+        PlayerPrefs.SetInt(actionToChange.ToString(), (int)newBinding);
+        
         BindingsChanged?.Invoke(changedBindings.ToArray());
     }
 
@@ -80,6 +82,7 @@ public static class InputBindings
         foreach (var key in Default.Keys)
         {
             Bindings[key] = Default[key];
+            PlayerPrefs.SetInt(key.ToString(), (int)Default[key]);
         }
         
         BindingsChanged?.Invoke(Bindings.Keys.ToArray());
