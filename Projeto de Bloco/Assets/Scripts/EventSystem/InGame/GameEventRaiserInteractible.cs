@@ -17,7 +17,9 @@ public class GameEventRaiserInteractible : MonoBehaviour, IInteractable, IGameEv
         var mesh = GetComponent<MeshRenderer>();
         
     }
+
     
+
     public void Interact(GameObject playerObject)
     {
         Event.RaiseEvent();

@@ -14,7 +14,7 @@ public class AddItemToInventoryInteraction : MonoBehaviour, IInteractable
 
         PlayerInteraction.Instance.IgnoreInteraction(false);
         
-        gameObject.SetActive(false);
+        Destroy(gameObject);
     }
     
     public void SetOutlines(bool isActive)

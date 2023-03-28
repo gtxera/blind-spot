@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 08f5824245cc6d64282973fbcadbbef0, type: 2}
   LineIdentifier: revirando mochila (sfx)
-  DialogueEvent: {fileID: 11400000, guid: 3804e993a0f42f24e847d81c54f36420, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 11400000, guid: ac7cde06d16915244804ba0ca9fe63ab, type: 2}

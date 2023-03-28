@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ec35486d22abda1419c6f06a1b63d452, type: 2}
   LineIdentifier: fade out, sfx
-  DialogueEvent: {fileID: 11400000, guid: d961bd963fa56bf4b8173633bffe16d9, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 0}
