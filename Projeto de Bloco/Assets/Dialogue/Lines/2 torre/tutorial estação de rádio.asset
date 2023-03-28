@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: ec35486d22abda1419c6f06a1b63d452, type: 2}
   LineIdentifier: "tutorial esta\xE7\xE3o de r\xE1dio"
-  DialogueEvent: {fileID: 0}
+  DialogueEvent: {fileID: 11400000, guid: 3804e993a0f42f24e847d81c54f36420, type: 2}
   NextDialogue: {fileID: 11400000, guid: 91c17e05e0bc1b546954c059e00e621d, type: 2}

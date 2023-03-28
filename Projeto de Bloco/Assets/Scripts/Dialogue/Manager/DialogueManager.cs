@@ -29,6 +29,8 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
     private CancellationTokenSource _showTextTokenSource;
     private CancellationToken _showTextToken;
 
+    private bool _startDialogueCalled;
+
     public event Action<DialogueSO> OnDialogueStarted, OnDialogueEnded;
 
     private void Start()
@@ -48,6 +50,11 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     public void StartDialogue(DialogueSO dialogue)
     {
+        _startDialogueCalled = true;
+
+        _showTextTokenSource = null;
+        _showTextTask = null;
+        
         PlayerMovementStateMachine.Instance.ResetCurrentMovementState();
         PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
         PlayerInteraction.Instance.IgnoreInteraction(true);
@@ -63,9 +70,11 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
     private void TryLoadNextLine(DialogueLineSO nextLine)
     {
+        _startDialogueCalled = false;
+        
         if (nextLine == null)
         {
-            EndDialogue(_currentLine.ParentDialogue);
+            EndDialogue();
             return;
         }
 
@@ -73,18 +82,21 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         ShowCurrentLine();
     }
 
-    private void EndDialogue(DialogueSO dialogue)
+    private void EndDialogue(DialogueSO dialogue = null)
     {
         PlayerMovementStateMachine.Instance.ChangeDefaultMovementState();
         PlayerInteraction.Instance.IgnoreInteraction(false);
         
         OnDialogueEnded?.Invoke(dialogue);
         
+        _showTextTokenSource.Cancel();
+        
         _dialogueUI.SetActive(false);
     }
 
     private void ShowCurrentLine()
     {
+        _showTextTokenSource?.Cancel();
         _showTextTokenSource = new CancellationTokenSource();
         _showTextToken = _showTextTokenSource.Token;
 
@@ -129,7 +141,12 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
             
             case DialogueEventLine eventLine:
                 eventLine.DialogueEvent.RaiseEvent();
-                TryLoadNextLine(eventLine.NextDialogue);
+                
+                if (!_startDialogueCalled)
+                {
+                    TryLoadNextLine(eventLine.NextDialogue);
+                }
+                
                 break;
         }
     }
@@ -140,10 +157,12 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
 
         for (int i = 1; i < _currentLineText.text.Length + 1; i++)
         {
-            await Task.Delay(50);
-            _currentLineText.maxVisibleCharacters = i;
-            
-            if (token.IsCancellationRequested)
+            try
+            {
+                await Task.Delay(50, token);
+                _currentLineText.maxVisibleCharacters = i;
+            }
+            catch(OperationCanceledException) when(token.IsCancellationRequested)
             {
                 ShowFullText();
                 throw new TaskCanceledException();
