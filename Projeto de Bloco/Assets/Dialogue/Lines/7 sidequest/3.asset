@@ -18,7 +18,7 @@ MonoBehaviour:
   LineIdentifier: 3
   NextDialogue: {fileID: 0}
   Text: "N\xE3o \xE9 problema! Vou ajud\xE1-la."
-  Character: {fileID: 0}
+  Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
   Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Portrait: {fileID: 21300000, guid: 1d94882b8f9675040b2b4ac90d2524be, type: 3}
+  PortraitKey: Sorrindo

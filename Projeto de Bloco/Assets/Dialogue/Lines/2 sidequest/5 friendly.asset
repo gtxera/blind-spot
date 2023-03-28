@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
-  m_Name: 8
+  m_Name: 5 friendly
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
-  ParentDialogue: {fileID: 11400000, guid: fad52bee9ef8e4b45acd05c5f72bc5a1, type: 2}
-  LineIdentifier: 8
+  ParentDialogue: {fileID: 11400000, guid: 9922b1f180d99fc4ab091c71ab395186, type: 2}
+  LineIdentifier: 5 friendly
   Choices:
-  - ChoiceText: Sinto muito
-    NextDialogue: {fileID: 0}
-  - ChoiceText: Vou embora
-    NextDialogue: {fileID: 0}
-  Text: "Voc\xEA n\xE3o sabe do que est\xE1 falando! Vai embora!"
+  - ChoiceText: "N\xE3o tenho tempo pra isso"
+    NextDialogue: {fileID: 11400000, guid: 096431df07e0e3144abfb81e15635061, type: 2}
+  - ChoiceText: Estou indo
+    NextDialogue: {fileID: 11400000, guid: 8e18697859d9f9f49b4d3cce3182786b, type: 2}
+  Text: "Venha, r\xE1pido!"
   Character: {fileID: 0}
   Name: 
   Portrait: {fileID: 0}

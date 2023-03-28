@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
-  m_Name: 0
+  m_Name: 6 friendly
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
-  ParentDialogue: {fileID: 11400000, guid: d7631d9aa3dd1ae48923355591387926, type: 2}
-  LineIdentifier: 0
+  ParentDialogue: {fileID: 11400000, guid: 9922b1f180d99fc4ab091c71ab395186, type: 2}
+  LineIdentifier: 6 friendly
   NextDialogue: {fileID: 0}
-  Text: "Posso encontr\xE1-la."
+  Text: Calma, estou indo.
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
   Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Portrait: {fileID: 21300000, guid: 95aef87af9e2a734cb4a3a332623a5a3, type: 3}
+  PortraitKey: Neutro

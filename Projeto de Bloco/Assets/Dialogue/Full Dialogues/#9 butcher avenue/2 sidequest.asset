@@ -17,3 +17,16 @@ MonoBehaviour:
   DialogueLines:
   - {fileID: 11400000, guid: 3ac643aec3180f14b8c1998708b2d681, type: 2}
   - {fileID: 11400000, guid: 4aad6a34bb2f0794eaae3e16a464c43e, type: 2}
+  - {fileID: 11400000, guid: fa21ccd589e740b42a558f1e43f264b3, type: 2}
+  - {fileID: 11400000, guid: ab179d407a6a16e4b87557d8ec4807cc, type: 2}
+  - {fileID: 11400000, guid: b2fb76dadcecea84889ba025e8eabbb1, type: 2}
+  - {fileID: 11400000, guid: 14dc1ec17315b6f4e93b112a07e1ec9b, type: 2}
+  - {fileID: 11400000, guid: 8825290b0952723428e72bf2fafcfb73, type: 2}
+  - {fileID: 11400000, guid: ff3420306379fa548853d8b02ab0842e, type: 2}
+  - {fileID: 11400000, guid: 9b5e94b7b771b274489a824bba7a152b, type: 2}
+  - {fileID: 11400000, guid: 65f532d5577a7954db235a9a211a3079, type: 2}
+  - {fileID: 11400000, guid: c2ea14ce00636df42bc9f52d9e474dcd, type: 2}
+  - {fileID: 11400000, guid: 096431df07e0e3144abfb81e15635061, type: 2}
+  - {fileID: 11400000, guid: 59983a4d4a594514e826f0f400082951, type: 2}
+  - {fileID: 11400000, guid: b396a662f1c415a43863b5d29f805b61, type: 2}
+  - {fileID: 11400000, guid: 8e18697859d9f9f49b4d3cce3182786b, type: 2}

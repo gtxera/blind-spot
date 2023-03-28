@@ -9,16 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
-  m_Name: 1
+  m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
+  m_Name: 3 agressive
   m_EditorClassIdentifier: 
   Wrapper:
-    DialogueLineSO: {fileID: 0}
+    DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 9922b1f180d99fc4ab091c71ab395186, type: 2}
-  LineIdentifier: 
+  LineIdentifier: 3 agressive
   NextDialogue: {fileID: 0}
-  Text: 
-  Character: {fileID: 0}
-  Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Text: "Ela parecia aterrorizada, n\xE3o deve causar problemas."

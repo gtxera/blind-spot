@@ -21,7 +21,7 @@ MonoBehaviour:
     NextDialogue: {fileID: 0}
   - ChoiceText: Vou embora
     NextDialogue: {fileID: 0}
-  Text: 
+  Text: "N\xE3o \xE9 nada. Por favor, v\xE1 embora."
   Character: {fileID: 0}
   Name: 
   Portrait: {fileID: 0}

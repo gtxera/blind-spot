@@ -9,19 +9,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
-  m_Name: 8
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 3 friendly
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
-  ParentDialogue: {fileID: 11400000, guid: fad52bee9ef8e4b45acd05c5f72bc5a1, type: 2}
-  LineIdentifier: 8
-  Choices:
-  - ChoiceText: Sinto muito
-    NextDialogue: {fileID: 0}
-  - ChoiceText: Vou embora
-    NextDialogue: {fileID: 0}
-  Text: "Voc\xEA n\xE3o sabe do que est\xE1 falando! Vai embora!"
+  ParentDialogue: {fileID: 11400000, guid: 9922b1f180d99fc4ab091c71ab395186, type: 2}
+  LineIdentifier: 3 friendly
+  NextDialogue: {fileID: 11400000, guid: 65f532d5577a7954db235a9a211a3079, type: 2}
+  Text: "Eu\u2026 preciso de ajuda. \xC9 importante, eu juro."
   Character: {fileID: 0}
   Name: 
   Portrait: {fileID: 0}

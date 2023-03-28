@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
-  m_Name: 0
+  m_Name: 2 agressive
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
-  ParentDialogue: {fileID: 11400000, guid: d7631d9aa3dd1ae48923355591387926, type: 2}
-  LineIdentifier: 0
-  NextDialogue: {fileID: 0}
-  Text: "Posso encontr\xE1-la."
+  ParentDialogue: {fileID: 11400000, guid: 9922b1f180d99fc4ab091c71ab395186, type: 2}
+  LineIdentifier: 2 agressive
+  NextDialogue: {fileID: 11400000, guid: 8825290b0952723428e72bf2fafcfb73, type: 2}
+  Text: "Ent\xE3o \xE9 melhor ir embora, antes que eu te machuque."
   Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
   Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Portrait: {fileID: 21300000, guid: 9e3a18388fa18334590f20796a8dfa36, type: 3}
+  PortraitKey: Irritada

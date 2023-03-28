@@ -18,7 +18,7 @@ MonoBehaviour:
   LineIdentifier: 2 dialogue
   NextDialogue: {fileID: 11400000, guid: 820e734eb67b074488d29682befa23b2, type: 2}
   Text: O que houve com ele?
-  Character: {fileID: 0}
+  Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
   Name: 
-  Portrait: {fileID: 0}
-  PortraitKey: 
+  Portrait: {fileID: 21300000, guid: f28200d9f7dbf174f865f5cffbd08092, type: 3}
+  PortraitKey: Preocupada
