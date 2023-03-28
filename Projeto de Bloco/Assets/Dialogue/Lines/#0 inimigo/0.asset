@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9bacac846cfb4f5448931524ca37b7da, type: 3}
+  m_Name: 0
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: 57f43aeca1a994f4ba213493ef5bde0e, type: 2}
+  LineIdentifier: 0
+  Choices:
+  - ChoiceText: Atirar
+    NextDialogue: {fileID: 11400000, guid: af54175af1434274ba4e45c433857dd6, type: 2}
+  - ChoiceText: Recuar
+    NextDialogue: {fileID: 11400000, guid: 8078a58fca0b5ab4cac1311ec7cb0a8e, type: 2}
+  Text: "O que \xE9 aquilo? \xC9 enorme! Ser\xE1 que consigo mat\xE1-lo?"

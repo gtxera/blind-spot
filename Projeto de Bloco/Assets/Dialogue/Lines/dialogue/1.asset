@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: 1cb7610857aab334da9722845d989a94, type: 2}
+  LineIdentifier: 1
+  NextDialogue: {fileID: 11400000, guid: 0efa5eb837700ab4fbe56a1c1f198826, type: 2}
+  Text: "Hm? O que voc\xEA disse?"
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 
