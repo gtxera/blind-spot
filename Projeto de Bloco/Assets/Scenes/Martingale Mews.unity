@@ -1336,6 +1336,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Martingale Mews4
       objectReference: {fileID: 0}
+    - target: {fileID: 2320881816093610726, guid: 15fbe8207b54bed4a8a3b724a5144787, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.04
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 15fbe8207b54bed4a8a3b724a5144787, type: 3}
 --- !u!1 &1771071045 stripped
