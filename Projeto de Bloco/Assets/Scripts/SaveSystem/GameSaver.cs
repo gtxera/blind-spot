@@ -1,19 +1,14 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.Serialization.Formatters;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 public class GameSaver : SingletonBehaviour<GameSaver>
 {
+    
     private string _saveId = "a";
 
     private UnityAction<Scene, LoadSceneMode> _loadGameObjectsCallback;
@@ -92,6 +87,8 @@ public class GameSaver : SingletonBehaviour<GameSaver>
         foreach (var state in saveData.GameObjectStates)
         {
             var savedObject = ids.First(instance => instance.ID == state.GameObjectId).gameObject;
+            
+            print(savedObject.gameObject.name);
 
             savedObject.SetActive(state.IsActive);
 
@@ -99,7 +96,9 @@ public class GameSaver : SingletonBehaviour<GameSaver>
             {
                 charCtrl.enabled = false;
                 savedObject.transform.position = state.Position;
+                charCtrl.enabled = true;
             }
+            
             else savedObject.transform.position = state.Position;
 
             foreach (var behaviourState in state.MonoBehaviourStates)

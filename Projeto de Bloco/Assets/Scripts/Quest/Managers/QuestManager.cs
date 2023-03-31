@@ -41,7 +41,6 @@ public class QuestManager : SingletonBehaviour<QuestManager>
 
     private void PhaseTransition(Quest currentQuest, QuestPhase newPhase)
     {
-
         if (_currentPhaseListners.ContainsKey(_currentQuests[currentQuest]))
         {
             foreach (var listener in _currentPhaseListners[_currentQuests[currentQuest]])

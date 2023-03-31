@@ -32,6 +32,9 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
 
     private bool _inventoryKeyDown;
     public event Action InventoryKeyDown;
+
+    private bool _pauseKeyDown;
+    public event Action PauseKeyDown;
     
     private void Update()
     {
@@ -60,6 +63,8 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         _radioKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Radio]);
 
         _inventoryKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.OpenInventory]);
+
+        _pauseKeyDown = Input.GetKeyDown(InputBindings.Bindings[InputBindings.PlayerActions.Pause]);
     }
 
     private void RaiseEvents()
@@ -87,5 +92,7 @@ public class PlayerInputs : SingletonBehaviour<PlayerInputs> {
         if(_radioKeyDown) RadioKeyDown?.Invoke();
         
         if(_inventoryKeyDown) InventoryKeyDown?.Invoke();
+        
+        if(_pauseKeyDown) PauseKeyDown?.Invoke();
     }
 }

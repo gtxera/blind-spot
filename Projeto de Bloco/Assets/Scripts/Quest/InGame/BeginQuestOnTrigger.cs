@@ -17,7 +17,7 @@ public class BeginQuestOnTrigger : MonoBehaviour, IQuestHolder
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<PlayerInputs>(out _))
+        if (other.TryGetComponent<PlayerInteraction>(out _))
         {
             QuestManager.Instance.StartQuest(Quest);
         }
