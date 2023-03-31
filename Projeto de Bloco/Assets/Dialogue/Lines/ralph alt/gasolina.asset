@@ -15,6 +15,11 @@ MonoBehaviour:
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 05b3214568cf23947a5084312ba8cec7, type: 2}
+<<<<<<< Updated upstream:Projeto de Bloco/Assets/Dialogue/Lines/ralph alt/gasolina.asset
   LineIdentifier: gasolina
   DialogueEvent: {fileID: 0}
+=======
+  LineIdentifier: "pe\xE7as"
+  DialogueEvent: {fileID: 11400000, guid: 3804e993a0f42f24e847d81c54f36420, type: 2}
+>>>>>>> Stashed changes:Projeto de Bloco/Assets/Dialogue/Lines/ralph alt/peças.asset
   NextDialogue: {fileID: 11400000, guid: 16129c14ba50c2843bc66b1deed74d60, type: 2}

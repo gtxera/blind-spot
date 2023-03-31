@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 419999e8a4faeda4aa3200c469bfa790, type: 2}
   LineIdentifier: "leve sophia ao seu destino (miss\xE3o)"
-  DialogueEvent: {fileID: 0}
+  DialogueEvent: {fileID: 11400000, guid: 8362e86a1fdede94dba3baba77350851, type: 2}
   NextDialogue: {fileID: 0}

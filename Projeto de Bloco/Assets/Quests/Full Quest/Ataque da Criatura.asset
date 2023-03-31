@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   IsMandatory: 1
   QuestPhases:
-  - {fileID: 11400000, guid: e5ff111ae5ea24e43a2edd5e8a7a62c7, type: 2}
+  - {fileID: 11400000, guid: 8a4b00d03f863d74dac60703e5485765, type: 2}

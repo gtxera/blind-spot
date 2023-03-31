@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
+  m_Name: 6
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
+  LineIdentifier: 6
+  Choices:
+  - ChoiceText: "(Continuar em sil\xEAncio)"
+    NextDialogue: {fileID: 11400000, guid: 73e4e135fe6fd81449d917f85a20da35, type: 2}
+  - ChoiceText: "Estou indo procurar meu irm\xE3o"
+    NextDialogue: {fileID: 11400000, guid: a67b1bac71e8e4d48855fdb1a1b0ab0c, type: 2}
+  Text: "Okay, voc\xEA ganhou! Eu sou uma agente dupla do apocalipse tentando te
+    arrancar informa\xE7\xF5es!"
+  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: Sorrindo

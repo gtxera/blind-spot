@@ -32,6 +32,12 @@ public class InventoryUIController : MonoBehaviour
         ItemUIDragger.DragStarted += CreatePlaceholder;
         ItemUIDragger.DragEnded += DestroyPlaceholder;
 
+        DialogueManager.Instance.OnDialogueStarted += so =>
+        {
+            _rectTransform.anchoredPosition = new Vector2(0, _rectTransform.sizeDelta.y / 2);
+            _inventoryOpen = false;
+        };
+
         _rectTransform = GetComponent<RectTransform>();
     }
 
@@ -48,6 +54,7 @@ public class InventoryUIController : MonoBehaviour
         var newItemUI = Instantiate(_itemUIPrefab, transform);
 
         var itemImg = newItemUI.transform.GetChild(1).GetComponent<Image>();
+        print(item.ItemImage);
         itemImg.sprite = item.ItemImage;
         itemImg.color = Color.white;
         newItemUI.GetComponent<ItemUIDragger>().Initialize(transform.parent, item);
