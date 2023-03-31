@@ -3,67 +3,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using UnityEngine.Serialization;
-using Object = UnityEngine.Object;
 
 public class SaveData
 {
     [Serializable]
     public struct GameObjectState
     {
-        public uint GameObjectId;
+        public string GameObjectName;
 
         public bool IsActive;
 
-        public Vector3 Position;
-        
-        public List<BehaviourState> MonoBehaviourStates;
-    }
+        public List<(Type, bool)> MonoBehaviourStates;
 
-    [Serializable]
-    public struct BehaviourState
-    {
-        public string Name;
-        public bool Enabled;
+        public List<GameObjectState> ChildObjectsState;
     }
     
     public int SceneId;
 
     public List<GameObjectState> GameObjectStates;
-    
+
     public SaveData(Scene activeScene)
     {
         SceneId = activeScene.buildIndex;
 
         GameObjectStates = new List<GameObjectState>();
 
-        foreach (var saveObject in Object.FindObjectsOfType<SaveObjectID>(true))
+        foreach (var rootObject in activeScene.GetRootGameObjects())
         {
-            Debug.Log(saveObject.name);
-            GameObjectStates.Add(CreateGameObjectState(saveObject.gameObject, saveObject.ID));
+            GameObjectStates.Add(CreateGameObjectStatesRecursively(rootObject));
         }
     }
 
-    private GameObjectState CreateGameObjectState(GameObject gameObject, uint saveId)
+    private GameObjectState CreateGameObjectStatesRecursively(GameObject gameObject)
     {
-        var monoBehaviourStates = new List<BehaviourState>();
+        var monoBehaviourStates = new List<(Type, bool)>();
 
         foreach (var monoBehaviour in gameObject.GetComponents<Behaviour>())
         {
-            monoBehaviourStates.Add(new BehaviourState
-            {
-                Name = monoBehaviour.GetType().Name,
-                Enabled = monoBehaviour.enabled
-            });
+            monoBehaviourStates.Add((monoBehaviour.GetType(), monoBehaviour.enabled));
+            Debug.Log(monoBehaviour.GetType());
         }
 
         var state = new GameObjectState
         {
-            GameObjectId = saveId,
+            GameObjectName = gameObject.name,
             IsActive = gameObject.activeSelf,
-            Position = gameObject.transform.position,
             MonoBehaviourStates = monoBehaviourStates,
+            ChildObjectsState = new List<GameObjectState>()
         };
+
+        foreach (Transform child in gameObject.transform)
+        {
+            state.ChildObjectsState.Add(CreateGameObjectStatesRecursively(child.gameObject));
+        }
 
         return state;
     }

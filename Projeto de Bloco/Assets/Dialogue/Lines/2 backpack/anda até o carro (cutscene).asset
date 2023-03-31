@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 08f5824245cc6d64282973fbcadbbef0, type: 2}
   LineIdentifier: "anda at\xE9 o carro (cutscene)"
-  DialogueEvent: {fileID: 11400000, guid: b3acdccc74ed34949b879897b7c5e5ee, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 11400000, guid: 83cddf6eb43e549479f1aeab3aced3e5, type: 2}

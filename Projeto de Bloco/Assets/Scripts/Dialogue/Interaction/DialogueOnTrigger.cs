@@ -16,7 +16,7 @@ public class DialogueOnTrigger : MonoBehaviour, IDialogueHolder
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<PlayerMovementStateMachine>(out _))
+        if (other.TryGetComponent<PlayerInputs>(out _))
         {
             DialogueManager.Instance.StartDialogue(Dialogue);
         }

@@ -16,7 +16,7 @@ public class GameEventOnTrigger : MonoBehaviour, IGameEventHolder
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.TryGetComponent<PlayerMovementStateMachine>(out _))
+        if (other.TryGetComponent<PlayerInputs>(out _))
         {
             Event.RaiseEvent();
         }

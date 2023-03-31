@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
+  m_Name: 6 dialogue
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: ca11b681482363a4ea8748e53cf8a02b, type: 2}
+  LineIdentifier: 12 dialogue
+  Choices:
+  - ChoiceText: Lugar nenhum.
+    NextDialogue: {fileID: 11400000, guid: f47b0d340a5bcee4985209a4df64324b, type: 2}
+  - ChoiceText: "Procurar meu irm\xE3o."
+    NextDialogue: {fileID: 11400000, guid: 7eed0f0378780914da6a7fd605de2da9, type: 2}
+  Text: "E voc\xEA? T\xE1 indo pra onde? Esse seu irm\xE3o..."
+  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: Neutro

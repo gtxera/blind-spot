@@ -14,7 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Wrapper:
     DialogueLineSO: {fileID: 11400000}
-<<<<<<< Updated upstream:Projeto de Bloco/Assets/Dialogue/Lines/7 sidequest/8.asset
   ParentDialogue: {fileID: 11400000, guid: fad52bee9ef8e4b45acd05c5f72bc5a1, type: 2}
   LineIdentifier: 8
   Choices:
@@ -24,15 +23,6 @@ MonoBehaviour:
     NextDialogue: {fileID: 0}
   Text: "Voc\xEA n\xE3o sabe do que est\xE1 falando! Vai embora!"
   Character: {fileID: 0}
-=======
-  ParentDialogue: {fileID: 11400000, guid: 6a0f18732a6991841aa028bfac759b66, type: 2}
-  LineIdentifier: 0 dialogue
-  Choices:
-  - ChoiceText: "Sim, meu irm\xE3o me ensinou"
-    NextDialogue: {fileID: 11400000, guid: 33b832e5aac457543b503f4083fbfaeb, type: 2}
-  Text: "Te ensinaram a dirigir isso a\xED?"
-  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
->>>>>>> Stashed changes:Projeto de Bloco/Assets/Dialogue/Lines/3.1 tutorial/0 dialogue.asset
   Name: 
   Portrait: {fileID: 0}
-  PortraitKey: Neutro
+  PortraitKey: 

@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 99152d60109190b429ea192d4e4e2da3, type: 2}
   LineIdentifier: "Tente contatar seu irm\xE3o na torre de r\xE1dio (miss\xE3o)"
-  DialogueEvent: {fileID: 11400000, guid: 8362e86a1fdede94dba3baba77350851, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 0}

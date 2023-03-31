@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 05b3214568cf23947a5084312ba8cec7, type: 2}
   LineIdentifier: "muni\xE7\xE3o"
-  DialogueEvent: {fileID: 11400000, guid: 3804e993a0f42f24e847d81c54f36420, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 11400000, guid: 16129c14ba50c2843bc66b1deed74d60, type: 2}

@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: d358c53372d71434b9e2e24a686822a0, type: 2}
   LineIdentifier: "mudar di\xE1logo pra ralph alt"
-  DialogueEvent: {fileID: 11400000, guid: b6b2ce4df4208634cbaf3efd7070c83a, type: 2}
-  NextDialogue: {fileID: 0}
+  DialogueEvent: {fileID: 0}
+  NextDialogue: {fileID: 11400000, guid: 7ae868aa69bd3fc4ea9041312eafa54c, type: 2}

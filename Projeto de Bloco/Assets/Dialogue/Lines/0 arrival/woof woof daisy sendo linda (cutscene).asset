@@ -16,5 +16,5 @@ MonoBehaviour:
     DialogueLineSO: {fileID: 11400000}
   ParentDialogue: {fileID: 11400000, guid: 1175a062ce5fd554fa9f9a863a4c5c08, type: 2}
   LineIdentifier: woof woof daisy sendo linda (cutscene)
-  DialogueEvent: {fileID: 11400000, guid: 3804e993a0f42f24e847d81c54f36420, type: 2}
+  DialogueEvent: {fileID: 0}
   NextDialogue: {fileID: 11400000, guid: 430a008b6eea3234c8003f6d07f61c99, type: 2}

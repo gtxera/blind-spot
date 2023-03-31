@@ -24,7 +24,7 @@ MonoBehaviour:
   - ChoiceText: "N\xE3o, obrigada."
     NextDialogue: {fileID: 11400000, guid: dc7ca65a424d1e2408be31c68711cdf8, type: 2}
   Text: Mudou de ideia?
-  Character: {fileID: 11400000, guid: 578346a7341662043bee0ad08f72a27f, type: 2}
+  Character: {fileID: 0}
   Name: 
   Portrait: {fileID: 0}
-  PortraitKey: Neutro
+  PortraitKey: 
