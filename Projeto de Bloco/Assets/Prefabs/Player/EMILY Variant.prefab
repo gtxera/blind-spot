@@ -188,3 +188,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _persistentInventoryManagerPrefab: {fileID: 55526580340366667, guid: 6c5f4f330a0eeab41ae5f45b8cddaed5, type: 3}
+--- !u!114 &-4249658777413238594
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1431112335303792933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb333e3ab1bcc141996ae621015e2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 0
