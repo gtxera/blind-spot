@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 2 combate
+  m_EditorClassIdentifier: 
+  Name: 2 combate
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 9d319590f8c9a5340b7819daca291f04, type: 2}
+  - {fileID: 11400000, guid: d73046122f302fd42a2a1b279d73ff45, type: 2}
+  - {fileID: 11400000, guid: 2f0cf5556409f9644b41c370f3e34205, type: 2}

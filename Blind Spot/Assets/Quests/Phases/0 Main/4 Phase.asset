@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d906d845bb380e14badc707b1673e6d7, type: 3}
+  m_Name: 4 Phase
+  m_EditorClassIdentifier: 
+  PhaseText: "\xC9 preciso se preparar antes de enfrentar a estrada, recolha seus
+    equipamentos e d\xEA o fora da\xED!\nAbaste\xE7a o carro"
+  NextPhases:
+    list:
+    - Key: {fileID: 11400000, guid: 4bcb7f8ba5e1f554fa99e353288eefc0, type: 2}
+      Value: {fileID: 11400000, guid: a3545984cf958b84d81f6a7d787778da, type: 2}
+  PhaseWaypointName: "Abaste\xE7a o carro"
+  ParentQuest: {fileID: 11400000, guid: 4c456e49685605e47896c64c607d488b, type: 2}
+  Wrapper:
+    QuestPhase: {fileID: 11400000}

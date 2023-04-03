@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
+  m_Name: 1
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: f738edaa1b7f6c049a8cdb41317e5e71, type: 2}
+  LineIdentifier: 1
+  Choices:
+  - ChoiceText: Atirar
+    NextDialogue: {fileID: 11400000, guid: d3515c9dbbeb47943b4841e53e1ec925, type: 2}
+  - ChoiceText: Buzinar
+    NextDialogue: {fileID: 11400000, guid: ec64277279875bd4ba62e8870fd81578, type: 2}
+  Text: "Atr\xE1s de voc\xEA!"
+  Character: {fileID: 11400000, guid: d11ae890b06af644dba2ea1e95af1fd5, type: 2}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: Preocupada

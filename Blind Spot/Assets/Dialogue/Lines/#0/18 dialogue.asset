@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82af63464a3d66f43a15831d64854f97, type: 3}
+  m_Name: 18 dialogue
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: fdeb121a6d3223b4cab1bb2c4195f947, type: 2}
+  LineIdentifier: 18 dialogue
+  Choices:
+  - ChoiceText: "V\xE1 pela frente"
+    NextDialogue: {fileID: 11400000, guid: 304c5c5c99c2a504b908f0c7aa0e70bf, type: 2}
+  - ChoiceText: "V\xE1 por tr\xE1s"
+    NextDialogue: {fileID: 11400000, guid: 5e5a224f9017a3a43a40be9d8fb73f44, type: 2}
+  Text: "Assim, andar por 2 horas n\xE3o me anima nem um pouco, mas ficar vivo \xE9
+    bem atrativo. N\xE3o quero ver meu amigo alce de novo t\xE3o cedo."
+  Character: {fileID: 0}
+  Name: 
+  Portrait: {fileID: 0}
+  PortraitKey: 

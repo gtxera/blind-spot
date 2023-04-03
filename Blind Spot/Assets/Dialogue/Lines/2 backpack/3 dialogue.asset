@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 331e3c4b659287443bf03eb45b34a66d, type: 3}
+  m_Name: 3 dialogue
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: 08f5824245cc6d64282973fbcadbbef0, type: 2}
+  LineIdentifier: 3 dialogue
+  NextDialogue: {fileID: 11400000, guid: 4b32bbeffaf9f4443b43f34cfbb58542, type: 2}
+  Text: "Deixa eu dar uma olhada\u2026"
+  Character: {fileID: 11400000, guid: 1a696aff163f94043996a4fb7e2d5511, type: 2}
+  Name: 
+  Portrait: {fileID: 21300000, guid: cc017bf955ed1de49b0bef27ffb3937c, type: 3}
+  PortraitKey: Neutro

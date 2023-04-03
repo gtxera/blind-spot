@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: "#2 final sem muni\xE7\xE3o"
+  m_EditorClassIdentifier: 
+  Name: "#2 final sem muni\xE7\xE3o"
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 25efd4750ed2f424c896f4c5ce360271, type: 2}
+  - {fileID: 11400000, guid: 923d0e48e91269548890374ebf2c2d87, type: 2}
+  - {fileID: 11400000, guid: d5a50e487b054884891ef837bc5bae37, type: 2}

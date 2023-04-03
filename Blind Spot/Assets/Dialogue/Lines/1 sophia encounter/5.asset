@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e8349f2c918de8e4c9b149ba27f5ec2c, type: 3}
+  m_Name: 5
+  m_EditorClassIdentifier: 
+  Wrapper:
+    DialogueLineSO: {fileID: 11400000}
+  ParentDialogue: {fileID: 11400000, guid: b1be5b695ca2246418866008b6fc74b0, type: 2}
+  LineIdentifier: 5
+  NextDialogue: {fileID: 11400000, guid: bf85042b37dd82a46ae83c0fabd26c9a, type: 2}
+  Text: "Voc\xEA gasta 3 das suas preciosas muni\xE7\xF5es, mas em compensa\xE7\xE3o
+    a besta n\xE3o parece mais ter vida"

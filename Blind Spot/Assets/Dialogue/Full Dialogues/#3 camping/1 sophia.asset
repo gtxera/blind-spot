@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 1 sophia
+  m_EditorClassIdentifier: 
+  Name: 1 sophia
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: dc60eb8c695db0c4990729fd001db162, type: 2}
+  - {fileID: 11400000, guid: b175e1a02aebab04c91121425bea4f60, type: 2}
+  - {fileID: 11400000, guid: 4c5768f8dbbbc7d46bd2db693b6b6ff6, type: 2}

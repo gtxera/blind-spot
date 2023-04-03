@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bfd35c3648a75cf46b5d3b721486a224, type: 3}
+  m_Name: 3 sidequest
+  m_EditorClassIdentifier: 
+  Name: 3 sidequest
+  HasNameSet: 1
+  DialogueLines:
+  - {fileID: 11400000, guid: 76df28643d6456e47884f9307df88b4e, type: 2}
+  - {fileID: 11400000, guid: e01227df5a24e9b489a5c20311c62ed5, type: 2}
+  - {fileID: 11400000, guid: d108d085b7eb5f44a868bd3fdcb1d189, type: 2}
+  - {fileID: 11400000, guid: 820e734eb67b074488d29682befa23b2, type: 2}
