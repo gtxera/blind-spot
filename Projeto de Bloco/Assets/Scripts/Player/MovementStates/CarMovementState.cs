@@ -106,7 +106,7 @@ public class CarMovementState : MovementState
 
     private void HandleSteering()
     {
-        _currentSteerAngle = Mathf.Lerp(_currentSteerAngle, _maxSteerAngle * PlayerInputs.Instance.HorizontalInput, 0.01f);
+        _currentSteerAngle = Mathf.Lerp(_currentSteerAngle, _maxSteerAngle * PlayerInputs.Instance.HorizontalInput, Time.fixedDeltaTime);
 
         _frontLeftWheelCollider.steerAngle = _currentSteerAngle;
         _frontRightWheelCollider.steerAngle = _currentSteerAngle;

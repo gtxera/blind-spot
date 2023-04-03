@@ -26,6 +26,8 @@ public class PauseManager : SingletonBehaviour<PauseManager>
         if (SceneManager.GetActiveScene().buildIndex == 0) return;
 
         IsPaused = !IsPaused;
+
+        Time.timeScale = IsPaused ? 0 : 1;
         
         _inventoryCanvas.SetActive(!_inventoryCanvas.activeSelf);
     }

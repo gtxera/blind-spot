@@ -48,16 +48,29 @@ public class DialogueManager : SingletonBehaviour<DialogueManager>
         
     }
 
+    private void OnDisable()
+    {
+        PlayerInputs.Instance.MouseLeftButtonDownEvent -= OnMouseClick;
+    }
+
     public void StartDialogue(DialogueSO dialogue)
     {
         _startDialogueCalled = true;
 
         _showTextTokenSource = null;
         _showTextTask = null;
-        
-        PlayerMovementStateMachine.Instance.ResetCurrentMovementState();
-        PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
-        PlayerInteraction.Instance.IgnoreInteraction(true);
+
+        switch (PlayerMovementStateMachine.Instance.CurrentMovementState)
+        {
+            case CarMovementState carMovementState:
+                break;
+            default:
+                PlayerMovementStateMachine.Instance.ResetCurrentMovementState();
+                PlayerMovementStateMachine.Instance.ChangeMovementState(new StaticMovementState());
+                PlayerInteraction.Instance.IgnoreInteraction(true);
+                break;
+                
+        }
         
         OnDialogueStarted?.Invoke(dialogue);
 

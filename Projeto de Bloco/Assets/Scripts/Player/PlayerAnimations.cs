@@ -31,6 +31,15 @@ public class PlayerAnimations : MonoBehaviour
         PlayerMovementStateMachine.Instance.StateChanged += StopIdleAnimation;
     }
 
+    private void OnDisable()
+    {
+        PlayerInputs.Instance.MovementStartedEvent -= StartWalkingAnimation;
+        PlayerInputs.Instance.MovementStoppedEvent -= StopWalkAnimation;
+
+        PlayerInputs.Instance.RunKeyDownEvent -= StartRunningAnimation;
+        PlayerInputs.Instance.RunKeyUpEvent -= StopRunningAnimation;
+    }
+
     private void StartWalkingAnimation()
     {
         if(PlayerMovementStateMachine.Instance.GetCurrentMovementStateType() == typeof(FootMovementState)) 

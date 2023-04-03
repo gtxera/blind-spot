@@ -10,6 +10,8 @@ public class PlayerMovementStateMachine : SingletonBehaviour<PlayerMovementState
 {
     private MovementState _currentMovementState;
 
+    public MovementState CurrentMovementState => _currentMovementState;
+
     private FootMovementState _defaultMovementState;
     
     [SerializeField] private float walkSpeed, runSpeed;

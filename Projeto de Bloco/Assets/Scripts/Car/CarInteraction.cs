@@ -45,6 +45,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
         if (PlayerMovementStateMachine.Instance.GetCurrentMovementStateType() != typeof(CarMovementState))
         {
             _carMovementState.SetDriverAndSeatTransform(playerObject.transform, driverSeatTransform);
+            playerObject.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = false;
             playerObject.GetComponent<CharacterController>().enabled = false;
             PlayerMovementStateMachine.Instance.ChangeMovementState(_carMovementState);
             PlayerInteraction.Instance.LockInteraction(true);
@@ -52,6 +53,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
         else
         {
             playerObject.transform.position = exitPointTransform.position;
+            playerObject.transform.GetChild(1).GetComponent<SkinnedMeshRenderer>().enabled = true;
             playerObject.GetComponent<CharacterController>().enabled = true;
             _carMovementState.FullStop();
             PlayerMovementStateMachine.Instance.ChangeDefaultMovementState();

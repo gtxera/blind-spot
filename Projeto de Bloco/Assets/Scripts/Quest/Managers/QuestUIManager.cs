@@ -7,11 +7,11 @@ using UnityEngine.Serialization;
 
 public class QuestUIManager : MonoBehaviour
 {
-    private void Start()
+    /*private void Start()
     {
         QuestManager.Instance.OnPhaseTransition += (_, phase) =>
         {
             PauseManager.Instance.QuestText.text = phase.PhaseWaypointName;
         };
-    }
+    }*/
 }

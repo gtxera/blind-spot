@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a29d6907c62053047b517c023b683170, type: 3}
   m_Name: OldCar
   m_EditorClassIdentifier: 
-  MaxMotorForce: 1000
-  MaxSpeedKmPerHour: 100
-  MaxBreakForce: 3000
+  MaxMotorForce: 5000
+  MaxSpeedKmPerHour: 300
+  MaxBreakForce: 5000
   MaxSteerAngleInDegrees: 30
   AntiRollForce: 5000
-  DecelerationForce: 200
+  DecelerationForce: 1000
   MaximumGasCapacity: 1000
   GasConsumptionInUnitsPerSecond: 10
