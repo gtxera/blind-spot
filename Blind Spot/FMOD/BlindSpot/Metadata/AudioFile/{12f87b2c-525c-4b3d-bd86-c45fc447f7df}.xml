@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{12f87b2c-525c-4b3d-bd86-c45fc447f7df}">
+		<property name="assetPath">
+			<value>352514__inspectorj__ambience-night-wildlife-a.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>61.079410430839005</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1cff2850-4741-4e7a-8aef-23840df979c1}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -271,6 +271,7 @@ GameObject:
   - component: {fileID: 6094363431195048917}
   - component: {fileID: 6094363431195048916}
   - component: {fileID: 6094363431195048915}
+  - component: {fileID: 898502735306467309}
   m_Layer: 0
   m_Name: Drivable Car
   m_TagString: Untagged
@@ -359,6 +360,39 @@ MonoBehaviour:
   rearRightWheelTransform: {fileID: 5987885612342311426}
   driverSeatTransform: {fileID: 6094363431409297127}
   exitPointTransform: {fileID: 6094363430570034839}
+--- !u!114 &898502735306467309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6094363431195048914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1147083165
+      Data2: 1208323697
+      Data3: -2105876603
+      Data4: -423867833
+    Path: event:/CarSound
+  Event: 
+  PlayEvent: 0
+  StopEvent: 2
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params:
+  - Name: StopCar
+    Value: 0
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &6094363431409297126
 GameObject:
   m_ObjectHideFlags: 0

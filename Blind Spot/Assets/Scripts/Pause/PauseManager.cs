@@ -29,6 +29,9 @@ public class PauseManager : SingletonBehaviour<PauseManager>
 
         Time.timeScale = IsPaused ? 0 : 1;
         
+        FMODUnity.RuntimeManager.PauseAllEvents(IsPaused);
+        
         _inventoryCanvas.SetActive(!_inventoryCanvas.activeSelf);
+        
     }
 }

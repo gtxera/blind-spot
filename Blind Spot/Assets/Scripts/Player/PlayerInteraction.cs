@@ -17,6 +17,11 @@ public class PlayerInteraction : SingletonBehaviour<PlayerInteraction>
         PlayerInputs.Instance.InteractKeyDownEvent += CallInteraction;
     }
 
+    private void OnDisable()
+    {
+        PlayerInputs.Instance.InteractKeyDownEvent -= CallInteraction;
+    }
+
     private void CallInteraction()
     {
         _currentInteraction?.Interact(gameObject);

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{971233db-bcbb-4f35-96c7-9c410ff6f7a3}">
+		<property name="assetPath">
+			<value>Zombie 2.flac</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>35.301916666666664</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1cff2850-4741-4e7a-8aef-23840df979c1}</destination>
+		</relationship>
+	</object>
+</objects>

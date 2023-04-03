@@ -8,6 +8,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(FMODUnity.StudioEventEmitter))]
 public class InventoryUIController : MonoBehaviour
 {
     [SerializeField] private GameObject _itemUIPrefab;
@@ -19,6 +20,8 @@ public class InventoryUIController : MonoBehaviour
     private RectTransform _rectTransform;
 
     private bool _inventoryOpen;
+
+    private FMODUnity.StudioEventEmitter _emitter;
     
 
     private void Start()
@@ -39,11 +42,21 @@ public class InventoryUIController : MonoBehaviour
         };
 
         _rectTransform = GetComponent<RectTransform>();
+
+        _emitter = GetComponent<FMODUnity.StudioEventEmitter>();
+    }
+
+    private void OnDisable()
+    {
+        PlayerInputs.Instance.InventoryKeyDown -= ShowHideInventory;
     }
 
     private void ShowHideInventory()
     {
         _inventoryOpen = !_inventoryOpen;
+        
+        _emitter.Play();
+        _emitter.SetParameter("InventoryOpened", _inventoryOpen ? 1f : 0f);
 
         _rectTransform.anchoredPosition = new Vector2(0,
             _inventoryOpen ? - _rectTransform.sizeDelta.y / 2 : _rectTransform.sizeDelta.y / 2);

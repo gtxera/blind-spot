@@ -18,7 +18,7 @@ MonoBehaviour:
   LineIdentifier: 2
   Choices:
   - ChoiceText: Atirar na criatura
-    NextDialogue: {fileID: 11400000, guid: b2876a6353daf424b9262fee5a21fed2, type: 2}
+    NextDialogue: {fileID: 11400000, guid: 5a60a261155f3e14dbc2fcd391788e9a, type: 2}
   - ChoiceText: Partir para o soco
     NextDialogue: {fileID: 11400000, guid: bd0cbbc93123f584e88524d6aa0fb024, type: 2}
   Text: "Preciso ajud\xE1-la! N\xE3o tenho muitas muni\xE7\xF5es comigo mas talvez

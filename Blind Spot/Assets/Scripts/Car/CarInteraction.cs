@@ -25,8 +25,11 @@ public class CarInteraction : MonoBehaviour, IInteractable
     
     private CarMovementState _carMovementState;
 
+    private FMODUnity.StudioEventEmitter _emitter;
+
     private void Awake()
     {
+        _emitter = GetComponent<FMODUnity.StudioEventEmitter>();
         _carRigidBody = GetComponent<Rigidbody>();
     }
 
@@ -49,6 +52,8 @@ public class CarInteraction : MonoBehaviour, IInteractable
             playerObject.GetComponent<CharacterController>().enabled = false;
             PlayerMovementStateMachine.Instance.ChangeMovementState(_carMovementState);
             PlayerInteraction.Instance.LockInteraction(true);
+            _emitter.SetParameter("StopCar", 0);
+            _emitter.Play();
         }
         else
         {
@@ -58,6 +63,7 @@ public class CarInteraction : MonoBehaviour, IInteractable
             _carMovementState.FullStop();
             PlayerMovementStateMachine.Instance.ChangeDefaultMovementState();
             PlayerInteraction.Instance.LockInteraction(false);
+            _emitter.SetParameter("StopCar", 1);
         }
         
     }

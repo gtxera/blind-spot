@@ -1769,6 +1769,37 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.10989112, y: 0.09298313, z: 0.058347605}
   m_Center: {x: -0.0035580492, y: -0.003094554, z: 0.02663277}
+--- !u!114 &654658078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 654658072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
+  Event: 
+  PlayEvent: 0
+  StopEvent: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: -1
+  OverrideMaxDistance: -1
 --- !u!1 &678310677
 GameObject:
   m_ObjectHideFlags: 0
@@ -2507,6 +2538,37 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 70882c189cf3d60449070bf47fc97bdf, type: 3}
   m_PrefabInstance: {fileID: 2106003406}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1229041636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229041635}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 202146497
+      Data2: 1332621393
+      Data3: -1743769961
+      Data4: -385662151
+    Path: event:/Zombie
+  Event: 
+  PlayEvent: 1
+  StopEvent: 12
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  AllowNonRigidbodyDoppler: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1285714006
 GameObject:
   m_ObjectHideFlags: 0
@@ -3841,3 +3903,28 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
+--- !u!1 &8276601015756786271 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7571232697862813475, guid: 4c9558b9b70a74c49adf2ee85ed3e49f, type: 3}
+  m_PrefabInstance: {fileID: 8276601015756786270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8276601015756786272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8276601015756786271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ddbc917bc067b04e984e1add86c41f4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameEvent: {fileID: 11400000, guid: 823afc0100884ae4fb5473dd595a6ef3, type: 2}
+  _event:
+    Guid:
+      Data1: -1345857567
+      Data2: 1103533875
+      Data3: -1400589660
+      Data4: -2034500572
+    Path: event:/GunSound
