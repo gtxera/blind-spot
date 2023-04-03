@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4a6509b675a76304a803b3a978d18461, type: 3}
-  m_Name: Gun
+  m_Name: Bullet
   m_EditorClassIdentifier: 
-  ItemImage: {fileID: 21300000, guid: b19d94a07416fdc41bc2dcaf25dc5179, type: 3}
-  Stackable: 0
+  ItemImage: {fileID: 21300000, guid: 46bb519a92bca8b40be5b31ca7dc2d17, type: 3}
+  Stackable: 1

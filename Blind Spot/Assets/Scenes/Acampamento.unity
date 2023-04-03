@@ -8486,6 +8486,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _startingEvent: {fileID: 11400000, guid: 3c2fe7b4cae131549b9d5c3b6ce3a303, type: 2}
+--- !u!114 &820154834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820154828}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb333e3ab1bcc141996ae621015e2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 1277054656
 --- !u!1 &820273525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17057,6 +17070,30 @@ MonoBehaviour:
     _unityEvent:
       m_PersistentCalls:
         m_Calls:
+        - m_Target: {fileID: 1653058243}
+          m_TargetAssemblyTypeName: ItemAdder, Assembly-CSharp
+          m_MethodName: AddItem
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1653058242}
+          m_TargetAssemblyTypeName: ItemAdder, Assembly-CSharp
+          m_MethodName: AddItem
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
         - m_Target: {fileID: 255919077}
           m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
           m_MethodName: SetActive
@@ -17095,6 +17132,47 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.014946198, y: 0.0034160079, z: 0.008112233}
   m_Center: {x: -0.0011996481, y: -0.00000499402, z: 0.0009937356}
+--- !u!114 &1653058242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255919077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c0822df03b29f4291afe0a3307e443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemToAdd: {fileID: 11400000, guid: 11bda6729b089b144816534f34d3e1f7, type: 2}
+  _amount: 5
+--- !u!114 &1653058243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255919077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93c0822df03b29f4291afe0a3307e443, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _itemToAdd: {fileID: 11400000, guid: 376528ff3e4a3fe489622ef9239fd3eb, type: 2}
+  _amount: 1
+--- !u!114 &1653058244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 255919077}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb333e3ab1bcc141996ae621015e2e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: 3689624625
 --- !u!1 &1656336607
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,7 +20,7 @@ public class PlayerInventory : SingletonBehaviour<PlayerInventory>
 
     private bool _mouseInInventory;
 
-    private void Start()
+    private IEnumerator Start()
     {
         if (FindObjectOfType<PersistentInventoryManager>() == null)
         {
@@ -30,8 +30,10 @@ public class PlayerInventory : SingletonBehaviour<PlayerInventory>
         else
         {
             _inventory = PersistentInventoryManager.Instance.LastInventory;
-            PopulateInventoryUI();
         }
+        
+        yield return new WaitForEndOfFrame();
+        PopulateInventoryUI();
     }
 
     public bool HasItem(ItemSO item)
