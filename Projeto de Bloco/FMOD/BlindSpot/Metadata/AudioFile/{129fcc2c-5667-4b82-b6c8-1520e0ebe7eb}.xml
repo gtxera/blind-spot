@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{129fcc2c-5667-4b82-b6c8-1520e0ebe7eb}">
+		<property name="assetPath">
+			<value>Grass/Som 10.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.20000000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{1cff2850-4741-4e7a-8aef-23840df979c1}</destination>
+		</relationship>
+	</object>
+</objects>
